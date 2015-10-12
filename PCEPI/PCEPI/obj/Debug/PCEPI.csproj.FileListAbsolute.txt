@@ -1,0 +1,5 @@
+D:\PCEPI\PCEPI\bin\PCEPI.dll
+D:\PCEPI\PCEPI\bin\PCEPI.pdb
+D:\PCEPI\PCEPI\obj\Debug\PCEPI.dll
+D:\PCEPI\PCEPI\obj\Debug\PCEPI.pdb
+D:\PCEPI\PCEPI\obj\Debug\PCEPI.csprojResolveAssemblyReference.cache
