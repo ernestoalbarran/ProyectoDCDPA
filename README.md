@@ -1,2 +1,2 @@
 # ProyectoDCDPA
-Codigo de todo el proyecto del sitema DCDPA
+Carpeta que contiene el codigo de todo el proyecto del sistema DCDPA
