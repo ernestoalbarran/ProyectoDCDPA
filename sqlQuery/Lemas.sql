@@ -1,0 +1,21 @@
+USE PCEPI2
+GO
+
+
+CREATE PROCEDURE RELACION_PL
+(
+@ID_LEMA smallint,
+@ID_PERIODO smallint
+)
+AS INSERT INTO LEMA_PERIODO(ID_LEMA,ID_PERIODO) VALUES (@ID_LEMA,@ID_PERIODO)
+
+CREATE PROCEDURE INSERTAR_LP
+(
+@titulo char(40),
+@descripcion varchar(2100),
+@ID_LEMA smallint,
+@ID_PERIODO smallint
+)
+AS INSERT INTO Lemas(titulo,descripcion) values(@titulo,@descripcion)
+INSERT INTO LEMA_PERIODO(ID_LEMA,ID_PERIODO) VALUES (@ID_LEMA,@ID_PERIODO)
+           

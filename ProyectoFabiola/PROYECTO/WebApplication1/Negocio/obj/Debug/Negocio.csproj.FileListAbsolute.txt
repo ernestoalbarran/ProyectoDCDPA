@@ -1,0 +1,9 @@
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Negocio\bin\Debug\Negocio.dll
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Negocio\bin\Debug\Negocio.pdb
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Negocio\bin\Debug\Comun.dll
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Negocio\bin\Debug\Datos.dll
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Negocio\bin\Debug\Comun.pdb
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Negocio\bin\Debug\Datos.pdb
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Negocio\obj\Debug\Negocio.dll
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Negocio\obj\Debug\Negocio.pdb

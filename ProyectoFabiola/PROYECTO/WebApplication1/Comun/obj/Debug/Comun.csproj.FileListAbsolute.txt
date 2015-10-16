@@ -1,0 +1,4 @@
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Comun\bin\Debug\Comun.dll
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Comun\bin\Debug\Comun.pdb
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Comun\obj\Debug\Comun.dll
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Comun\obj\Debug\Comun.pdb
