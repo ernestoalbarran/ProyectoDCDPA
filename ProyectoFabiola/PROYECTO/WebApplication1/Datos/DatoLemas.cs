@@ -110,7 +110,7 @@ namespace PCEPI.Datos
                     {
                         while (dr.Read())
                         {
-                            LstLemas.Add(new LemasPCEPI((int)dr["IDLema"], (string)dr["titulo"], (string)dr["descripcion"]));
+                            LstLemas.Add(new LemasPCEPI((int)dr["ID_Lema"], (string)dr["titulo"], (string)dr["descripcion"]));
                         }
 
                     }
