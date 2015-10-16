@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Chalkwork_Basic" Width="466.667" Height="466.667" Clip="F1 M 0,0L 466.667,0L 466.667,466.667L 0,466.667L 0,0">
+	<Canvas x:Name="Copy" Width="466.667" Height="466.667" Canvas.Left="0" Canvas.Top="0">
+		<Path x:Name="Path" Width="214.508" Height="266.263" Canvas.Left="74.2626" Canvas.Top="31.6021" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 288.771,74.5527L 288.771,297.865L 74.2626,297.865L 74.2626,31.678L 245.849,31.6021L 288.771,74.5527 Z "/>
+		<Path x:Name="Path_0" Width="225.175" Height="276.929" Canvas.Left="68.9293" Canvas.Top="26.2687" Stretch="Fill" Fill="#FF8A8A8A" Data="F1 M 243.639,36.9368C 246.433,39.7314 280.648,73.97 283.437,76.7607L 283.437,292.531L 79.5959,292.531L 79.5959,37.0087C 89.4719,37.0047 239.465,36.938 243.639,36.9368 Z M 68.9293,26.3474L 68.9293,303.198L 294.104,303.198L 294.104,72.3434L 248.059,26.2687L 68.9293,26.3474 Z "/>
+		<Path x:Name="Path_1" Width="191.051" Height="242.987" Canvas.Left="86.0173" Canvas.Top="42.8927" Stretch="Fill" Data="F1 M 277.068,76.2847L 277.068,285.879L 86.0173,285.879L 86.0173,42.8927L 244.595,42.8927L 244.595,76.2847L 277.068,76.2847 Z ">
+			<Path.Fill>
+				<LinearGradientBrush StartPoint="-0.0616826,0.125195" EndPoint="2.08996,0.125195">
+					<LinearGradientBrush.RelativeTransform>
+						<TransformGroup>
+							<SkewTransform CenterX="-0.0616826" CenterY="0.125195" AngleX="-13.6469" AngleY="0"/>
+							<RotateTransform CenterX="-0.0616826" CenterY="0.125195" Angle="38.1766"/>
+						</TransformGroup>
+					</LinearGradientBrush.RelativeTransform>
+					<LinearGradientBrush.GradientStops>
+						<GradientStop Color="#FFFFFFFF" Offset="0"/>
+						<GradientStop Color="#FFDBDBDB" Offset="1"/>
+					</LinearGradientBrush.GradientStops>
+				</LinearGradientBrush>
+			</Path.Fill>
+		</Path>
+		<Rectangle x:Name="Rectangle" Width="37.1613" Height="7.28134" Canvas.Left="246.303" Canvas.Top="81.8741" Stretch="Fill" Fill="#A6D9D9D9"/>
+		<Path x:Name="Path_2" Width="37.052" Height="37.2267" Canvas.Left="244.433" Canvas.Top="38.9207" Stretch="Fill" Fill="#FFD6D6D6" Data="F1 M 281.485,74.814L 245.617,38.9207L 244.433,38.922L 244.433,76.026L 281.485,76.1474L 281.485,74.814 Z "/>
+		<Path x:Name="Path_3" Width="49.52" Height="51.424" Canvas.Left="239.1" Canvas.Top="30.5074" Stretch="Fill" Fill="#FF8A8A8A" Data="F1 M 239.1,30.5074L 239.1,81.9314L 288.62,81.9314L 288.62,71.2647L 249.767,71.2647L 249.767,30.5074L 239.1,30.5074 Z "/>
+		<Rectangle x:Name="Rectangle_4" Width="159.667" Height="5.33334" Canvas.Left="101.657" Canvas.Top="89.6474" Stretch="Fill" Fill="#FFB0B0B0"/>
+		<Rectangle x:Name="Rectangle_5" Width="47.272" Height="5.33334" Canvas.Left="101.657" Canvas.Top="116.314" Stretch="Fill" Fill="#FFB0B0B0"/>
+		<Rectangle x:Name="Rectangle_6" Width="47.272" Height="5.33333" Canvas.Left="101.657" Canvas.Top="222.981" Stretch="Fill" Fill="#FFB0B0B0"/>
+		<Rectangle x:Name="Rectangle_7" Width="47.272" Height="5.33334" Canvas.Left="101.657" Canvas.Top="249.647" Stretch="Fill" Fill="#FFB0B0B0"/>
+		<Path x:Name="Path_8" Width="147.579" Height="197.924" Canvas.Left="141.192" Canvas.Top="99.9407" Stretch="Fill" Fill="#4D8A8A8A" Data="F1 M 141.192,297.865L 288.771,297.865L 288.771,99.9407L 141.192,100.006L 141.192,297.865 Z "/>
+		<Path x:Name="Path_9" Width="214.508" Height="266.263" Canvas.Left="154.263" Canvas.Top="111.602" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 368.771,154.553L 368.771,377.865L 154.263,377.865L 154.263,111.678L 325.849,111.602L 368.771,154.553 Z "/>
+		<Path x:Name="Path_10" Width="225.175" Height="276.929" Canvas.Left="148.929" Canvas.Top="106.269" Stretch="Fill" Fill="#FF8A8A8A" Data="F1 M 323.639,116.937C 326.433,119.731 360.648,153.97 363.437,156.761L 363.437,372.531L 159.596,372.531L 159.596,117.009C 169.472,117.005 319.465,116.938 323.639,116.937 Z M 148.929,106.347L 148.929,383.198L 374.104,383.198L 374.104,152.343L 328.059,106.269L 148.929,106.347 Z "/>
+		<Rectangle x:Name="Rectangle_11" Width="45.5813" Height="52.7573" Canvas.Left="103.349" Canvas.Top="145.251" Stretch="Fill">
+			<Rectangle.Fill>
+				<RadialGradientBrush RadiusX="0.919311" RadiusY="0.794268" Center="0.188509,0.321073" GradientOrigin="0.188509,0.321073">
+					<RadialGradientBrush.GradientStops>
+						<GradientStop Color="#FFC8DFF1" Offset="0"/>
+						<GradientStop Color="#FF9BC3D5" Offset="1"/>
+					</RadialGradientBrush.GradientStops>
+					<RadialGradientBrush.RelativeTransform>
+						<TransformGroup/>
+					</RadialGradientBrush.RelativeTransform>
+				</RadialGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<Path x:Name="Path_12" Width="44.1467" Height="34.876" Canvas.Left="104.783" Canvas.Top="161.894" Stretch="Fill" Data="F1 M 104.783,170.985L 104.783,196.77L 148.929,196.77L 148.929,177.885C 138.091,168.701 126.949,161.894 122.064,161.894C 117.523,161.894 108.571,166.703 104.783,170.985 Z ">
+			<Path.Fill>
+				<RadialGradientBrush RadiusX="0.533961" RadiusY="0.675896" Center="0.179628,0.185407" GradientOrigin="0.179628,0.185407">
+					<RadialGradientBrush.GradientStops>
+						<GradientStop Color="#FF99C596" Offset="0"/>
+						<GradientStop Color="#FF6DA66A" Offset="1"/>
+					</RadialGradientBrush.GradientStops>
+					<RadialGradientBrush.RelativeTransform>
+						<TransformGroup/>
+					</RadialGradientBrush.RelativeTransform>
+				</RadialGradientBrush>
+			</Path.Fill>
+		</Path>
+		<Path x:Name="Path_13" Width="16.2133" Height="15.1573" Canvas.Left="132.716" Canvas.Top="181.865" Stretch="Fill" Data="F1 M 132.716,197.022L 148.929,197.022L 148.929,181.865C 142.817,186.613 137.183,192.505 132.716,197.022 Z ">
+			<Path.Fill>
+				<RadialGradientBrush RadiusX="0.911376" RadiusY="0.974871" Center="0.396402,0.236591" GradientOrigin="0.396402,0.236591">
+					<RadialGradientBrush.GradientStops>
+						<GradientStop Color="#FF99C596" Offset="0"/>
+						<GradientStop Color="#FF6DA66A" Offset="1"/>
+					</RadialGradientBrush.GradientStops>
+					<RadialGradientBrush.RelativeTransform>
+						<TransformGroup/>
+					</RadialGradientBrush.RelativeTransform>
+				</RadialGradientBrush>
+			</Path.Fill>
+		</Path>
+		<Path x:Name="Path_14" Width="48.2467" Height="58.0907" Canvas.Left="100.683" Canvas.Top="142.585" Stretch="Fill" Fill="#FF8CB0D0" Data="F1 M 100.683,200.675L 148.929,200.675L 148.929,195.342L 106.016,195.342L 106.016,147.918L 148.929,147.918L 148.929,142.585L 100.683,142.585L 100.683,200.675 Z "/>
+		<Path x:Name="Path_15" Width="191.051" Height="242.987" Canvas.Left="166.017" Canvas.Top="122.893" Stretch="Fill" Data="F1 M 357.068,156.285L 357.068,365.879L 166.017,365.879L 166.017,122.893L 324.595,122.893L 324.595,156.285L 357.068,156.285 Z ">
+			<Path.Fill>
+				<LinearGradientBrush StartPoint="-0.0616825,0.125192" EndPoint="2.08996,0.125192">
+					<LinearGradientBrush.RelativeTransform>
+						<TransformGroup>
+							<SkewTransform CenterX="-0.0616825" CenterY="0.125192" AngleX="-13.6469" AngleY="0"/>
+							<RotateTransform CenterX="-0.0616825" CenterY="0.125192" Angle="38.1766"/>
+						</TransformGroup>
+					</LinearGradientBrush.RelativeTransform>
+					<LinearGradientBrush.GradientStops>
+						<GradientStop Color="#FFFFFFFF" Offset="0"/>
+						<GradientStop Color="#FFDBDBDB" Offset="1"/>
+					</LinearGradientBrush.GradientStops>
+				</LinearGradientBrush>
+			</Path.Fill>
+		</Path>
+		<Rectangle x:Name="Rectangle_16" Width="37.1614" Height="7.28134" Canvas.Left="326.303" Canvas.Top="161.874" Stretch="Fill" Fill="#A6D9D9D9"/>
+		<Rectangle x:Name="Rectangle_17" Width="67.4707" Height="52.756" Canvas.Left="183.348" Canvas.Top="225.253" Stretch="Fill">
+			<Rectangle.Fill>
+				<RadialGradientBrush RadiusX="0.789182" RadiusY="1.0093" Center="0.0732487,0.179979" GradientOrigin="0.0732487,0.179979">
+					<RadialGradientBrush.GradientStops>
+						<GradientStop Color="#FFC8DFF0" Offset="0"/>
+						<GradientStop Color="#FF9AC3D4" Offset="1"/>
+					</RadialGradientBrush.GradientStops>
+					<RadialGradientBrush.RelativeTransform>
+						<TransformGroup/>
+					</RadialGradientBrush.RelativeTransform>
+				</RadialGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<Path x:Name="Path_18" Width="61.008" Height="34.876" Canvas.Left="184.783" Canvas.Top="241.894" Stretch="Fill" Data="F1 M 245.791,276.77L 245.791,274.889C 232.636,258.522 209.701,241.894 202.064,241.894C 197.521,241.894 188.572,246.703 184.783,250.986L 184.783,276.77L 245.791,276.77 Z ">
+			<Path.Fill>
+				<RadialGradientBrush RadiusX="0.479157" RadiusY="0.838182" Center="0.179616,0.185425" GradientOrigin="0.179616,0.185425">
+					<RadialGradientBrush.GradientStops>
+						<GradientStop Color="#FF99C596" Offset="0"/>
+						<GradientStop Color="#FF6DA66A" Offset="1"/>
+					</RadialGradientBrush.GradientStops>
+					<RadialGradientBrush.RelativeTransform>
+						<TransformGroup/>
+					</RadialGradientBrush.RelativeTransform>
+				</RadialGradientBrush>
+			</Path.Fill>
+		</Path>
+		<Path x:Name="Path_19" Width="29.42" Height="13.2427" Canvas.Left="215.488" Canvas.Top="229.751" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 243.147,236.735C 243.171,236.585 243.187,236.434 243.187,236.279C 243.187,234.733 241.976,233.489 240.481,233.489L 238.605,233.489C 238.624,233.363 238.633,233.233 238.633,233.109C 238.633,231.563 237.417,229.751 235.92,229.751L 231.368,229.751C 230.173,229.751 229.165,231.581 228.801,232.686L 223.983,232.686C 222.471,232.686 221.236,234.134 221.053,235.634L 218.569,235.634C 216.868,235.634 215.488,236.762 215.488,238.507C 215.488,240.263 216.868,241.229 218.569,241.229L 224.3,241.229C 224.819,241.853 225.587,242.994 226.444,242.994L 235.553,242.994C 236.392,242.994 237.145,241.866 237.665,241.267C 237.963,241.403 238.289,241.483 238.633,241.483L 242.569,241.483C 243.864,241.483 244.908,240.405 244.908,239.074C 244.908,237.945 244.157,237.002 243.147,236.735 Z "/>
+		<Path x:Name="Path_20" Width="36.3733" Height="23.4493" Canvas.Left="212.716" Canvas.Top="253.573" Stretch="Fill" Data="F1 M 249.089,277.022L 249.089,253.573L 247.848,253.573C 235.139,253.573 221.613,268.025 212.716,277.022L 249.089,277.022 Z ">
+			<Path.Fill>
+				<RadialGradientBrush RadiusX="0.801673" RadiusY="1.24351" Center="0.396422,0.236567" GradientOrigin="0.396422,0.236567">
+					<RadialGradientBrush.GradientStops>
+						<GradientStop Color="#FF99C596" Offset="0"/>
+						<GradientStop Color="#FF6DA66A" Offset="1"/>
+					</RadialGradientBrush.GradientStops>
+					<RadialGradientBrush.RelativeTransform>
+						<TransformGroup/>
+					</RadialGradientBrush.RelativeTransform>
+				</RadialGradientBrush>
+			</Path.Fill>
+		</Path>
+		<Path x:Name="Path_21" Width="16.212" Height="7.80934" Canvas.Left="231.295" Canvas.Top="236.666" Stretch="Fill" Data="F1 M 245.624,239.637L 245.056,239.637C 245.089,239.49 245.103,239.335 245.103,239.178L 245.103,238.723C 245.103,237.587 244.191,236.666 243.053,236.666L 237.001,236.666C 235.863,236.666 234.944,237.587 234.944,238.723L 234.944,239.178C 234.944,239.603 235.075,239.999 235.295,240.319L 233.348,240.319C 232.212,240.319 231.295,241.241 231.295,242.377L 231.295,242.603C 231.295,243.738 232.212,244.475 233.348,244.475L 240.315,244.475C 241.161,244.475 241.893,244.142 242.207,243.405L 245.624,243.405C 246.663,243.405 247.507,242.554 247.507,241.522C 247.507,240.481 246.663,239.637 245.624,239.637 Z ">
+			<Path.Fill>
+				<LinearGradientBrush StartPoint="0.510932,0.649044" EndPoint="1.7815,0.649044">
+					<LinearGradientBrush.RelativeTransform>
+						<TransformGroup>
+							<SkewTransform CenterX="0.510932" CenterY="0.649044" AngleX="37.9863" AngleY="0"/>
+							<RotateTransform CenterX="0.510932" CenterY="0.649044" Angle="239.44"/>
+						</TransformGroup>
+					</LinearGradientBrush.RelativeTransform>
+					<LinearGradientBrush.GradientStops>
+						<GradientStop Color="#FFFFFFFF" Offset="0"/>
+						<GradientStop Color="#FFC9CBCD" Offset="1"/>
+					</LinearGradientBrush.GradientStops>
+				</LinearGradientBrush>
+			</Path.Fill>
+		</Path>
+		<Path x:Name="Path_22" Width="37.052" Height="37.2267" Canvas.Left="324.433" Canvas.Top="118.921" Stretch="Fill" Fill="#FFD6D6D6" Data="F1 M 361.485,154.814L 325.617,118.921L 324.433,118.922L 324.433,156.026L 361.485,156.147L 361.485,154.814 Z "/>
+		<Path x:Name="Path_23" Width="49.52" Height="51.424" Canvas.Left="319.1" Canvas.Top="110.507" Stretch="Fill" Fill="#FF8A8A8A" Data="F1 M 319.1,110.507L 319.1,161.931L 368.62,161.931L 368.62,151.265L 329.767,151.265L 329.767,110.507L 319.1,110.507 Z "/>
+		<Rectangle x:Name="Rectangle_24" Width="159.667" Height="5.33331" Canvas.Left="181.657" Canvas.Top="169.647" Stretch="Fill" Fill="#FFB0B0B0"/>
+		<Rectangle x:Name="Rectangle_25" Width="159.667" Height="5.33334" Canvas.Left="181.657" Canvas.Top="196.314" Stretch="Fill" Fill="#FFB0B0B0"/>
+		<Rectangle x:Name="Rectangle_26" Width="71.6667" Height="5.33333" Canvas.Left="269.657" Canvas.Top="222.981" Stretch="Fill" Fill="#FFB0B0B0"/>
+		<Rectangle x:Name="Rectangle_27" Width="71.6667" Height="5.33334" Canvas.Left="269.657" Canvas.Top="249.647" Stretch="Fill" Fill="#FFB0B0B0"/>
+		<Rectangle x:Name="Rectangle_28" Width="71.6667" Height="5.33334" Canvas.Left="269.657" Canvas.Top="276.314" Stretch="Fill" Fill="#FFB0B0B0"/>
+		<Rectangle x:Name="Rectangle_29" Width="159.667" Height="5.33334" Canvas.Left="181.657" Canvas.Top="302.981" Stretch="Fill" Fill="#FFB0B0B0"/>
+		<Rectangle x:Name="Rectangle_30" Width="129" Height="5.33331" Canvas.Left="181.657" Canvas.Top="329.647" Stretch="Fill" Fill="#FFB0B0B0"/>
+		<Path x:Name="Path_31" Width="72.804" Height="58.0894" Canvas.Left="180.683" Canvas.Top="222.586" Stretch="Fill" Fill="#FF8CB0D0" Data="F1 M 248.152,275.342L 186.015,275.342L 186.015,227.919L 248.152,227.919M 180.683,280.675L 253.487,280.675L 253.487,222.586L 180.683,222.586L 180.683,280.675 Z "/>
+		<Path x:Name="Path_32" Width="13.4413" Height="10.648" Canvas.Left="135.488" Canvas.Top="152.345" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 143.984,152.686C 142.471,152.686 141.236,154.134 141.053,155.635L 138.568,155.635C 136.868,155.635 135.488,156.762 135.488,158.507C 135.488,160.263 136.868,161.229 138.568,161.229L 144.3,161.229C 144.819,161.853 145.587,162.993 146.444,162.993L 148.929,162.993L 148.929,152.345C 148.883,152.462 148.837,152.579 148.801,152.686L 143.984,152.686 Z "/>
+	</Canvas>
+</Canvas>

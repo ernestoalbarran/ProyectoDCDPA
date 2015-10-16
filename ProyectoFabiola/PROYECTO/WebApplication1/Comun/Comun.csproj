@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LemasPCEPI.cs" />
+    <Compile Include="PeriodoLema.cs" />
     <Compile Include="PeriodosPECEPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

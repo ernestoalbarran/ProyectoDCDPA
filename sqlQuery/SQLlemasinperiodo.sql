@@ -1,26 +1,26 @@
 Use PCEPI2
 GO
 
-create procedure AltaLema
+ALTER procedure AltaLema
 (
-@titulo char(40),
-@descripcion varchar(2100)
+@TITULO char(40),
+@DESCRIPCION varchar(2100)
 )
 as 
 insert into Lema(TITULO,DESCRIPCION) values(@TITULO,@DESCRIPCION)
 
 
-CREATE PROCEDURE ObtenerLemaByTitulo
+ALTER PROCEDURE ObtenerLemaByTitulo
 (
-@titulo char(40)
+@TITULO char(40)
 )
-as select ID_Lema,titulo,descripcion from PCEPI2 where titulo=@titulo
+as select ID_LEMA,TITULO,DESCRIPCION from PCEPI2 where TITULO=@TITULO
 
-CREATE procedure ActualizarLema
+ALTER procedure ActualizarLema
 (
 @ID_LEMA smallint, 
-@titulo char(40),
-@descripcion varchar(2100)
+@TITULO char(40),
+@DESCRIPCION varchar(2100)
 )
 as 
  update Lema set TITULO=@TITULO,DESCRIPCION=@DESCRIPCION where ID_LEMA=@ID_LEMA

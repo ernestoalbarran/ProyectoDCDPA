@@ -72,7 +72,7 @@ namespace PCEPI.Datos
         //a la forma de la tabla, campos a insertar y variables, tambien hacer 
         //los determinados querys para las nuevas tablas, realizar un nuevo query 
         //para las nuevas tablas y modificar este codigo, ya que este codigo trabaja sobre un determinado query.
-        public int InsertPeriodo(string Nombre_periodo, DateTime Fecha_i, DateTime Fecha_f)
+        public int InsertPeriodo(string Nombre_periodo, DateTime FECHA_INICIO, DateTime FECHA_TERMINO)
         {
             List<DbParameter> parametros = new List<DbParameter>();
 
@@ -82,13 +82,13 @@ namespace PCEPI.Datos
             parametros.Add(paramNombre);
 
             DbParameter paramFecha_i = dpf.CreateParameter();
-            paramFecha_i.Value = Fecha_i;
-            paramFecha_i.ParameterName = "Fecha_i";
+            paramFecha_i.Value = FECHA_INICIO;
+            paramFecha_i.ParameterName = "FECHA_INICIO";
             parametros.Add(paramFecha_i);
 
             DbParameter paramFecha_f = dpf.CreateParameter();
-            paramFecha_f.Value = Fecha_f;
-            paramFecha_f.ParameterName = "Fecha_f";
+            paramFecha_f.Value = FECHA_TERMINO;
+            paramFecha_f.ParameterName = "FECHA_TERMINO";
             parametros.Add(paramFecha_f);
 
             return ejecutaNonQuery("AltaPeriodo", parametros);
@@ -112,7 +112,7 @@ namespace PCEPI.Datos
                     {
                         while (dr.Read())
                         {
-                            LstPeriodo.Add(new PeriodosPECEPI((int)dr["IDPeriodo"], (string)dr["Nombre_periodo"], (DateTime)dr["Fecha_i"], (DateTime)dr["Fecha_f"]));
+                            LstPeriodo.Add(new PeriodosPECEPI((int)dr["ID_PERIODO"], (string)dr["NOMBRE_PERIODO"], (DateTime)dr["FECHA_INICIO"], (DateTime)dr["FECHA_TERMINO"]));
                         }
 
                     }

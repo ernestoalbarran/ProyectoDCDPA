@@ -24,27 +24,27 @@ namespace PCEPI.Comun
             get { return _Nombre_periodo; }
             set { _Nombre_periodo = value; }
         }
-        private DateTime _Fecha_i;
+        private DateTime _FECHA_INICIO;
 
-        public DateTime Fecha_i
+        public DateTime FECHA_INICIO
         {
-            get { return _Fecha_i; }
-            set { _Fecha_i = value; }
+            get { return _FECHA_INICIO; }
+            set { _FECHA_INICIO = value; }
         }
-        private DateTime _Fecha_f;
+        private DateTime _FECHA_TERMINO;
         
-        public DateTime Fecha_f
+        public DateTime FECHA_TERMINO
         {
-            get { return _Fecha_f; }
-            set { _Fecha_f = value; }
+            get { return _FECHA_TERMINO; }
+            set { _FECHA_TERMINO = value; }
         }
 
-        public PeriodosPECEPI(int IDPeriodo, string Nombre_periodo, DateTime Fecha_i, DateTime Fecha_f)
+        public PeriodosPECEPI(int IDPeriodo, string Nombre_periodo, DateTime FECHA_INICIO, DateTime FECHA_TERMINO)
         {
             this.IDPeriodo = IDPeriodo;
             this.Nombre_periodo = Nombre_periodo;
-            this.Fecha_i = Fecha_i;
-            this.Fecha_f = Fecha_f;
+            this.FECHA_INICIO = FECHA_INICIO;
+            this.FECHA_TERMINO = FECHA_TERMINO;
  
         }
     }

@@ -11,12 +11,12 @@ namespace PCEPI.Comun
         { }
 
 
-        private int _IDLemas;
+        private int _ID_Lema;
 
-        public int IDLemas
+        public int ID_Lema
         {
-            get { return _IDLemas; }
-            set { _IDLemas = value; }
+            get { return _ID_Lema; }
+            set { _ID_Lema = value; }
         }
         private string _titulo;
 
@@ -32,10 +32,11 @@ namespace PCEPI.Comun
             get { return _descripcion; }
             set { _descripcion = value; }
         }
+
       
-        public LemasPCEPI(int IDLemas, string Titulo, string Descripcion)
+        public LemasPCEPI(int ID_Lema, string Titulo, string Descripcion)
         {
-            this.IDLemas = IDLemas;
+            this.ID_Lema = ID_Lema;
             this.Titulo = Titulo;
             this.Descripcion = Descripcion;
         }

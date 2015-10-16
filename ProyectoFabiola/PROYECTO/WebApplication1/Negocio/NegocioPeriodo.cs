@@ -14,10 +14,10 @@ namespace PCEPI.Negocio
         { }
 
         //insertando Periodos
-        public int AltaPeriodo(string Nombre_periodo, DateTime Fecha_i , DateTime Fecha_f)
+        public int AltaPeriodo(string Nombre_periodo, DateTime FECHA_INICIO , DateTime FECHA_TERMINO)
         {
             DatoPeriodo DatPer = new DatoPeriodo();
-            return DatPer.InsertPeriodo(Nombre_periodo, Fecha_i, Fecha_f);
+            return DatPer.InsertPeriodo(Nombre_periodo, FECHA_INICIO, FECHA_TERMINO);
         }
 
         //obtener todos los lemas 

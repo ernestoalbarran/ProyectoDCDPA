@@ -137,6 +137,9 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="DefaultLema.aspx" />
+    <Content Include="DefaultPeriodo.aspx" />
+    <Content Include="Images\calendario1.jpg" />
+    <Content Include="Images\calendario2.jpg" />
     <Content Include="Interface\Administracion\administrador.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\Site.css" />
@@ -262,6 +265,13 @@
     </Compile>
     <Compile Include="DefaultLema.aspx.designer.cs">
       <DependentUpon>DefaultLema.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultPeriodo.aspx.cs">
+      <DependentUpon>DefaultPeriodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultPeriodo.aspx.designer.cs">
+      <DependentUpon>DefaultPeriodo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interface\Administracion\administrador.aspx.cs">
       <DependentUpon>administrador.aspx</DependentUpon>

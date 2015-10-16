@@ -1,16 +1,26 @@
 USE PCEPI2
 GO
 
+create procedure AltaPeriodo
+(
+@NOMBRE_PERIODO varchar(20),
+@FECHA_INICIO smalldatetime,
+@FECHA_TERMINO smalldatetime
+)
+as 
+insert into Periodo(NOMBRE_PERIODO,FECHA_INICIO,FECHA_TERMINO) values(@NOMBRE_PERIODO,@FECHA_INICIO,@FECHA_TERMINO)
+Go
+
 CREATE PROCEDURE ObtenerPeriodoByNombre
 (
-@NOMBRE_PERIODO char(9)
+@NOMBRE_PERIODO char(20)
 )
 as select ID_PERIODO,NOMBRE_PERIODO,FECHA_INICIO,FECHA_TERMINO from PCEPI2 where NOMBRE_PERIODO=@NOMBRE_PERIODO
 
 CREATE procedure ActualizarPeriodo
 (
-@ID_PERIODO smallint,
-@NOMBRE_PERIODO varchar(9),
+@ID_PERIODO int,
+@NOMBRE_PERIODO varchar(20),
 @FECHA_INICIO smalldatetime,
 @FECHA_TERMINO smalldatetime
 )
@@ -19,7 +29,7 @@ as
  
 CREATE procedure BorrarPeriodo
 (
-@ID_PERIODO smallint
+@ID_PERIODO int
 )
 as delete PERIODO where ID_PERIODO=@ID_PERIODO
 

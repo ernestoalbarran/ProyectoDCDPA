@@ -41,6 +41,7 @@ C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebAppl
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Antlr3.Runtime.dll
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\AspNet.ScriptManager.jQuery.dll
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Comun.dll
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\DotNetOpenAuth.AspNet.dll
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\DotNetOpenAuth.Core.dll
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\DotNetOpenAuth.OAuth.Consumer.dll
@@ -54,9 +55,13 @@ C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebAppl
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Microsoft.ScriptManager.MSAjax.dll
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Microsoft.ScriptManager.WebForms.dll
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Negocio.dll
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\System.Web.Optimization.dll
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\System.Web.Providers.dll
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\WebGrease.dll
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Datos.dll
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Comun.pdb
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Negocio.pdb
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\EntityFramework.xml
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\DotNetOpenAuth.Core.xml
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\DotNetOpenAuth.OAuth.xml
@@ -66,6 +71,7 @@ C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebAppl
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\DotNetOpenAuth.AspNet.xml
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Microsoft.AspNet.Membership.OpenAuth.xml
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Datos.pdb
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\es\EntityFramework.resources.dll
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\es\System.Web.Optimization.resources.dll
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\es\System.Web.Providers.resources.dll
@@ -74,9 +80,3 @@ C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebAppl
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
-C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Comun.dll
-C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Negocio.dll
-C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Datos.dll
-C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Comun.pdb
-C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Negocio.pdb
-C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\Datos.pdb

@@ -1,0 +1,171 @@
+----------------------------------------------
+CHALKWORK BASIC (VECTOR)
+by Dave Shea
+mezzoblue.com/icons/chalkwork/basic/vector
+----------------------------------------------
+
+Thanks for your interest in the Chalkwork Family. Please consider subscribing to the Chalkwork news feed, which will announce new releases in the family as well as inform existing users of updates if any occur.
+
+	http://mezzoblue.com/icons/chalkwork/news.xml
+
+- Dave Shea
+  mezzoblue.com
+  @mezzoblue on Twitter
+
+
+
+
+LICENSE AGREEMENT
+----------------------------------------------
+By downloading this icon set, you agree to abide by the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License under which these icons are being made available for non-commercial use.
+
+	Applicable Creative Commons License: http://creativecommons.org/licenses/by-nc-sa/3.0/
+	Attribution and additional license information: http://www.mezzoblue.com/icons/license/#license-cc
+
+By purchasing a Chalkwork Commercial License, you agree to abide by the Chalkwork Royalty-Free Stock Icon License Agreement under which these icons are being made available for commercial use.
+
+	Chalkwork Commercial License: http://www.mezzoblue.com/icons/license/#license-cc
+
+This notice must be included any time these icons are redistributed.
+
+
+
+
+----------------------------------------------
+ICON FOLDER INDEX
+----------------------------------------------
+The icon files are categorized by file format, one format per directory. Some formats are single files with each icon on its own layer, while others contain one icon per file across multiple files. The formats are as follows:
+
+
+*   AI (single layered file)
+        The native file format of Adobe Illustrator, readable by
+        a handful of other vector drawing applications. Saved 
+        down the original to Illustrator CS format for maximum 
+        compatibility (older versions don't support transparency)
+        -- http://en.wikipedia.org/wiki/Adobe_Illustrator_Artwork
+
+*   EPS (single layered file)
+        A design industry standard format readable by most
+        software. Saved down to Illustrator CS EPS format
+        for maximum compatibility (older versions don't 
+        support transparency)
+        -- http://en.wikipedia.org/wiki/Encapsulated_PostScript
+
+    SVG (one file per icon)
+        An open standard developed by the W3C, readable by 
+        open source and commercial applications alike, as well
+        as many web browsers. Saved to an SVG 1.0 profile for
+        maximum compatibility.
+        -- http://en.wikipedia.org/wiki/Svg
+
+    XAML (one file per icon)
+        A Microsoft-developed format mainly used by Microsoft
+        applications and platforms. Saved to XAML WPF Canvas
+        profile.
+        -- http://en.wikipedia.org/wiki/Xaml
+
+
+
+* a star indicates preferred file format for usage. You're free to use any format you'd like of course, but slight quality compromises were made during the creation of the non-preferred formats.
+
+
+
+----------------------------------------------
+CHALKWORK BASIC ICON INDEX
+----------------------------------------------
+
+Add
+Admin
+Alert
+Arrow (Down)
+Arrow (Left)
+Arrow (Redo)
+Arrow (Refresh)
+Arrow (Right)
+Arrow (Undo)
+Arrow (Up)
+Calculator
+Calendar
+Cancel
+Chart
+Clock
+Close
+Comment
+Computer (Desktop)
+Computer (Laptop)
+Confirm
+Contact
+Control (Fast Forward)
+Control (Pause)
+Control (Play)
+Control (Rewind)
+Control (Skip Back)
+Control (Skip Forward)
+Control (Stop)
+Copy
+Cut
+Delete
+Disc
+Document
+Edit
+Favourite
+Folder (Closed)
+Folder (Open)
+Group
+Hard Drive
+Help
+History
+Home
+Info
+Internet
+iPod
+Link
+Lock (Closed)
+Lock (Open)
+Mail
+Movie
+Music
+Network (Wired)
+Network (Wireless)
+Notepad
+Open
+Paste
+Photos (x2)
+Photo
+Podcast
+Printer
+Report
+RSS
+Save
+Search
+Settings
+Shopping Cart
+Stop
+Tag
+Trash (Empty)
+Trash (Full)
+User
+Warning
+Web Browser
+Zoom In
+Zoom Out
+
+
+
+OVERLAYS
+
+Also included are 10 action-oriented overlays for Add, Remove, Edit, Secure/Lock, and Sync/Share. These are provided in both solid and reversed variants, and can be found either in the layered file or as their own individual files, depending on file format. The overlays are:
+
+	Add
+	Add (Reversed)
+	Remove
+	Remove (Reversed)
+	Edit
+	Edit (Reversed)
+	Secure
+	Secure (Reversed)
+	Share
+	Share (Reversed)
+
+You may use them however you wish, but as an example you can see how they've been applied to the bitmapped version of Chalkwork Basic:
+http://www.mezzoblue.com/icons/chalkwork/basic/
