@@ -20,6 +20,12 @@ namespace WebApplication1
 
                LinkButton linkRU = (LinkButton)LoginView1.FindControl("btnRegistroUsuarios");
                linkRU.Visible = true;
+
+               LinkButton linkLemas = (LinkButton)LoginView1.FindControl("lbtnLemas");
+               linkLemas.Visible = true;
+
+               LinkButton linkPeriodo = (LinkButton)LoginView1.FindControl("lbtnPeriodo");
+               linkPeriodo.Visible = true;
            }
         }
 
