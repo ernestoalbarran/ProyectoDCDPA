@@ -1,7 +1,7 @@
 Use PCEPI2
 GO
 
-ALTER procedure AltaLema
+CREATE procedure AltaLema
 (
 @TITULO char(40),
 @DESCRIPCION varchar(2100)
@@ -10,15 +10,15 @@ as
 insert into Lema(TITULO,DESCRIPCION) values(@TITULO,@DESCRIPCION)
 
 
-ALTER PROCEDURE ObtenerLemaByTitulo
+CREATE PROCEDURE ObtenerLemaByTitulo
 (
 @TITULO char(40)
 )
 as select ID_LEMA,TITULO,DESCRIPCION from PCEPI2 where TITULO=@TITULO
 
-ALTER procedure ActualizarLema
+CREATE procedure ActualizarLema
 (
-@ID_LEMA smallint, 
+@ID_LEMA int, 
 @TITULO char(40),
 @DESCRIPCION varchar(2100)
 )
@@ -27,7 +27,7 @@ as
  
  CREATE procedure BorrarLema
 (
-@ID_LEMA smallint
+@ID_LEMA int
 )
 as delete Lema where ID_LEMA=@ID_LEMA
 
