@@ -11,13 +11,13 @@ as
 insert into Periodo(NOMBRE_PERIODO,FECHA_INICIO,FECHA_TERMINO) values(@NOMBRE_PERIODO,@FECHA_INICIO,@FECHA_TERMINO)
 Go
 
-CREATE PROCEDURE ObtenerPeriodoByNombre
+alter PROCEDURE ObtenerPeriodoByNombre
 (
 @NOMBRE_PERIODO char(20)
 )
 as select ID_PERIODO,NOMBRE_PERIODO,FECHA_INICIO,FECHA_TERMINO from PCEPI2 where NOMBRE_PERIODO=@NOMBRE_PERIODO
 
-CREATE procedure ActualizarPeriodo
+ALTER procedure ActualizarPeriodo
 (
 @ID_PERIODO int,
 @NOMBRE_PERIODO varchar(20),
