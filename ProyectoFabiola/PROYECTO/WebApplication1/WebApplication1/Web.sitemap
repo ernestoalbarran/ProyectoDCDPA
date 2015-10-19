@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap>
+  <siteMapNode title="Inicio" description="Inicio"
+       url="~/default.aspx" >
+    <siteMapNode title="Administrador" description="Página de Administración"
+       url="~/AdminPages/Admin.aspx">
+    </siteMapNode>
+    <siteMapNode title="PCEPI" description="Proyectos e Informes"
+            url="~/MemberPages/PCEPI/">
+
+      <siteMapNode title="Proyectos"
+           description="Proyectos"
+           url="~/PCEPI/Proyectos.aspx"/>
+    </siteMapNode>
+    <siteMapNode title="Acerca de" description="About"
+       url="~/About.aspx"/>
+  </siteMapNode>
+</siteMap>
