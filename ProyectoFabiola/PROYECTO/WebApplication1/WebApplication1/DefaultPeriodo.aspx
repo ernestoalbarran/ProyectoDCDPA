@@ -1,30 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DefaultPeriodo.aspx.cs" Inherits="PCEPI.Presentacion.DefaultPeriodo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DefaultPeriodo.aspx.cs" Inherits="PCEPI.Presentacion.DefaultPeriodo" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <style type="text/css">
-        #Reset1 {
-            height: 31px;
-            width: 120px;
-        }
-        .auto-style3 {
-            width: 215px;
-        }
-        .auto-style4 {
-            width: 251px;
-        }
-        #Reset_Periodos {
-            width: 118px;
-            height: 24px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+</asp:Content>
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <div>
         <table>
             <!-- <tr>
@@ -97,7 +75,4 @@
            </tr>
         </table>
     </div>
-    </form>
-    
-</body>
-</html>
+</asp:Content>

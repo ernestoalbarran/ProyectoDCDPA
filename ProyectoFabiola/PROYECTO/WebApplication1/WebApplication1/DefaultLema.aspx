@@ -1,32 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DefaultLema.aspx.cs" Inherits="PCEPI.Presentacion.DefaultLema" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 411px;
-        }
-        #Reset1 {
-            height: 31px;
-            width: 120px;
-        }
-        .auto-style4 {
-            width: 177px;
-        }
-        .auto-style7 {
-            width: 75px;
-        }
-        .auto-style8 {
-            width: 39px;
-        }
-        </style>
-</head>
-<body style="height: 412px">
-    <form id="form1" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DefaultLema.aspx.cs" Inherits="PCEPI.Presentacion.DefaultLema" %>
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+</asp:Content>
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+  
     <div>
         <table>
             <tr>
@@ -72,7 +48,6 @@
            </tr>
         </table>
     </div>
-    </form>
-    
-</body>
-</html>
+
+
+</asp:Content>
