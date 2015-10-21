@@ -6,21 +6,18 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad">
        <div class="panel panel-info">
            <div class="panel-heading">
-              <h2>LEMAS</h2>
-               
-                </div>
+              <h2>LEMAS</h2>    
+          </div>
             
            <div class="panel-body">
-            <div class=" col-md-10 col-lg-10 "> 
+                <div class=" col-md-10 col-lg-10 "> 
         
-         <table class="table table-user-information">
-             <tbody>
-            <tr>
-
-                <td >
-                    TITULO
-                </td>
-
+                     <table class="table table-user-information">
+                     <tbody>
+                     <tr>
+                     <td >
+                            TITULO
+                     </td>
                 <td colspan=2>
                     <asp:TextBox ID="txtitulo" runat="server" class="form-control input-lg" placeholder="TITULO" tabindex="1"/> </asp:TextBox>
                 </td>
@@ -28,11 +25,9 @@
                     PERIODO
                 </td>
                 <td >
-
                     <asp:DropDownList ID="periodo" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_periodo" DataValueField="Nombre_periodo" Width="500">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [NOMBRE_PERIODO] FROM [PERIODO]"></asp:SqlDataSource>
-
                 </td>
              </tr>
              </tr>
@@ -74,8 +69,7 @@
                              <SortedAscendingHeaderStyle BackColor="#506C8C" />
                             <SortedDescendingCellStyle BackColor="#FFFDF8" />
                              <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                          
+                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />                         
                           </asp:GridView>
                 </td>
            </tr>
@@ -83,15 +77,9 @@
         </table>
     </div>
     </div>
-    </div>
-       
-            
+    </div>           
 </div>
-
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
       <script src= "/newdcdpa/Scripts/Templates/Formularioggroups.js" type="text/javascript"></script>
       <script src= "/newdcdpa/Scripts/habilitar_inhabilitar_controles.js" type="text/javascript" > </script>
-      
-
-
 </asp:Content>
