@@ -5,7 +5,7 @@
     <siteMapNode title="Administrador" description="Página de Administración"
        url="~/AdminPages/Admin.aspx">
     </siteMapNode>
-    <siteMapNode title="PCEPI" description="Proyectos e Informes"
+    <siteMapNode title="QUE PEX YA LO CAMBIE" description="Proyectos e Informes"
             url="~/MemberPages/PCEPI/">
 
       <siteMapNode title="Proyectos"
