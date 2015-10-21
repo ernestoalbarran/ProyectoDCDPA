@@ -7,46 +7,28 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PCEPI.Presentacion {
+namespace DGCCH.Presentacion {
     
     
-    public partial class DefaultLema {
+    public partial class DefaultCampos {
         
         /// <summary>
-        /// Control txtitulo.
+        /// Control txDes_Corta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtitulo;
+        protected global::System.Web.UI.WebControls.TextBox txDes_Corta;
         
         /// <summary>
-        /// Control periodo.
+        /// Control txDes_Larga.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList periodo;
-        
-        /// <summary>
-        /// Control SqlDataSource1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-        
-        /// <summary>
-        /// Control txdescripcion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txdescripcion;
+        protected global::System.Web.UI.WebControls.TextBox txDes_Larga;
         
         /// <summary>
         /// Control btnInsert.
@@ -58,12 +40,12 @@ namespace PCEPI.Presentacion {
         protected global::System.Web.UI.WebControls.Button btnInsert;
         
         /// <summary>
-        /// Control grvLemas.
+        /// Control grvCampos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grvLemas;
+        protected global::System.Web.UI.WebControls.GridView grvCampos;
     }
 }

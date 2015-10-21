@@ -5,3 +5,10 @@ C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebAppl
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.dll
 C:\Users\GENESIS\Desktop\Proyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.pdb
+C:\Users\Bere\Desktop\Git\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Datos.dll
+C:\Users\Bere\Desktop\Git\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Datos.pdb
+C:\Users\Bere\Desktop\Git\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Comun.dll
+C:\Users\Bere\Desktop\Git\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Comun.pdb
+C:\Users\Bere\Desktop\Git\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\Bere\Desktop\Git\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.dll
+C:\Users\Bere\Desktop\Git\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.pdb

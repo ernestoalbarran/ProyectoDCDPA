@@ -1,12 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DefaultLema.aspx.cs" Inherits="PCEPI.Presentacion.DefaultLema" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DefaultCampos.aspx.cs" Inherits="DGCCH.Presentacion.DefaultCampos" %>
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-  
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad">
+
+     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad">
        <div class="panel panel-info">
            <div class="panel-heading">
-              <h2>LEMAS</h2>    
+              <h2>CAMPOS</h2>    
           </div>
             
            <div class="panel-body">
@@ -16,50 +17,44 @@
                      <tbody>
                      <tr>
                      <td >
-                            TITULO
-                     </td>
+                            TÍTULO:
+                    </td>
                 <td colspan=2>
-                    <asp:TextBox ID="txtitulo" runat="server" class="form-control input-lg" placeholder="TITULO" tabindex="1"/> </asp:TextBox>
+                    <asp:TextBox ID="txDes_Corta" runat="server" class="form-control input-lg" placeholder="TITULO" tabindex="1"/> </asp:TextBox>
                 </td>
+                </tr>
+                <tr >
                 <td >
-                    PERIODO
+                            DESCRIPCIÓN LARGA
                 </td>
-                <td >
-                    <asp:DropDownList ID="periodo" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_periodo" DataValueField="Nombre_periodo" Width="500">
-                    </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [NOMBRE_PERIODO] FROM [PERIODO]"></asp:SqlDataSource>
-                </td>
-             </tr>
-             </tr>
-            <tr >
-                <td>
-                    DESCRIPCION DE LEMA
-                </td>
-                <td colspan=5>
-                    <asp:TextBox TextMode="Multiline" ID="txdescripcion" runat="server" class="form-control input-lg" placeholder="DESCRIPCION"
-                                  TabIndex="2"></asp:TextBox>
-                </td>
+                <td colspan=2>
+                    <asp:TextBox  TextMode="Multiline" ID="txDes_Larga" runat="server" class="form-control input-lg" placeholder="DESCRIPCION LARGA" tabindex="1"/> </asp:TextBox>
             </tr>
+            <tr>             
+            </tr>
+       
             <tr>
                  <td >
-                        <asp:Button ID="btnInsert" runat="server" Text="Almacenar Lema" OnClick="btnInsert_Click" class="btn btn-primary" />
+                        <asp:Button ID="btnInsert" runat="server" Text="Almacenar Campos
+                            " OnClick="btnInsert_Click" class="btn btn-primary" />
                  </td>      
                 <td>
-                    <input id="Reset_Lemas" type="reset" value="limpiar campos" class="btn btn-primary" />
+                    <input id="Reset_Campos" type="reset" value="limpiar campos" class="btn btn-primary"/>
                 </td>
             </tr>
-           </tr>
+
+            <tr>
                 <td colspan="2">
-                    <!--Width="519px-->
-                      <asp:GridView AutoGenerateColumns="true" runat="server" ID="grvLemas" 
-                          EmptyDataText="No hay registros de Lemas ."
+                      <asp:GridView AutoGenerateColumns="true" runat="server" ID="grvCampos" 
+                           EmptyDataText="No hay registros de Campos ."
                           AllowSorting="True"
                           AllowPaging="True"  
                           CellPadding="4"
                           GridLines="None" 
                           ForeColor="#333333" 
-                           Width="607px" >
-                           <EditRowStyle BackColor="#999999" />
+                           Width="607px" 
+                           >
+                    <EditRowStyle BackColor="#999999" />
                              <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
                              <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                              <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
@@ -73,7 +68,7 @@
                           </asp:GridView>
                 </td>
            </tr>
-             </tbody>
+          </tbody>
         </table>
     </div>
     </div>
