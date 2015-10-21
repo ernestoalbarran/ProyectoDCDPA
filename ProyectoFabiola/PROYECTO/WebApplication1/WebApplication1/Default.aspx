@@ -22,6 +22,8 @@
                 <asp:LinkButton ID="lbtnPEC" runat="server" PostBackUrl="~/Interface/Jefe_Seccion/jefeSeccion.aspx">Pantalla del Jefe de Sección</asp:LinkButton>
                 <asp:LinkButton ID="lbtnLemas" visible="false" runat="server" PostBackUrl="~/DefaultLema.aspx">Lemas</asp:LinkButton>
                  <asp:LinkButton ID="lbtnPeriodo" visible="false" runat="server" PostBackUrl="~/DefaultPeriodo.aspx">Alta Periodos</asp:LinkButton>
+                <asp:LinkButton ID="lbtnCampos" visible="false" runat="server" PostBackUrl="~/DefaultCampos.aspx">Campos</asp:LinkButton>
+
               <!--  <div id="admin">
                 <h3>Ventana del Administrador</h3>
                 <ol class="round">

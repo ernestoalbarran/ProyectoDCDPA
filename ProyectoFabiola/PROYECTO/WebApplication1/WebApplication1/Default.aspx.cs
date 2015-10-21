@@ -26,6 +26,10 @@ namespace WebApplication1
 
                LinkButton linkPeriodo = (LinkButton)LoginView1.FindControl("lbtnPeriodo");
                linkPeriodo.Visible = true;
+
+               LinkButton linkCampos = (LinkButton)LoginView1.FindControl("lbtnCampos");
+               linkCampos.Visible = true;
+           
            }
         }
 
