@@ -15,6 +15,7 @@ namespace WebApplication1
         {
            if (Roles.IsUserInRole("Administrador"))
            {
+               /*
                LinkButton link = (LinkButton)LoginView1.FindControl("btnAdmin");
                link.Visible = true;
 
@@ -29,6 +30,8 @@ namespace WebApplication1
 
                LinkButton linkCampos = (LinkButton)LoginView1.FindControl("lbtnCampos");
                linkCampos.Visible = true;
+                */
+               Response.Redirect("~/Principal.aspx");
            
            }
         }
