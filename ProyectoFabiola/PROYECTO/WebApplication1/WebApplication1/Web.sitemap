@@ -5,6 +5,7 @@
     <siteMapNode title="Sesiones" description="Página de Informes y proyetos"
        url="~/AdminPages/Admin.aspx">
     </siteMapNode>
+<<<<<<< HEAD
      <siteMapNode title="Consejeros-Firmas" description="Página de Consejeros-Firmas"
        url="~/AdminPages/nada.aspx">
     </siteMapNode>
@@ -12,6 +13,9 @@
        url="~/AdminPages/nada1.aspx">
     </siteMapNode>
     <siteMapNode title="Administrador" description="Página administrador"
+=======
+    <siteMapNode title="QUE PEX YA LO CAMBIE" description="Proyectos e Informes"
+>>>>>>> c5be59946751d15eb7e7e987a00fb324e8542283
             url="~/MemberPages/PCEPI/">
 
       <siteMapNode title="Lemas"
