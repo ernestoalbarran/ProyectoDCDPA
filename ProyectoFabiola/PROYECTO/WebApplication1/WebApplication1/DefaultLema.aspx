@@ -25,9 +25,9 @@
                     PERIODO
                 </td>
                 <td >
-                    <asp:DropDownList ID="periodo" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_periodo" DataValueField="Nombre_periodo" class="form-control input-lg">
+                    <asp:DropDownList ID="periodo" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_periodo" DataValueField="ID_PERIODO" class="form-control input-lg">
                     </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [NOMBRE_PERIODO] FROM [PERIODO]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_PERIODO], [NOMBRE_PERIODO] FROM [PERIODO]" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
                 </td>
              </tr>
              </tr>
@@ -56,7 +56,8 @@
                           AllowSorting="True"
                           AllowPaging="True"  
                           CellPadding="4"
-                          GridLines="None" 
+                          GridLines="None"
+                          OnPageIndexChanging="grvLemas_PageIndexChanging" 
                           ForeColor="#333333" 
                            Width="607px" >
                            <EditRowStyle BackColor="#999999" />
