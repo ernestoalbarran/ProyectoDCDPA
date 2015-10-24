@@ -21,10 +21,10 @@ namespace PCEPI.Negocio
             return DatLema.InsertLema(titulo, descripcion);
         }
 
-        public int INSERTAR_LP(string titulo, string descripcion, int ID_LEMA, int ID_PERIODO)
+        public int RELACION_LP(string titulo, string descripcion, int ID_PERIODO)
         {
             DatoLemas DatoPL = new DatoLemas();
-            return DatoPL.Insert_LP(titulo, descripcion, ID_LEMA, ID_PERIODO);
+            return DatoPL.RELACION_LP(titulo, descripcion, ID_PERIODO);
         }
         //obtener todos los lemas 
         public List<LemasPCEPI> ObtenerLemas()

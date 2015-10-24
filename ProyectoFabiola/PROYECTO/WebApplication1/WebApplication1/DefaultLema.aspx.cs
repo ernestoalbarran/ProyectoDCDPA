@@ -28,22 +28,28 @@ namespace PCEPI.Presentacion
             txtitulo.Text = "";
             txdescripcion.Text = "";
         }
+
         protected void btnInsert_Click(object sender, EventArgs e)
         {
            
 
             NegocioLemas NegLem = new NegocioLemas();
-            
 
+            int id_periodo = int.Parse(periodo.SelectedValue);
+            MessageBox.Show("ID periodo" + id_periodo);
+           //NegLem.RELACION_LP(txtitulo.Text, txdescripcion.Text, id_periodo);
             
-            if (NegLem.AltaLema(txtitulo.Text, txdescripcion.Text)>0)
+            if (NegLem.RELACION_LP(txtitulo.Text, txdescripcion.Text,id_periodo)>0)
             {
                 //se manda a llamar al load grid para que cada vez que 
                 //se inserte un auto se refleje a la hora de cargar el grid
                 LoadGrid();
                 MessageBox.Show("Lema Insertado");
+                
             }
-           
+            Reset_Lemas_Click(NegLem, e);
+            grvLemas.SetPageIndex(grvLemas.PageCount);
+            
         }
 
         private void LoadGrid()
@@ -56,6 +62,18 @@ namespace PCEPI.Presentacion
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
 
+        }
+
+        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void grvLemas_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView gv = (GridView)sender;
+            gv.PageIndex = e.NewPageIndex;
+            LoadGrid();
         }
 
     }

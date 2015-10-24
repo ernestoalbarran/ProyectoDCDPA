@@ -90,7 +90,7 @@ namespace PCEPI.Datos
             return ejecutaNonQuery("AltaLema", parametros);
         }
 
-        public int Insert_LP(string titulo, string descripcion, int ID_LEMA, int ID_PERIODO )
+        public int RELACION_LP(string titulo, string descripcion, int ID_PERIODO)
         {
             List<DbParameter> parametros = new List<DbParameter>();
 
@@ -104,17 +104,13 @@ namespace PCEPI.Datos
             paramDesc.ParameterName = "descripcion";
             parametros.Add(paramDesc);
 
-            DbParameter paramIDL = dpf.CreateParameter();
-            paramIDL.Value = ID_LEMA;
-            paramIDL.ParameterName = "ID_LEMA";
-            parametros.Add(paramIDL);
-
             DbParameter paramIDP = dpf.CreateParameter();
             paramIDP.Value = ID_PERIODO;
+            System.Console.WriteLine("Valor " + paramIDP.Value);
             paramIDP.ParameterName = "ID_PERIODO";
             parametros.Add(paramIDP);
 
-            return ejecutaNonQuery("INSERTAR_LP", parametros);
+            return ejecutaNonQuery("RELACION_LP", parametros);
         }
         
         

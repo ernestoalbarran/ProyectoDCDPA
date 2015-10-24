@@ -10,13 +10,25 @@ CREATE PROCEDURE RELACION_PL
 AS INSERT INTO LEMA_PERIODO(ID_LEMA,ID_PERIODO) VALUES (@ID_LEMA,@ID_PERIODO)
 
 
-ALTER PROCEDURE INSERTAR_LP
+ALTER PROCEDURE RELACION_LP
 (
 @titulo char(40),
 @descripcion varchar(2100),
-@ID_LEMA int,
 @ID_PERIODO int
 )
-AS INSERT INTO Lemas(titulo,descripcion) values(@titulo,@descripcion)
-INSERT INTO LEMA_PERIODO(ID_LEMA,ID_PERIODO) VALUES (@ID_LEMA,@ID_PERIODO)
+AS 
+BEGIN TRAN t1;
+IF(@titulo IS NULL OR @descripcion IS NULL OR @ID_PERIODO IS NULL)
+	BEGIN
+		PRINT N'VARIABLES NULAS';
+	END   
+ELSE
+	BEGIN	
+		INSERT INTO Lema(titulo,descripcion) values(@titulo,@descripcion)
+		declare @IDL int;
+		SELECT @IDL=MAX(ID_LEMA) from LEMA where TITULO=@titulo and descripcion=@descripcion;
+		INSERT INTO LEMA_PERIODO(ID_LEMA,ID_PERIODO) VALUES (@IDL,@ID_PERIODO)
+	END
+COMMIT TRAN t1;
+GO
            

@@ -136,6 +136,7 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="AltaProyecto.aspx" />
     <Content Include="DefaultCampos.aspx" />
     <Content Include="DefaultLema.aspx" />
     <Content Include="DefaultPeriodo.aspx" />
@@ -274,6 +275,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaProyecto.aspx.cs">
+      <DependentUpon>AltaProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaProyecto.aspx.designer.cs">
+      <DependentUpon>AltaProyecto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DefaultCampos.aspx.cs">
       <DependentUpon>DefaultCampos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
