@@ -2,7 +2,7 @@
 <siteMap>
   <siteMapNode title="Inicio" description="Inicio"
        url="~/Principal.aspx" >
-    </siteMapNode>
+   
     <siteMapNode title="Sesiones" description="Página de Informes y proyetos"
        url="~/AdminPages/Admin.aspx">
     </siteMapNode>
@@ -23,11 +23,15 @@
       <siteMapNode title="Campos"
            description="Campos"
            url="~/DefaultCampos.aspx"/>
+      <siteMapNode title="Alta Proyectos"
+           description="Alta Proyectos"
+           url="~/AltaProyecto.aspx"/>
    
   </siteMapNode>
   
     <siteMapNode title="Acerca de" description="About"
-       url="~/About.aspx">
+       url="~/About.aspx"/>
+  
     </siteMapNode>
 
 </siteMap>
