@@ -2,28 +2,17 @@
 <siteMap>
   <siteMapNode title="Inicio" description="Inicio"
        url="~/Principal.aspx" >
+   
     <siteMapNode title="Sesiones" description="Página de Informes y proyetos"
        url="~/AdminPages/Admin.aspx">
     </siteMapNode>
-<!--<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 745059502e5fb00194290fb5127d22466ae2766e
      <siteMapNode title="Consejeros-Firmas" description="Página de Consejeros-Firmas"
        url="~/AdminPages/nada.aspx">
     </siteMapNode>
     <siteMapNode title="Permisos Planteles" description="Página de Permisos Planteles "
        url="~/AdminPages/nada1.aspx">
     </siteMapNode>
-    <siteMapNode title="Administrador" description="Página administrador"
-<<<<<<< HEAD
-=======
-    <siteMapNode title="QUE PEX YA LO CAMBIE" description="Proyectos e Informes"
->>>>>>> c5be59946751d15eb7e7e987a00fb324e8542283
-            url="~/MemberPages/PCEPI/">
-=======
-    >
->>>>>>> 745059502e5fb00194290fb5127d22466ae2766e-->
+    <siteMapNode title="Administrador" description="Página administrador">
 
       <siteMapNode title="Lemas"
            description="Lemas"
@@ -34,8 +23,15 @@
       <siteMapNode title="Campos"
            description="Campos"
            url="~/DefaultCampos.aspx"/>
-    </siteMapNode>
-   <!-- <siteMapNode title="Acerca de" description="About"
+      <siteMapNode title="Alta Proyectos"
+           description="Alta Proyectos"
+           url="~/AltaProyecto.aspx"/>
+   
+  </siteMapNode>
+  
+    <siteMapNode title="Acerca de" description="About"
        url="~/About.aspx"/>
-  </siteMapNode>-->
+  
+    </siteMapNode>
+
 </siteMap>
