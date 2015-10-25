@@ -4,6 +4,7 @@
 </asp:Content>
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
 
+    
     <!--
         <asp:LoginView ID="LoginView1" runat="server">
  
@@ -48,11 +49,14 @@
 
     -->
 
-    <!--                           Login con Validación. Se la copie al Viiiiiiiiiiiiiiiiiic!                  -->
+    <!--                           Login con Validación. Se la copie al Viiiiiiiiiiiiiiiiiic!         
+        
+                                  Solo no agregue el registrarse por que segun entiendo no lo manejamos
+        
+                 -->
 
-      <h2>
+    <h2>
         Iniciar sesión
-
     </h2>
 
     <asp:Login ID="LoginUser" runat="server" EnableViewState="false" RenderOuterTable="false">
