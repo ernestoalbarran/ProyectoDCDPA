@@ -55,11 +55,18 @@
         
                  -->
 
-    <h2>
-        Iniciar sesión
-    </h2>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad">
+                         <div class="panel panel-info">
+                             <div class="panel-heading" align="center">
+                              <h2>Iniciar Sesión</h2>    
+                                 </div>
+            
+                                    <div class="panel-body" align="center">
+                                          <div class=" col-md-10 col-lg-10 " align="center"> 
 
-    <asp:Login ID="LoginUser" runat="server" EnableViewState="false" RenderOuterTable="false">
+    <asp:Login ID="LoginUser" runat="server" EnableViewState="false" RenderOuterTable="false">  
+
+
         <LayoutTemplate>
             <span class="failureNotification">
                 <asp:Literal ID="FailureText" runat="server"></asp:Literal>
@@ -68,9 +75,10 @@
                  ValidationGroup="LoginUserValidationGroup"/>
             <div class="accountInfo">
                 <fieldset class="login">
-                    <legend>Información de cuenta</legend>
+
+                 <legend></legend>
                     <p>
-                        <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Nombre de usuario:</asp:Label>
+                        <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Usuario   :</asp:Label>
                         <asp:TextBox ID="UserName" runat="server" CssClass="textEntry"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" 
                              CssClass="failureNotification" ErrorMessage="El nombre de usuario es obligatorio." ToolTip="El nombre de usuario es obligatorio." 
@@ -85,14 +93,20 @@
                     </p>
                     <p>
                         <asp:CheckBox ID="RememberMe" runat="server"/>
-                        <asp:Label ID="RememberMeLabel" runat="server" AssociatedControlID="RememberMe" CssClass="inline">Mantenerme conectado</asp:Label>
+                        <asp:Label ID="RememberMeLabel" runat="server" AssociatedControlID="RememberMe" CssClass="inline">Recordarme</asp:Label>
                     </p>
                 </fieldset>
                 <p class="submitButton">
-                    <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Iniciar sesión" ValidationGroup="LoginUserValidationGroup"/>
+                    <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Entrar" ValidationGroup="LoginUserValidationGroup" class="btn btn-primary"/>
                 </p>
             </div>
         </LayoutTemplate>
+
     </asp:Login>
+
+        </div>
+       </div>
+    </div>           
+</div>
 
 </asp:Content>

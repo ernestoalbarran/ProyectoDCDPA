@@ -30,9 +30,7 @@
                 <td colspan=2>
                     <asp:TextBox  TextMode="Multiline" ID="txDes_Larga" runat="server" class="form-control input-lg" placeholder="DESCRIPCION LARGA" tabindex="1"/> </asp:TextBox>
             </tr>
-            <tr>             
-            </tr>
-       
+                   
             <tr>
                  <td >
                         <asp:Button ID="btnInsert" runat="server" Text="Almacenar Campos
