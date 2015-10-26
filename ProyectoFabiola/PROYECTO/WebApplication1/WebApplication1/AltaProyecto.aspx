@@ -146,7 +146,10 @@
                 <td class="auto-style2">&nbsp;</td>
                 <asp:Button ID="Button4" runat="server" Text="Button" />
                 <td colspan="2">
-                    <asp:Button ID="Button5" runat="server" Text="Guardar Proyecto" />
+                    <asp:Button ID="ButtonGuardarPro" runat="server" Text="Guardar Proyecto" OnClick="Button5_Click" style="height: 26px" />
+                </td>
+                <td>
+                    <asp:Button ID="ButtonLimpiar" runat="server" OnClick="ButtonLimpiar_Click" Text="Limpiar Campos" />
                 </td>
             </tr>
         </table>
