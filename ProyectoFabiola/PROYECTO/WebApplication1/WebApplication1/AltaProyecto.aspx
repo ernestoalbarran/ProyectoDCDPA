@@ -38,18 +38,21 @@
             <tr>
                
                 <td>
-                   Plantel <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                   Plantel 
+                    <asp:Label ID="Label1" runat="server" Text="Label" ></asp:Label>
                 </td>
                 <td class="auto-style5">
-                    Grupo<asp:TextBox ID="TextBox5" runat="server" Width="39px"></asp:TextBox>
+                    Grupo<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
                 </td>
                 <td class="auto-style6">
-                    <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style1" colspan="3">
-                    Proyectos <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox><asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
+                    Proyectos 
+                    <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -90,14 +93,15 @@
                     
                 </td>
                 <td class="auto-style5">
-                    <asp:ListBox ID="ListBox1" runat="server" AutoPostBack="True" Height="217px" Width="222px"></asp:ListBox>
+                    <asp:ListBox ID="ListBoxMaterias" runat="server" AutoPostBack="True" Height="217px" Width="222px" DataSourceID="SqlDataSource2" DataTextField="MATERIA40" DataValueField="MATERIA40" OnSelectedIndexChanged="ListBoxMaterias_SelectedIndexChanged" SelectionMode="Multiple"></asp:ListBox>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT DISTINCT [MATERIA40] FROM [MATERIA]"></asp:SqlDataSource>
                 </td>
                 <td class="auto-style6">
-                    <asp:Button ID="Button1" runat="server" Text="&gt;&gt;" />
+                    <asp:Button ID="Button1" runat="server" Text="&gt;&gt;" OnClick="Button1_Click" />
                     <asp:Button ID="Button2" runat="server" Text="&gt;&gt;" />
                 </td>
                 <td>
-                    <asp:ListBox ID="ListBox2" runat="server" Height="217px" Width="222px"></asp:ListBox>
+                    <asp:ListBox ID="ListBoxMateriasP" runat="server" Height="217px" Width="222px" AutoPostBack="True" OnSelectedIndexChanged="ListBoxMateriasP_SelectedIndexChanged" SelectionMode="Multiple"></asp:ListBox>
                     <br />
                 </td>
             </tr>
@@ -109,12 +113,13 @@
             <tr>
                 <td class="auto-style2">Opinión del director</td>
                 <td colspan="3">
-                    <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource3" DataTextField="ID_OPINION_DIRECTOR" DataValueField="ID_OPINION_DIRECTOR">
                         <asp:ListItem Selected="True"></asp:ListItem>
                         <asp:ListItem>No Evaluado</asp:ListItem>
                         <asp:ListItem>No viable</asp:ListItem>
                         <asp:ListItem>Viable</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_OPINION_DIRECTOR], [DESCRIPCION] FROM [OPINION_DIRECTOR]"></asp:SqlDataSource>
                 </td>
             </tr>
             <tr>
@@ -127,13 +132,14 @@
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:ListBox ID="ListBox3" runat="server" Height="240px" Width="280px"></asp:ListBox>
+                    <asp:ListBox ID="ListBoxProfesor" runat="server" Height="240px" Width="280px" DataSourceID="SqlDataSource4" DataTextField="NOMBRE" DataValueField="NOMBRE" SelectionMode="Multiple"></asp:ListBox>
+                    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [NOMBRE] FROM [PROFESOR]"></asp:SqlDataSource>
                 </td>
                 <td class="auto-style5">
-                    <asp:Button ID="Button3" runat="server" Text="&gt;&gt;" Width="82px" />
+                    <asp:Button ID="ButtonAddProf" runat="server" Text="&gt;&gt;" Width="82px" OnClick="ButtonAddProf_Click" />
                 </td>
                 <td colspan="2">
-                    <asp:ListBox ID="ListBox4" runat="server" Height="231px" Width="227px"></asp:ListBox>
+                    <asp:ListBox ID="ListBoxProfProy" runat="server" Height="231px" Width="227px" SelectionMode="Multiple"></asp:ListBox>
                 </td>
             </tr>
             <tr>

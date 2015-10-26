@@ -13,5 +13,27 @@ namespace WebApplication1
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            ListBoxMateriasP.Items.Add(ListBoxMaterias.SelectedItem);
+            ListBoxMaterias.Items.Remove(ListBoxMaterias.SelectedItem);
+        }
+
+        protected void ListBoxMaterias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ListBoxMateriasP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ButtonAddProf_Click(object sender, EventArgs e)
+        {
+            Lis
+        }
+
     }
 }
