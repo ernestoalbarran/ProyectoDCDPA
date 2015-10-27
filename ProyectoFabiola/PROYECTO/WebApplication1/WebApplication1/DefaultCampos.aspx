@@ -20,7 +20,7 @@
                             TÍTULO:
                     </td>
                 <td colspan=2>
-                    <asp:TextBox ID="txDes_Corta" runat="server" class="form-control input-lg" placeholder="TITULO" tabindex="1"/> </asp:TextBox>
+                    <asp:TextBox ID="txDes_Corta" runat="server" class="form-control input-lg" placeholder="TITULO" tabindex="1"> </asp:TextBox>
                 </td>
                 </tr>
                 <tr >
@@ -28,7 +28,7 @@
                             DESCRIPCIÓN LARGA
                 </td>
                 <td colspan=2>
-                    <asp:TextBox  TextMode="Multiline" ID="txDes_Larga" runat="server" class="form-control input-lg" placeholder="DESCRIPCION LARGA" tabindex="1"/> </asp:TextBox>
+                    <asp:TextBox  TextMode="Multiline" ID="txDes_Larga" runat="server" class="form-control input-lg" placeholder="DESCRIPCION LARGA" tabindex="1"> </asp:TextBox>
             </tr>
                    
             <tr>
