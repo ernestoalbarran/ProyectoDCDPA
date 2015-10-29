@@ -44,50 +44,50 @@
                
                 <td >
                    Plantel 
-                    <asp:Label ID="Label1" runat="server" Text="Label" ></asp:Label>
+                    <asp:Label ID="lblPlantel" runat="server" Text="Label" ></asp:Label>
                 </td>
                 <td class="auto-style5">
                     Grupo<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
                 </td>
                 <td class="auto-style6">
-                    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="lblMateria" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style1" colspan="3">
                     Proyectos 
-                    <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
-                    <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="lblPeriodo" runat="server" Text="Label"></asp:Label>
+                    &nbsp;
+                    <asp:Label ID="Label5" runat="server" Text="Entidad 1"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Número de oficio*</td>
-                <td colspan=2>CCH/DIR/<asp:TextBox ID="TextBox1" runat="server" Width="39px"></asp:TextBox>/2016</td>
+                <td colspan=2>CCH/DIR/<asp:TextBox ID="txtNumOfice" runat="server" Width="39px"></asp:TextBox>/2016</td>
             </tr>
             <tr>
                 <td class="auto-style2">Fecha de evaluación</td>
                 <td class="auto-style3" colspan="2">
-                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtFechaeval" runat="server"></asp:TextBox>
                     dd/mm/aaaa</td>
             </tr>
             <tr>
-                <td class="auto-style2">TITULO*</td>
+                <td class="auto-style2">Titulo*</td>
                 <td colspan="2">
-                    <asp:TextBox ID="TextBox3" runat="server" class="form-control input-lg" placeholder="Título"></asp:TextBox>
+                    <asp:TextBox ID="txtTitulo" runat="server" class="form-control input-lg" placeholder="Título"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">PRODUCTO*</td>
+                <td class="auto-style2">Producto*</td>
                 <td colspan="2">
-                    <asp:TextBox ID="TextBox4" runat="server" class="form-control input-lg" placeholder="PRODUCTO"></asp:TextBox>
+                    <asp:TextBox ID="txtProducto" runat="server" class="form-control input-lg" placeholder="PRODUCTO"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Campo</td>
                 <td colspan="2">
-                    <asp:DropDownList ID="DownListCampos" runat="server" DataSourceID="SqlDataSource1" class="form-control input-lg" placeholder="Campo">
+                    <asp:DropDownList ID="ddlCampo" runat="server" class="form-control input-lg" placeholder="Campo">
                     </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [IDCampo], [Des_Larga] FROM [Campos]" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
                 </td>
             </tr>
             <tr>
@@ -103,7 +103,7 @@
                 </td>
                 <td class="auto-style6">
                     <asp:Button ID="Button1" runat="server" Text="&gt;&gt;" OnClick="Button1_Click" />
-                    <asp:Button ID="Button2" runat="server" Text="&gt;&gt;" />
+                    <asp:Button ID="Button2" runat="server" Text="&lt;&lt;" />
                 </td>
                 <td>
                     <asp:ListBox ID="ListBoxMateriasP" runat="server" class="form-control input-lg" Height="217px" Width="222px" AutoPostBack="True" OnSelectedIndexChanged="ListBoxMateriasP_SelectedIndexChanged" SelectionMode="Multiple"></asp:ListBox>
@@ -113,12 +113,12 @@
             <tr>
                 <td class="auto-style2">Descripción del proyecto</td>
                 <td colspan="3">
-                    <textarea id="TextArea1" name="S1" class="form-control input-lg" ></textarea></td>
+                    <textarea id="txtADescProy" name="S1" class="form-control input-lg" ></textarea></td>
             </tr>
             <tr>
                 <td class="auto-style2">Opinión del director</td>
                 <td colspan="3">
-                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource3" class="form-control input-lg" DataTextField="ID_OPINION_DIRECTOR" DataValueField="ID_OPINION_DIRECTOR" Width="176px">
+                    <asp:DropDownList ID="ddlOpinion" runat="server" DataSourceID="SqlDataSource3" class="form-control input-lg" DataTextField="ID_OPINION_DIRECTOR" DataValueField="ID_OPINION_DIRECTOR" Width="176px">
                         <asp:ListItem Selected="True"></asp:ListItem>
                         <asp:ListItem>No Evaluado</asp:ListItem>
                         <asp:ListItem>No viable</asp:ListItem>
@@ -130,7 +130,7 @@
             <tr>
                 <td class="auto-style2">Observaciones</td>
                 <td colspan="3">
-                    <textarea id="TextArea2" name="S2" class="form-control input-lg" ></textarea></td>
+                    <textarea id="txtArea" name="S2" class="form-control input-lg" ></textarea></td>
             </tr>
             <tr>
                 <td colspan="3">Integrantes</td>
