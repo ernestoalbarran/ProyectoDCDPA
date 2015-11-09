@@ -15,6 +15,9 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblPeriodo.Text = Session["Proyecto"].ToString();
+            lblMateria.Text = Session["Materia"].ToString();
+            lblPlantel.Text = Session["Plantel"].ToString();
 
         }
 
