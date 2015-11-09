@@ -138,6 +138,7 @@
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="AltaProyecto.aspx" />
     <Content Include="DefaultCampos.aspx" />
+    <Content Include="DefaultFirmantes1.aspx" />
     <Content Include="DefaultLema.aspx" />
     <Content Include="DefaultPeriodo.aspx" />
     <Content Include="Images\calendario1.jpg" />
@@ -288,6 +289,13 @@
     </Compile>
     <Compile Include="DefaultCampos.aspx.designer.cs">
       <DependentUpon>DefaultCampos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultFirmantes1.aspx.cs">
+      <DependentUpon>DefaultFirmantes1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultFirmantes1.aspx.designer.cs">
+      <DependentUpon>DefaultFirmantes1.aspx</DependentUpon>
     </Compile>
     <Compile Include="DefaultLema.aspx.cs">
       <DependentUpon>DefaultLema.aspx</DependentUpon>

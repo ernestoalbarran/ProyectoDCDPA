@@ -39,7 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaProyecto.cs" />
     <Compile Include="Campos.cs" />
+    <Compile Include="Firmantes1.cs" />
     <Compile Include="LemasPCEPI.cs" />
     <Compile Include="PeriodoLema.cs" />
     <Compile Include="PeriodosPECEPI.cs" />

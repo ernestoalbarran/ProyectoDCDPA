@@ -85,7 +85,7 @@
             <tr>
                 <td class="auto-style2">Campo</td>
                 <td colspan="2">
-                    <asp:DropDownList ID="DownListCampos" runat="server" DataSourceID="SqlDataSource1" class="form-control input-lg" placeholder="Campo">
+                    <asp:DropDownList ID="DownListCampos" runat="server" DataSourceID="SqlDataSource1"  DataTextField="Des_Larga" DataValueField="IDCampo" class="form-control input-lg" placeholder="Campo">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [IDCampo], [Des_Larga] FROM [Campos]" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
                 </td>

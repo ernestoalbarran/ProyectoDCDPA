@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NegocioCampos.cs" />
+    <Compile Include="NegocioFirmantes1.cs" />
     <Compile Include="NegocioLemas.cs" />
     <Compile Include="NegocioPeriodo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

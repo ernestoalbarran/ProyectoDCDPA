@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatoAltaFirmante1.cs" />
+    <Compile Include="DatoAltaProyecto.cs" />
     <Compile Include="DatoCampo.cs" />
     <Compile Include="DatoLemas.cs" />
     <Compile Include="DatoPeriodo.cs" />

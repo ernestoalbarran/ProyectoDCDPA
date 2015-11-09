@@ -91,8 +91,8 @@
                         <td>Area:</td>
                         <td colspan=2><asp:DropDownList ID="ddlArea" runat="server" class="form-control" tabindex="5" 
                                  DataSourceID="SqlDataSource3" 
-                                DataTextField="NOMBRE_CORTO" 
-                                DataValueField="ID_AREA">
+                                DataTextField="NOMBRE" 
+                                DataValueField="ID_PLANTEL">
                             </asp:DropDownList>
                         </td>
                    </tr>
@@ -100,8 +100,8 @@
                         <td>Materia:</td>
                         <td colspan=2><asp:DropDownList ID="DropDownList1" runat="server" class="form-control" tabindex="5" 
                                 DataSourceID="SqlDataSource4" 
-                                DataTextField="NOMBRE_PERIODO" 
-                                DataValueField="ID_PERIODO">
+                                DataTextField="NOMBRE_CORTO" 
+                                DataValueField="ID_AREA">
                             </asp:DropDownList>
                         </td>
                    </tr>
@@ -128,8 +128,8 @@
 
        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_PLANTEL], [NOMBRE] FROM [PLANTEL]" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_PERIODO], [NOMBRE_PERIODO] FROM [PERIODO]" OnSelecting="SqlDataSource2_Selecting"></asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_AREA], [NOMBRE_CORTO] FROM [AREA]" OnSelecting="SqlDataSource3_Selecting"></asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_PERIODO], [NOMBRE_PERIODO] FROM [PERIODO]" OnSelecting="SqlDataSource4_Selecting"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_PLANTEL], [NOMBRE] FROM [PLANTEL]" OnSelecting="SqlDataSource3_Selecting"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_AREA], [NOMBRE_CORTO] FROM [AREA]" OnSelecting="SqlDataSource4_Selecting"></asp:SqlDataSource>
                              
 
                

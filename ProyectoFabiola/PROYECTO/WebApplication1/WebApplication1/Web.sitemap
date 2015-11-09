@@ -26,6 +26,9 @@
       <siteMapNode title="Alta Proyectos"
            description="Alta Proyectos"
            url="~/AltaProyecto.aspx"/>
+      <siteMapNode title="Firmas"
+           description="Firmas"
+           url="~/DefaultFirmantes1.aspx"/>
    
   </siteMapNode>
   
