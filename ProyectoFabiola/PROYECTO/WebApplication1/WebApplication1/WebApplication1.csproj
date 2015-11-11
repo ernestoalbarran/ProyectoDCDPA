@@ -145,6 +145,8 @@
     <Content Include="Images\dcdpa.jpg" />
     <Content Include="Images\dcdpa_logo.png" />
     <Content Include="Images\DGCCH.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\eliminar.gif" />
     <Content Include="Images\sin_foto.jpg" />
     <Content Include="Interface\Administracion\administrador.aspx" />
     <Content Include="Contact.aspx" />
@@ -220,6 +222,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Interface\Jefe_Seccion\jefeSeccion.aspx" />
+    <Content Include="ListarProyectos.aspx" />
     <Content Include="packages.config" />
     <Content Include="Images\dcdpa only circle.psd" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
@@ -378,6 +381,13 @@
     </Compile>
     <Compile Include="Interface\Jefe_Seccion\jefeSeccion.aspx.designer.cs">
       <DependentUpon>jefeSeccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarProyectos.aspx.cs">
+      <DependentUpon>ListarProyectos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarProyectos.aspx.designer.cs">
+      <DependentUpon>ListarProyectos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.aspx.cs">
       <DependentUpon>Principal.aspx</DependentUpon>

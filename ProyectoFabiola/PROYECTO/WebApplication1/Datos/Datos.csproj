@@ -42,7 +42,9 @@
   <ItemGroup>
     <Compile Include="DatoCampo.cs" />
     <Compile Include="DatoLemas.cs" />
+    <Compile Include="DatoMateriaP.cs" />
     <Compile Include="DatoPeriodo.cs" />
+    <Compile Include="DBHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

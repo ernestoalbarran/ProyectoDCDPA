@@ -30,7 +30,6 @@
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_PERIODO], [NOMBRE_PERIODO] FROM [PERIODO]" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
                 </td>
              </tr>
-             </tr>
             <tr >
                 <td>
                     DESCRIPCION DE LEMA
@@ -48,7 +47,7 @@
                     <input id="Reset_Lemas" type="reset" value="limpiar campos" class="btn btn-primary" />
                 </td>
             </tr>
-           </tr>
+        
                 <td colspan="2">
                     <!--Width="519px-->
                       <asp:GridView AutoGenerateColumns="true" runat="server" ID="grvLemas" 
@@ -73,7 +72,7 @@
                              <AlternatingRowStyle BackColor="White" ForeColor="#284775" />                         
                           </asp:GridView>
                 </td>
-           </tr>
+        
              </tbody>
         </table>
     </div>

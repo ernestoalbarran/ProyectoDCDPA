@@ -96,8 +96,8 @@ namespace WebApplication1
             Session.Add("Id_Plantel", ddlPlantel.SelectedItem.Value);
             Session.Add("Proyecto", ddlProyecto.SelectedItem.Text);
             Session.Add("Id_Proyecto", ddlProyecto.SelectedItem.Value);
-            //Session.Add("Area", ddlArea.SelectedItem.Text);
-            // Session.Add("Id_Area", ddlArea.SelectedItem.Value);
+            Session.Add("Area", ddlArea.SelectedItem.Text);
+            Session.Add("Id_Area", ddlArea.SelectedItem.Value);
             Session.Add("Materia", ddlMateria.SelectedItem.Text);
             Session.Add("id_Materia", ddlMateria.SelectedItem.Value);
             Response.Redirect("~/AltaProyecto.aspx");

@@ -11,7 +11,7 @@
             <p class="message-success"><%: SuccessMessage %></p>
         </asp:PlaceHolder>
 
-        <p>Inició sesión como <strong><%: User.Identity.Name %></strong>.</p>
+        <p>Inició sesión como <strong><%: User.Identity.Name %></strong><%: User.Identity.ToString() %></p>
 
         <asp:PlaceHolder runat="server" ID="setPassword" Visible="false">
             <p>

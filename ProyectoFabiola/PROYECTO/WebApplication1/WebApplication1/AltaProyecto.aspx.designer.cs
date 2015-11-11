@@ -13,6 +13,15 @@ namespace WebApplication1 {
     public partial class AltaProyecto {
         
         /// <summary>
+        /// Control lblUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUsuario;
+        
+        /// <summary>
         /// Control lblPlantel.
         /// </summary>
         /// <remarks>
@@ -22,13 +31,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label lblPlantel;
         
         /// <summary>
-        /// Control Label2.
+        /// Control lblGrupo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblGrupo;
         
         /// <summary>
         /// Control lblMateria.
@@ -67,13 +76,31 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox txtNumOfice;
         
         /// <summary>
-        /// Control txtFechaeval.
+        /// Control rqfValidatorNumOfice.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFechaeval;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqfValidatorNumOfice;
+        
+        /// <summary>
+        /// Control txtFechaEval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFechaEval;
+        
+        /// <summary>
+        /// Control rfvValidarFechaEval.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvValidarFechaEval;
         
         /// <summary>
         /// Control txtTitulo.
@@ -85,6 +112,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox txtTitulo;
         
         /// <summary>
+        /// Control rfvValidarTitulo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvValidarTitulo;
+        
+        /// <summary>
         /// Control txtProducto.
         /// </summary>
         /// <remarks>
@@ -92,6 +128,15 @@ namespace WebApplication1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtProducto;
+        
+        /// <summary>
+        /// Control rfvValidarProducto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvValidarProducto;
         
         /// <summary>
         /// Control ddlCampo.
@@ -112,13 +157,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.ListBox ListBoxMaterias;
         
         /// <summary>
-        /// Control SqlDataSource2.
+        /// Control SqlDataSourceMAT.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceMAT;
         
         /// <summary>
         /// Control Button1.
@@ -148,6 +193,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.ListBox ListBoxMateriasP;
         
         /// <summary>
+        /// Control txtADescProy.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtADescProy;
+        
+        /// <summary>
         /// Control ddlOpinion.
         /// </summary>
         /// <remarks>
@@ -157,13 +211,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.DropDownList ddlOpinion;
         
         /// <summary>
-        /// Control SqlDataSource3.
+        /// Control txtObservaciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
+        protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
         
         /// <summary>
         /// Control ListBoxProfesor.
@@ -211,21 +265,12 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button Button4;
         
         /// <summary>
-        /// Control ButtonGuardarPro.
+        /// Control btGuardarProy.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonGuardarPro;
-        
-        /// <summary>
-        /// Control ButtonLimpiar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonLimpiar;
+        protected global::System.Web.UI.WebControls.Button btGuardarProy;
     }
 }

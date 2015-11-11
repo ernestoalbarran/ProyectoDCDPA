@@ -32,7 +32,9 @@
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad">
        <div class="panel panel-info">
            <div class="panel-heading">
-              <h2>Alta Proyectos</h2>    
+              <h2>Alta Proyectos&nbsp;
+                  <asp:Label ID="lblUsuario" runat="server" Text="Label"></asp:Label>
+               </h2>    
           </div>
             
            <div class="panel-body">
@@ -40,14 +42,14 @@
         
                      <table class="table table-user-information">
                      <tbody>
-                         <tr>
+               <tr>
                
                 <td >
                    Plantel 
                     <asp:Label ID="lblPlantel" runat="server" Text="Label" ></asp:Label>
                 </td>
                 <td class="auto-style5">
-                    Grupo<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                    Grupo<asp:Label ID="lblGrupo" runat="server" Text="Label"></asp:Label>
                 </td>
                 <td class="auto-style6">
                     <asp:Label ID="lblMateria" runat="server" Text="Label"></asp:Label>
@@ -63,18 +65,30 @@
             </tr>
             <tr>
                 <td class="auto-style2">Número de oficio*</td>
-                <td colspan=2>CCH/DIR/<asp:TextBox ID="txtNumOfice" runat="server" Width="39px"></asp:TextBox>/2016</td>
+                <td colspan=2>CCH/DIR/<asp:TextBox ID="txtNumOfice" runat="server" Width="39px" Height="22px"></asp:TextBox>/2016</td>
+
+                <td> <ASP:RequiredFieldValidator id="rqfValidatorNumOfice" runat="server" errormessage="El numero de oficio es obligatorio" width="243px" controltovalidate="txtNumOfice" display="Dynamic"></ASP:RequiredFieldValidator>
+</td>
+
             </tr>
             <tr>
                 <td class="auto-style2">Fecha de evaluación</td>
                 <td class="auto-style3" colspan="2">
-                    <asp:TextBox ID="txtFechaeval" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtFechaEval" runat="server"></asp:TextBox>
                     dd/mm/aaaa</td>
+                <td>
+                    <ASP:RequiredFieldValidator id="rfvValidarFechaEval" runat="server" errormessage="La fecha de evaluacion es obligatoria" width="243px" controltovalidate="txtFechaEval" display="Dynamic"></ASP:RequiredFieldValidator>
+                </td>
+                
+
             </tr>
             <tr>
                 <td class="auto-style2">Titulo*</td>
                 <td colspan="2">
                     <asp:TextBox ID="txtTitulo" runat="server" class="form-control input-lg" placeholder="Título"></asp:TextBox>
+                </td>
+                <td>
+                   <ASP:RequiredFieldValidator id="rfvValidarTitulo" runat="server" errormessage="Todos los proyectos requieren un titulo" width="243px" controltovalidate="txtTitulo" display="Dynamic"></ASP:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -82,11 +96,19 @@
                 <td colspan="2">
                     <asp:TextBox ID="txtProducto" runat="server" class="form-control input-lg" placeholder="PRODUCTO"></asp:TextBox>
                 </td>
+                <td>
+                   <ASP:RequiredFieldValidator id="rfvValidarProducto" runat="server" errormessage="Todos los proyectos requieren especificar la realización de un producto" width="243px" controltovalidate="txtTitulo" display="Dynamic"></ASP:RequiredFieldValidator>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style2">Campo</td>
                 <td colspan="2">
-                    <asp:DropDownList ID="ddlCampo" runat="server" class="form-control input-lg" placeholder="Campo">
+                    <asp:DropDownList ID="ddlCampo" runat="server">
+                        <asp:ListItem>Elige una opcion </asp:ListItem>
+                        <asp:ListItem>Calidad de Aprendizaje</asp:ListItem>
+                        <asp:ListItem>Formación Integral</asp:ListItem>
+                        <asp:ListItem>Actualización de los programas</asp:ListItem>
+                        <asp:ListItem>Proyectos cordinados</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -98,8 +120,8 @@
                     
                 </td>
                 <td class="auto-style5">
-                    <asp:ListBox ID="ListBoxMaterias" runat="server" AutoPostBack="True" class="form-control input-lg" Height="217px" Width="222px" DataSourceID="SqlDataSource2" DataTextField="MATERIA40" DataValueField="MATERIA40" OnSelectedIndexChanged="ListBoxMaterias_SelectedIndexChanged" SelectionMode="Multiple"></asp:ListBox>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT DISTINCT [MATERIA40] FROM [MATERIA]"></asp:SqlDataSource>
+                    <asp:ListBox ID="ListBoxMaterias" runat="server" AutoPostBack="True" class="form-control input-lg" Height="217px" Width="222px" DataSourceID="SqlDataSourceMAT" DataTextField="MATERIA40" DataValueField="MATERIA40" ></asp:ListBox>
+                    <asp:SqlDataSource ID="SqlDataSourceMAT" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [MATERIA40] FROM [MATERIA]"></asp:SqlDataSource>
                 </td>
                 <td class="auto-style6">
                     <asp:Button ID="Button1" runat="server" Text="&gt;&gt;" OnClick="Button1_Click" />
@@ -113,24 +135,23 @@
             <tr>
                 <td class="auto-style2">Descripción del proyecto</td>
                 <td colspan="3">
-                    <textarea id="txtADescProy" name="S1" class="form-control input-lg" ></textarea></td>
+                    <asp:TextBox runat="server" ID="txtADescProy" rows="5" Height="183px" Width="546px"></asp:TextBox></td>
             </tr>
             <tr>
                 <td class="auto-style2">Opinión del director</td>
                 <td colspan="3">
-                    <asp:DropDownList ID="ddlOpinion" runat="server" DataSourceID="SqlDataSource3" class="form-control input-lg" DataTextField="ID_OPINION_DIRECTOR" DataValueField="ID_OPINION_DIRECTOR" Width="176px">
-                        <asp:ListItem Selected="True"></asp:ListItem>
+                    <asp:DropDownList ID="ddlOpinion" runat="server" Width="176px">
+                        <asp:ListItem Selected="True">selecciona una opcion</asp:ListItem>
                         <asp:ListItem>No Evaluado</asp:ListItem>
                         <asp:ListItem>No viable</asp:ListItem>
                         <asp:ListItem>Viable</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_OPINION_DIRECTOR], [DESCRIPCION] FROM [OPINION_DIRECTOR]"></asp:SqlDataSource>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Observaciones</td>
                 <td colspan="3">
-                    <textarea id="txtArea" name="S2" class="form-control input-lg" ></textarea></td>
+                    <asp:TextBox ID="txtObservaciones" runat="server" rows="5" Height="118px" Width="495px" ></asp:TextBox></td>
             </tr>
             <tr>
                 <td colspan="3">Integrantes</td>
@@ -151,14 +172,12 @@
                 <td class="auto-style2">&nbsp;</td>
                 <asp:Button ID="Button4" runat="server" Text="Button" />
                 <td colspan="2">
-                    <asp:Button ID="ButtonGuardarPro" runat="server" Text="Guardar Proyecto" OnClick="Button5_Click" class="btn btn-primary"  />
+                    <asp:Button ID="btGuardarProy" runat="server" Text="Guardar Proyecto" OnClick="btnGuardarProy" class="btn btn-primary"  />
                 </td>
                 <td>
-                    <asp:Button ID="ButtonLimpiar" runat="server" OnClick="ButtonLimpiar_Click" Text="Limpiar Campos" class="btn btn-primary" />
-                </td>
+                    &nbsp;</td>
             </tr>
-      
-                    
+
           </tbody>
         </table>
     </div>
