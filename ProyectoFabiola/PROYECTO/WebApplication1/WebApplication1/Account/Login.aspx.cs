@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace WebApplication1.Account
 {
@@ -19,6 +20,12 @@ namespace WebApplication1.Account
             {
                 RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
+
+            if (Roles.IsUserInRole("Administrador"))
+            {
+                Response.Redirect("~/Principal.aspx");
+            }
+
         }
     }
 }

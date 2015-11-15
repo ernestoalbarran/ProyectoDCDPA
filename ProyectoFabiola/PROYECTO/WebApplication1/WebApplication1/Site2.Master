@@ -48,11 +48,11 @@
                         <div class="nav navbar navbar-right">
                         <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                             <AnonymousTemplate>
-                                <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server" class="btn btn-default navbar-btn">
-                                    Iniciar sesión</a>
+<%--                                <a href="~/Account/Register.aspx" id="HeadLoginStatus" runat="server" class="btn btn-default navbar-btn">
+                                    Registrase</a>--%>
                             </AnonymousTemplate>
                             <LoggedInTemplate>
-                                Bienvenido al DCDPA: <span class="bold">
+                                ¡Bienvenido al DCDPA <span class="bold">
                                     <asp:LoginName ID="HeadLoginName" runat="server" />
                                 </span>!
                                 <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión"

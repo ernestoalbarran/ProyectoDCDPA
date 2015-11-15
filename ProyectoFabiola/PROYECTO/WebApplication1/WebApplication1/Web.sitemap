@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap>
-  <siteMapNode title="Inicio" description="Inicio"
+  <siteMapNode title="Administrador" description="Área del Administrador"
        url="~/Principal.aspx" >
    
     <siteMapNode title="Sesiones" description="Página de Informes y proyetos"
@@ -12,24 +12,37 @@
     <siteMapNode title="Permisos Planteles" description="Página de Permisos Planteles "
        url="~/AdminPages/nada1.aspx">
     </siteMapNode>
-    <siteMapNode title="Administrador" description="Página administrador">
+    <siteMapNode title="Documentos" description="Documentos disponibless en PDF"
+       url="~/AdminPages/nada2.aspx">
+    </siteMapNode>
+    
+    <!--<siteMapNode title="Administrador" description="Página administrador">-->
 
       <siteMapNode title="Lemas"
            description="Lemas"
            url="~/DefaultLema.aspx"/>
-     <siteMapNode title="Periodos"
+      <siteMapNode title="Periodos"
            description="Periodos"
            url="~/DefaultPeriodo.aspx"/>
       <siteMapNode title="Campos"
            description="Campos"
            url="~/DefaultCampos.aspx"/>
-      <siteMapNode title="Alta Proyectos"
+      <!--<siteMapNode title="Alta Proyectos"
            description="Alta Proyectos"
+<<<<<<< HEAD
            url="~/AltaProyecto.aspx"/>
 
      
    
   </siteMapNode>
+=======
+           url="~/AltaProyecto.aspx"/>-->
+      <siteMapNode title="Usuarios"
+           description="Administración de cuentas de usuarios"
+           url="~/Account/Register.aspx"/>
+
+    <!--</siteMapNode>-->
+>>>>>>> b7d400999f1d07e3e866129a60a8bbd4d9a8b607
   
     <siteMapNode title="Acerca de" description="About"
        url="~/About.aspx"/>

@@ -52,7 +52,7 @@
                                      CssClass="field-validation-error" Display="Dynamic" ErrorMessage="La contraseña y la contraseña de confirmación no coinciden." />
                             </li>
                         </ol>
-                        <asp:Button runat="server" CommandName="MoveNext" Text="Registrarse" />
+                        <asp:Button runat="server" CommandName="MoveNext" Text="Crear nuevo usuario" />
                     </fieldset>
                 </ContentTemplate>
                 <CustomNavigationTemplate />
