@@ -96,7 +96,7 @@
                             </asp:DropDownList>
                         </td>
                    </tr>
-                 <tr>
+<%--                 <tr>
                         <td>Materia:</td>
                         <td colspan=2><asp:DropDownList ID="ddlMateria" runat="server" class="form-control" tabindex="5" 
                                 DataSourceID="SqlDataSource4" 
@@ -104,7 +104,7 @@
                                 DataValueField="ID_PERIODO">
                             </asp:DropDownList>
                         </td>
-                   </tr>
+                   </tr>--%>
                      <!--<a href="#" class="btn btn-primary" >Enviar</a>-->
                     <asp:Button ID="btnEnviar" class="btn btn-primary" runat="server" Text="Enviar" OnClick="btnEnviar_Click" />
                   

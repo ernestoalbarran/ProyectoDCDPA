@@ -19,7 +19,7 @@
         .auto-style3 {
         }
         .auto-style5 {
-            width: 169px;
+            width: 66px;
         }
         .auto-style6 {
             width: 25px;
@@ -51,12 +51,12 @@
                 <td class="auto-style5">
                     Grupo<asp:Label ID="lblGrupo" runat="server" Text="Label"></asp:Label>
                 </td>
-                <td class="auto-style6">
+                <td class="auto-style6" colspan="2">
                     <asp:Label ID="lblMateria" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1" colspan="3">
+                <td class="auto-style1" colspan="4" align="center">
                     Proyectos 
                     <asp:Label ID="lblPeriodo" runat="server" Text="Label"></asp:Label>
                     &nbsp;
@@ -121,7 +121,12 @@
                 </td>
                 <td class="auto-style5">
                     <asp:ListBox ID="ListBoxMaterias" runat="server" AutoPostBack="True" class="form-control input-lg" Height="217px" Width="222px" DataSourceID="SqlDataSourceMAT" DataTextField="MATERIA40" DataValueField="MATERIA40" ></asp:ListBox>
-                    <asp:SqlDataSource ID="SqlDataSourceMAT" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [MATERIA40] FROM [MATERIA]"></asp:SqlDataSource>
+<%--                    <asp:SqlDataSource ID="SqlDataSourceMAT" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [MATERIA40] FROM [MATERIA]"></asp:SqlDataSource>--%>
+                    <asp:SqlDataSource ID="SqlDataSourceMAT" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_FILTRAR_MATERIA" SelectCommandType="StoredProcedure">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="ddlArea" PropertyName="SelectedValue" Name="idArea" Type="Int32" DefaultValue="0" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
                 </td>
                 <td class="auto-style6">
                     <asp:Button ID="Button1" runat="server" Text="&gt;&gt;" OnClick="Button1_Click" />
@@ -159,7 +164,13 @@
             <tr>
                 <td class="auto-style2">
                     <asp:ListBox ID="ListBoxProfesor" runat="server" class="form-control input-lg"  Height="240px" Width="297px"  DataSourceID="SqlDataSource4" DataTextField="NOMBRE" DataValueField="NOMBRE" SelectionMode="Multiple"></asp:ListBox>
-                    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [NOMBRE] FROM [PROFESOR]"></asp:SqlDataSource>
+<%--                    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [NOMBRE] FROM [PROFESOR]"></asp:SqlDataSource>--%>
+                    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_OBTENER_INTEGRANTE" SelectCommandType="StoredProcedure">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="ddlArea" PropertyName="SelectedValue" Name="idArea" Type="Int32" DefaultValue="0" />
+                        </SelectParameters>                    	
+                    </asp:SqlDataSource>
+
                 </td>
                 <td class="auto-style5">
                     <asp:Button ID="ButtonAddProf" runat="server" Text="&gt;&gt;" Width="82px" OnClick="ButtonAddProf_Click" />

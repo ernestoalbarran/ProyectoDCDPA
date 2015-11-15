@@ -140,7 +140,7 @@ namespace WebApplication1
                 if (NegocioProyecto.Insertar(proyecto) > 0)
                 {
                     MessageBox.Show("Se inserto el proyecto correctamente");
-                    Response.Redirect("ListarProyectos.aspx",false);
+                    Response.Redirect("ListarProyectos.aspx");
 
                 }
             }
