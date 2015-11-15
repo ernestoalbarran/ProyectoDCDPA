@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Iniciar sesión" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WebApplication1.Account.Login" %>
+﻿<%@ Page Title="Iniciar sesión" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WebApplication1.Account.Login" %>
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
@@ -30,7 +30,11 @@
                             <asp:Label runat="server" AssociatedControlID="RememberMe" CssClass="checkbox">¿Recordar cuenta?</asp:Label>
                         </li>
                     </ol>
-                    <asp:Button runat="server" CommandName="Login" Text="Iniciar sesión" />
+<%--                    <asp:Button runat="server" CommandName="Login" Text="Iniciar sesión" />--%>
+                <p class="submitButton">
+                    <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Entrar" ValidationGroup="LoginUserValidationGroup" class="btn btn-primary"/>
+                </p>
+
                 </fieldset>
             </LayoutTemplate>
         </asp:Login>

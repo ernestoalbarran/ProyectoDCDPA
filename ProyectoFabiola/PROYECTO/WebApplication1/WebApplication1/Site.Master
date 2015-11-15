@@ -49,12 +49,13 @@
                         <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                             <AnonymousTemplate>
                                 <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server" class="btn btn-default navbar-btn">
-                                    Iniciar sesión</a>
+                                    Iniciar Sesión</a>
                             </AnonymousTemplate>
                             <LoggedInTemplate>
-                                Bienvenido al DCDPA: <span class="bold">
+                                ¡ Bienvenido al DCDPA <span class="bold">
                                     <asp:LoginName ID="HeadLoginName" runat="server" />
                                 </span>!
+                                <br />
                                 <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión"
                                     LogoutPageUrl="~/" class="btn btn-default navbar-btn" />
                             </LoggedInTemplate>
@@ -106,9 +107,13 @@
                         </td>
                    </tr>--%>
                      <!--<a href="#" class="btn btn-primary" >Enviar</a>-->
+                    <br />
                     <asp:Button ID="btnEnviar" class="btn btn-primary" runat="server" Text="Enviar" OnClick="btnEnviar_Click" />
                   
                 </div>
+
+                <br />
+                <br />
 
                 <asp:TreeView ID="TreeView1" runat="server" DataSourceID ="SiteMapDSMenuPrincipal">
                 </asp:TreeView>
