@@ -32,9 +32,11 @@
                     <tbody>
                       <tr>
                         <td>Jefe de Sección:</td>
-                          <td colspan=5>
-                              <asp:TextBox ID="tbJefe" runat="server" class="form-control input-lg" placeholder="Jefe de Sección"
-                                  TabIndex="2"></asp:TextBox>
+                          <td colspan=5><asp:DropDownList ID="ddlJefe" runat="server" class="form-control" tabindex="5" 
+                                DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
+                                DataValueField="NOMBRE">
+                            </asp:DropDownList>
+                        
                           </td>
                       </tr>
 
@@ -47,27 +49,52 @@
                       </tr>
                         <tr>
                         <td>Consejero1:</td>
-                        <td colspan=2><asp:TextBox ID="tbConsejero1" runat="server" class="form-control input-lg" placeholder="Consejero1" tabindex="1" disabled></asp:TextBox></td>
+                       <td colspan=2><asp:DropDownList ID="ddlConsejero1" runat="server" class="form-control" tabindex="5" 
+                                DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
+                                DataValueField="NOMBRE">
+                            </asp:DropDownList>
+                        </td> 
                         <td>Consejero2</td>
-                        <td colspan=2><asp:TextBox ID="tbnConsejero2" runat="server" class="form-control input-lg" placeholder="Consejero2" tabindex="7" disabled></asp:TextBox></td>
-                      </tr>
+                       <td colspan=2><asp:DropDownList ID="ddlConsejero2" runat="server" class="form-control" tabindex="5" 
+                                DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
+                                DataValueField="NOMBRE">
+                            </asp:DropDownList>
+                        </td>
+
+                        </tr>
 
                        <tr>
                         <td>Consejero3:</td>
-                        <td colspan=2><asp:TextBox ID="tbConsejero3" runat="server" class="form-control input-lg" placeholder="Consejero3" tabindex="1" disabled></asp:TextBox></td>
+                        <td colspan=2><asp:DropDownList ID="ddlConsejero3" runat="server" class="form-control" tabindex="5" 
+                                DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
+                                DataValueField="NOMBRE">
+                            </asp:DropDownList>
+                        </td>
                         <td>Consejero4</td>
-                        <td colspan=2><asp:TextBox ID="tbConsejero4" runat="server" class="form-control input-lg" placeholder="Consejero4" tabindex="7" disabled></asp:TextBox></td>
-                      </tr>
+                       
+                            <td colspan=2><asp:DropDownList ID="ddlConsejero4" runat="server" class="form-control" tabindex="5" 
+                                DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
+                                DataValueField="NOMBRE">
+                            </asp:DropDownList>
+                        </td>
+                                </tr>
 
 
                         <tr>
                         <td>Consejero5:</td>
-                        <td colspan=2><asp:TextBox ID="tbConsejero5" runat="server" class="form-control input-lg" placeholder="Consejero5" tabindex="1" disabled></asp:TextBox></td>
-                        <td>Consejero6</td>
-                        <td colspan=2><asp:TextBox ID="tbConsejeto6" runat="server" class="form-control input-lg" placeholder="Consejero6" tabindex="7" disabled></asp:TextBox></td>
-                      </tr>
-      
-                        
+
+                             <td colspan=2><asp:DropDownList ID="ddlConsejero5" runat="server" class="form-control" tabindex="5" 
+                                DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
+                                DataValueField="NOMBRE">
+                            </asp:DropDownList>
+                        </td>
+                          <td>Consejero6</td>
+                        <td colspan=2><asp:DropDownList ID="ddlConsejero6" runat="server" class="form-control" tabindex="5" 
+                                DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
+                                DataValueField="NOMBRE" >
+                            </asp:DropDownList>
+                        </td>  
+                        </tr>
                         
                         <tr>
                             <td>
@@ -85,54 +112,30 @@
               </div>
             </div>
                  <div class="panel-footer">
-                        <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
-                        <span class="pull-right">
-                            <asp:LinkButton ID="LnkModificar" runat="server" 
-                            data-original-title="Editar Profesor" data-toggle="tooltip" type="button" 
-                            class="btn btn-sm btn-warning" onclick="LnkModificar_Click"><i class="glyphicon glyphicon-edit"></i></asp:LinkButton>
-                            <asp:LinkButton ID="LnkNuevo" runat="server" 
-                            data-original-title="Insertar nuevo profesor" data-toggle="tooltip" type="button" 
-                            class="btn btn-sm btn-success" onclick="LnkNuevo_Click"><i class="glyphicon glyphicon-user"></i></asp:LinkButton>
-                            <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
-                        </span>
-                    </div>
+                        <tr>
+                 <td >
+                        <asp:Button ID="btnInsert" runat="server" Text="Guardar
+                            " OnClick="btnInsert_Click" class="btn btn-primary" />
+                 </td>      
+               
+            </tr>   
+
+                 </div>
             
           </div>
         </div>
       
 
+     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_OBTENER_FIRMANTE1" SelectCommandType="StoredProcedure">
+     <SelectParameters>
+                            <asp:ControlParameter ControlID="ddlArea" PropertyName="SelectedValue" Name="idArea" Type="Int32" DefaultValue="0" />
+                      
+        </SelectParameters>  
+         
+          </asp:SqlDataSource>
     
-      <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-          ConnectionString="Data Source=132.248.122.35;Initial Catalog=Maestros;User ID=sa;Password=..Wally1584" 
-          ProviderName="System.Data.SqlClient" SelectCommand="select n_plantel, nombre_p from planteles
-where n_plantel &lt;&gt; ''
-order by n_plantel" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
-      <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
-          ConnectionString="Data Source=132.248.122.35;Initial Catalog=Maestros;User ID=sa;Password=..Wally1584" 
-          ProviderName="System.Data.SqlClient" SelectCommand="select '', '[Seleccione Género]'
-UNION
-select 'M' idGenero,'Masculino' Genero
-UNION
-select 'F' idGenero,'Femenino' Genero"></asp:SqlDataSource>
-      <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
-          ConnectionString="<%$ ConnectionStrings:MaestrosConnectionString %>"
-          ProviderName="System.Data.SqlClient" SelectCommand="select clave_a, nombre_a from areas
-where clave_a &lt;&gt; ''
-order by clave_a"></asp:SqlDataSource>
-      <asp:SqlDataSource ID="SqlDataSource5" runat="server" 
-          ConnectionString="<%$ ConnectionStrings:MaestrosConnectionString %>" 
-          SelectCommand="CargarDelegaciones" SelectCommandType="StoredProcedure">
-          <SelectParameters>
-              <asp:ControlParameter ControlID="ddlEstado" Name="idEstado" 
-                  PropertyName="SelectedValue" Type="Int32" 
-                  DefaultValue="0" />
-          </SelectParameters>
-      </asp:SqlDataSource>
-      <asp:SqlDataSource ID="SqlDataSource4" runat="server" 
-          ConnectionString="Data Source=132.248.122.35;Initial Catalog=Maestros;User ID=sa;Password=..Wally1584" 
-          ProviderName="System.Data.SqlClient" 
-          SelectCommand="select idEstado, Estado from Estados"></asp:SqlDataSource>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
-      <script src= "/newdcdpa/Scripts/Templates/Formularioggroups.js" type="text/javascript"></script>
-      <script src= "/newdcdpa/Scripts/habilitar_inhabilitar_controles.js" type="text/javascript" > </script>
+                 
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+      <script src= "/WebApplication1/Scripts/Templates/Formularioggroups.js" type="text/javascript"></script>
+      <script src= "/WebApplication1/Scripts/habilitar_inhabilitar_controles.js" type="text/javascript" > </script>
       </asp:Content>

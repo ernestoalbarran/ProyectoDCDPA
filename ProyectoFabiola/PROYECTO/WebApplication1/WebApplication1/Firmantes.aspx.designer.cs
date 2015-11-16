@@ -22,13 +22,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label lbNombre;
         
         /// <summary>
-        /// Control tbJefe.
+        /// Control ddlJefe.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbJefe;
+        protected global::System.Web.UI.WebControls.DropDownList ddlJefe;
         
         /// <summary>
         /// Control tbSiglas.
@@ -40,58 +40,58 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox tbSiglas;
         
         /// <summary>
-        /// Control tbConsejero1.
+        /// Control ddlConsejero1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbConsejero1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlConsejero1;
         
         /// <summary>
-        /// Control tbnConsejero2.
+        /// Control ddlConsejero2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbnConsejero2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlConsejero2;
         
         /// <summary>
-        /// Control tbConsejero3.
+        /// Control ddlConsejero3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbConsejero3;
+        protected global::System.Web.UI.WebControls.DropDownList ddlConsejero3;
         
         /// <summary>
-        /// Control tbConsejero4.
+        /// Control ddlConsejero4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbConsejero4;
+        protected global::System.Web.UI.WebControls.DropDownList ddlConsejero4;
         
         /// <summary>
-        /// Control tbConsejero5.
+        /// Control ddlConsejero5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbConsejero5;
+        protected global::System.Web.UI.WebControls.DropDownList ddlConsejero5;
         
         /// <summary>
-        /// Control tbConsejeto6.
+        /// Control ddlConsejero6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbConsejeto6;
+        protected global::System.Web.UI.WebControls.DropDownList ddlConsejero6;
         
         /// <summary>
         /// Control tbFecha.
@@ -103,22 +103,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox tbFecha;
         
         /// <summary>
-        /// Control LnkModificar.
+        /// Control btnInsert.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LnkModificar;
-        
-        /// <summary>
-        /// Control LnkNuevo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LnkNuevo;
+        protected global::System.Web.UI.WebControls.Button btnInsert;
         
         /// <summary>
         /// Control SqlDataSource1.
@@ -128,41 +119,5 @@ namespace WebApplication1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-        
-        /// <summary>
-        /// Control SqlDataSource2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
-        
-        /// <summary>
-        /// Control SqlDataSource3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
-        
-        /// <summary>
-        /// Control SqlDataSource5.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource5;
-        
-        /// <summary>
-        /// Control SqlDataSource4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource4;
     }
 }

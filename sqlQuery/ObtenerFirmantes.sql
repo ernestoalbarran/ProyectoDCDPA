@@ -11,8 +11,7 @@ GO
 -- Description:	Procedimiento que muestra la lista de profesores que pueden
 -- ser seleccionados como integrantes del grupo de trabajo
 --=========================================
-
-ALTER PROCEDURE [dbo].[SP_OBTENER_FIRMANTE1]
+alter PROCEDURE [dbo].[SP_OBTENER_FIRMANTE1]
 	@idArea AS SMALLINT
 AS
 
