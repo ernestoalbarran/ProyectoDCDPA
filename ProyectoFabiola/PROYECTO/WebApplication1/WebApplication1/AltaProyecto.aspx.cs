@@ -118,6 +118,10 @@ namespace WebApplication1
 
         }
 
+        protected void LnkNuevo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Firmantes.aspx");
+        }
         protected void btnGuardarProy(object sender, EventArgs e)
         {
             try

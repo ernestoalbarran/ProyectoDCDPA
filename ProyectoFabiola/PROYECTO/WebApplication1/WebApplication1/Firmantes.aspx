@@ -20,7 +20,9 @@
    
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title"><asp:Label ID="lbNombre" runat="server" Text="Firmantes para la carta de consejo"></asp:Label></h3>
+              <h2>Alta Firmantes
+                  <asp:Label ID="lblTitulo" runat="server" ></asp:Label>
+                  </h2>
    
             </div>
             <div class="panel-body">
@@ -34,7 +36,7 @@
                         <td>Jefe de Sección:</td>
                           <td colspan=5><asp:DropDownList ID="ddlJefe" runat="server" class="form-control" tabindex="5" 
                                 DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
-                                DataValueField="NOMBRE">
+                                DataValueField="RFC" >
                             </asp:DropDownList>
                         
                           </td>
@@ -51,13 +53,13 @@
                         <td>Consejero1:</td>
                        <td colspan=2><asp:DropDownList ID="ddlConsejero1" runat="server" class="form-control" tabindex="5" 
                                 DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
-                                DataValueField="NOMBRE">
+                                DataValueField="RFC">
                             </asp:DropDownList>
                         </td> 
                         <td>Consejero2</td>
                        <td colspan=2><asp:DropDownList ID="ddlConsejero2" runat="server" class="form-control" tabindex="5" 
                                 DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
-                                DataValueField="NOMBRE">
+                                DataValueField="RFC">
                             </asp:DropDownList>
                         </td>
 
@@ -67,14 +69,14 @@
                         <td>Consejero3:</td>
                         <td colspan=2><asp:DropDownList ID="ddlConsejero3" runat="server" class="form-control" tabindex="5" 
                                 DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
-                                DataValueField="NOMBRE">
+                                DataValueField="RFC">
                             </asp:DropDownList>
                         </td>
                         <td>Consejero4</td>
                        
                             <td colspan=2><asp:DropDownList ID="ddlConsejero4" runat="server" class="form-control" tabindex="5" 
                                 DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
-                                DataValueField="NOMBRE">
+                                DataValueField="RFC">
                             </asp:DropDownList>
                         </td>
                                 </tr>
@@ -85,13 +87,13 @@
 
                              <td colspan=2><asp:DropDownList ID="ddlConsejero5" runat="server" class="form-control" tabindex="5" 
                                 DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
-                                DataValueField="NOMBRE">
+                                DataValueField="RFC">
                             </asp:DropDownList>
                         </td>
                           <td>Consejero6</td>
                         <td colspan=2><asp:DropDownList ID="ddlConsejero6" runat="server" class="form-control" tabindex="5" 
                                 DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
-                                DataValueField="NOMBRE" >
+                                DataValueField="RFC" >
                             </asp:DropDownList>
                         </td>  
                         </tr>
@@ -114,8 +116,11 @@
                  <div class="panel-footer">
                         <tr>
                  <td >
+
+                     <div class="center-block">
                         <asp:Button ID="btnInsert" runat="server" Text="Guardar
                             " OnClick="btnInsert_Click" class="btn btn-primary" />
+                         </div>
                  </td>      
                
             </tr>   

@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Campos.cs" />
+    <Compile Include="Firmante1.cs" />
     <Compile Include="LemasPCEPI.cs" />
     <Compile Include="MateriaProyecto.cs" />
     <Compile Include="PeriodoLema.cs" />
