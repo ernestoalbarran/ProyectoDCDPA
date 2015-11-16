@@ -51,6 +51,9 @@
                                 <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
                                      CssClass="field-validation-error" Display="Dynamic" ErrorMessage="La contraseña y la contraseña de confirmación no coinciden." />
                             </li>
+                            <li>
+                                <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+                            </li>
                         </ol>
                         <asp:Button runat="server" CommandName="MoveNext" Text="Crear nuevo usuario" />
                     </fieldset>

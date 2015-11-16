@@ -29,5 +29,8 @@ namespace WebApplication1.Account {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CreateUserWizardStep RegisterUserWizardStep;
+
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+
     }
 }

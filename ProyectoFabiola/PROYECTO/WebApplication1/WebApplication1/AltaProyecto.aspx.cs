@@ -75,7 +75,7 @@ namespace WebApplication1
             else
             {
                 ListBoxMateriasP.Items.Add(ListBoxMaterias.SelectedItem);
-                ListBoxMaterias.Items.Remove(ListBoxMaterias.SelectedItem);
+                ListBoxMateriasP.Items.Remove(ListBoxMaterias.SelectedItem);
             }
         }
 
