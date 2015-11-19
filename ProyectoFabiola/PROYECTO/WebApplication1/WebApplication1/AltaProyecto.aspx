@@ -32,16 +32,34 @@
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad">
        <div class="panel panel-info">
            <div class="panel-heading">
-              <h2>Alta Proyectos&nbsp;
-                  <asp:Label ID="lblUsuario" runat="server" Text="Label"></asp:Label>
-               </h2>    
+
+              
+              <h2>Alta Proyecto
+                  <asp:Label ID="lblTitulo" runat="server" ></asp:Label>
+        
+   
+               <span class="pull-right">
+                            <asp:LinkButton ID="LnkAlta" runat="server" text="Alta Firmantes"
+                            data-original-title="Alta Firmantes" data-toggle="tooltip" type="button" 
+                            class="btn btn-primary" onclick="LnkNuevo_Click"></asp:LinkButton>
+                              </span>
+               </h2>   
+               
+              
+                             
+              
           </div>
+            
+
             
            <div class="panel-body">
                 <div class=" col-md-10 col-lg-10 "> 
         
                      <table class="table table-user-information">
                      <tbody>
+                         
+                         
+
                <tr>
                
                 <td >
@@ -181,7 +199,6 @@
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
-                <asp:Button ID="Button4" runat="server" Text="Button" />
                 <td colspan="2">
                     <asp:Button ID="btGuardarProy" runat="server" Text="Guardar Proyecto" OnClick="btnGuardarProy" class="btn btn-primary"  />
                 </td>
@@ -197,6 +214,6 @@
 </div>
         
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
-      <script src= "/newdcdpa/Scripts/Templates/Formularioggroups.js" type="text/javascript"></script>
-      <script src= "/newdcdpa/Scripts/habilitar_inhabilitar_controles.js" type="text/javascript" > </script>
+      <script src= "/WebApplcation1/Scripts/Templates/Formularioggroups.js" type="text/javascript"></script>
+      <script src= "/WebApplication1/Scripts/habilitar_inhabilitar_controles.js" type="text/javascript" > </script>
 </asp:Content>
