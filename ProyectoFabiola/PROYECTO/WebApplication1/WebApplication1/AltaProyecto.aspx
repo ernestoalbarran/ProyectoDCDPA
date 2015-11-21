@@ -62,9 +62,6 @@
         
                      <table class="table table-user-information">
                      <tbody>
-                         
-                         
-
                <tr>
                
                 <td >
@@ -144,7 +141,7 @@
                 </td>
                 
                 <td class="auto-style5" rowspan="2">
-                    <asp:UpdatePanel runat="server">
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                         <ContentTemplate>
                     <asp:ListBox ID="ListBoxMaterias" runat="server" class="form-control input-lg" Height="217px" Width="222px" SelectionMode="Multiple" AutoPostBack="false" ></asp:ListBox>
                     <%--<asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [NOMBRE] FROM [PROFESOR]"></asp:SqlDataSource>
@@ -247,3 +244,4 @@
       <script src= "/WebApplcation1/Scripts/Templates/Formularioggroups.js" type="text/javascript"></script>
       <script src= "/WebApplication1/Scripts/habilitar_inhabilitar_controles.js" type="text/javascript" > </script>
 </asp:Content>
+

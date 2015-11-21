@@ -94,6 +94,7 @@ namespace WebApplication1
             }
             else
             {
+
                 ListItem materia = ListBoxMaterias.SelectedItem;
                 ListBoxMateriasP.Items.Add(materia);
                 ListBoxMaterias.Items.Remove(ListBoxMateriasP.SelectedItem);
@@ -141,6 +142,7 @@ namespace WebApplication1
 
         protected void LnkNuevo_Click(object sender, EventArgs e)
         {
+
             Response.Redirect("Firmantes.aspx",false);
         }
 
