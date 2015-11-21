@@ -109,7 +109,7 @@ namespace PCEPI.Comun
 
         public Proyecto() { }
 
-        public Proyecto(int ID_PROYECTO, string PLANTEL, string PERIODO, int ID_AREA, string NUM_OFICIO, DateTime FECHA_EVAL, string TITULO,  string PRODUCTO, string _MATERIA, string CAMPO, string DESCRIPCION_PROY, string OPINION_DIR, string OBSERVACIONES, string PROFESOR)
+        public Proyecto(int ID_PROYECTO, string PLANTEL, string PERIODO, int ID_AREA, string NUM_OFICIO, DateTime FECHA_EVAL, string TITULO,  string PRODUCTO, string MATERIA, string CAMPO, string DESCRIPCION_PROY, string OPINION_DIR, string OBSERVACIONES, string PROFESOR)
         {
             this.ID_PROYECTO = ID_PROYECTO;
             this.PLANTEL = PLANTEL;

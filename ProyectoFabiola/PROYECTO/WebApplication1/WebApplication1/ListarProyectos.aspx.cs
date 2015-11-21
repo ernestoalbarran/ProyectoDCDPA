@@ -29,12 +29,12 @@ namespace WebApplication1
 
         protected void GridProyectos_RowCommand(object sender, GridViewCommandEventArgs e)
          {
-             /*if (e.CommandName == "EditarProyecto")
+             if (e.CommandName == "EditarProyecto")
              {
                  string sProyectoId = e.CommandArgument.ToString();
                  Response.Redirect("AltaProyecto.aspx?=" + sProyectoId);
-             }*/
-             if (e.CommandName == "EliminarProyecto")
+             }
+            if (e.CommandName == "EliminarProyecto")
              {
                  Proyecto proyecto = new Proyecto();
                  proyecto.ID_PROYECTO=Convert.ToInt32(e.CommandArgument.ToString());
@@ -49,8 +49,5 @@ namespace WebApplication1
         {
 
         }
-
-       
-       
     }
 }

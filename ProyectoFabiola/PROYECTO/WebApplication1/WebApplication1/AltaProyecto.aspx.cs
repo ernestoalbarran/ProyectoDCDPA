@@ -25,6 +25,26 @@ namespace WebApplication1
                 lblPeriodo.Text = Session["Proyecto"].ToString();
                 lblMateria.Text = Session["Area"].ToString(); // se debe hacer el cambio de materia por area en la pagina donde se despliega
                 lblPlantel.Text = Session["Plantel"].ToString();
+
+                ProfesorProyecto profesor = new ProfesorProyecto();
+                profesor.ID_PLANTEL = Session["Id_Plantel"].ToString();
+
+                MateriaProyecto materia = new MateriaProyecto();
+                materia.AREA = Convert.ToInt32(Session["Id_Area"].ToString()); ;
+
+                DataSet dsProfesor = NegocioProyecto.GetProfesor(profesor,materia);
+
+                ListBoxProfesor.DataSource = dsProfesor.Tables[0];
+                ListBoxProfesor.DataTextField ="NOMBRE";
+                ListBoxProfesor.DataValueField ="RFC";
+                ListBoxProfesor.DataBind();
+
+                ListBoxMaterias.DataSource = dsProfesor.Tables[1];
+                ListBoxMaterias.DataTextField = "MATERIA40";
+                ListBoxMaterias.DataValueField = "ID_AREA";
+                ListBoxMaterias.DataBind();
+
+
             }
            /* if (!Page.IsPostBack)
             {
@@ -74,8 +94,9 @@ namespace WebApplication1
             }
             else
             {
-                ListBoxMateriasP.Items.Add(ListBoxMaterias.SelectedItem);
-                ListBoxMaterias.Items.Remove(ListBoxMaterias.SelectedItem);
+                ListItem materia = ListBoxMaterias.SelectedItem;
+                ListBoxMateriasP.Items.Add(materia);
+                ListBoxMaterias.Items.Remove(ListBoxMateriasP.SelectedItem);
             }
         }
 
@@ -118,6 +139,12 @@ namespace WebApplication1
 
         }
 
+        protected void LnkNuevo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Firmantes.aspx",false);
+        }
+
+
         protected void btnGuardarProy(object sender, EventArgs e)
         {
             try
@@ -140,26 +167,53 @@ namespace WebApplication1
                 if (NegocioProyecto.Insertar(proyecto) > 0)
                 {
                     MessageBox.Show("Se inserto el proyecto correctamente");
-                    Response.Redirect("ListarProyectos.aspx",false);
+                    Response.Redirect("ListarProyectos.aspx", false);
 
                 }
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("Algo esta mal"+ ex.Message + ex.StackTrace);
             }
-            
-           
+
+
             //AltaProyecto.Insertar(proyecto);
 
 
         }
 
-        protected void SqlDataSource1_Selecting1(object sender, SqlDataSourceSelectingEventArgs e)
+        protected void ButtondellMateria_Click(object sender, EventArgs e)
+        {
+          if (ListBoxMateriasP.SelectedIndex == -1)
+            {
+                MessageBox.Show("No se eligieron materias para eliminar de la lista");
+            }
+            else
+            {
+                /*ListItem materiaProy = ListBoxMateriasP.SelectedItem;
+                ListBoxMaterias.Items.Add(materiaProy);
+                ListBoxMateriasP.Items.Remove(ListBoxMaterias.SelectedItem);*/
+
+                ListBoxMaterias.Items.Add(ListBoxMateriasP.SelectedItem);
+                ListBoxMateriasP.Items.Remove(ListBoxMaterias.SelectedItem);
+            }
+        
+        }
+
+        protected void ButtondelProf_Click(object sender, EventArgs e)
         {
 
+            if (ListBoxProfProy.SelectedIndex == -1)
+            {
+                MessageBox.Show("No se eligieron profesores para eliminar de la lista");
+            }
+            else
+            {
+                ListBoxProfesor.Items.Add(ListBoxProfProy.SelectedItem);
+                ListBoxProfProy.Items.Remove(ListBoxProfesor.SelectedItem);
+            }
         }
-   
+       
     }
 }

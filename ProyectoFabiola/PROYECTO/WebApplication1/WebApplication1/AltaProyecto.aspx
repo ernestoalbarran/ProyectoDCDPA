@@ -19,7 +19,7 @@
         .auto-style3 {
         }
         .auto-style5 {
-            width: 169px;
+            width: 66px;
         }
         .auto-style6 {
             width: 25px;
@@ -32,16 +32,39 @@
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad">
        <div class="panel panel-info">
            <div class="panel-heading">
-              <h2>Alta Proyectos&nbsp;
-                  <asp:Label ID="lblUsuario" runat="server" Text="Label"></asp:Label>
-               </h2>    
+
+              
+              <h2>Alta Proyecto
+                  <asp:Label ID="lblTitulo" runat="server" ></asp:Label>
+        
+   
+               <span class="pull-right">
+                            <asp:LinkButton ID="LnkAlta" runat="server" text="Alta Firmantes"
+                            data-original-title="Alta Firmantes" data-toggle="tooltip" type="button" 
+                            class="btn btn-primary" onclick="LnkNuevo_Click"></asp:LinkButton>
+                              </span>
+               </h2>   
+               
+              
+                             
+              
           </div>
+            
+
             
            <div class="panel-body">
                 <div class=" col-md-10 col-lg-10 "> 
+          <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+             <Triggers><asp:AsyncPostBackTrigger ControlID="ButtonAddProf" EventName="Click"/>
+                       <asp:AsyncPostBackTrigger ControlID="Buttondelprof" EventName="Click"/>
+             </Triggers>
+          <ContentTemplate>
         
                      <table class="table table-user-information">
                      <tbody>
+                         
+                         
+
                <tr>
                
                 <td >
@@ -51,12 +74,12 @@
                 <td class="auto-style5">
                     Grupo<asp:Label ID="lblGrupo" runat="server" Text="Label"></asp:Label>
                 </td>
-                <td class="auto-style6">
+                <td class="auto-style6" colspan="2">
                     <asp:Label ID="lblMateria" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1" colspan="3">
+                <td class="auto-style1" colspan="4" align="center">
                     Proyectos 
                     <asp:Label ID="lblPeriodo" runat="server" Text="Label"></asp:Label>
                     &nbsp;
@@ -116,20 +139,35 @@
                 <td colspan="3">Materias del grupo</td>
             </tr>
             <tr>
-                <td class="auto-style2">Materias&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <td class="auto-style2" rowspan="2">Materias&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     
                 </td>
-                <td class="auto-style5">
-                    <asp:ListBox ID="ListBoxMaterias" runat="server" AutoPostBack="True" class="form-control input-lg" Height="217px" Width="222px" DataSourceID="SqlDataSourceMAT" DataTextField="MATERIA40" DataValueField="MATERIA40" ></asp:ListBox>
-                    <asp:SqlDataSource ID="SqlDataSourceMAT" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [MATERIA40] FROM [MATERIA]"></asp:SqlDataSource>
+                
+                <td class="auto-style5" rowspan="2">
+                    <asp:UpdatePanel runat="server">
+                        <ContentTemplate>
+                    <asp:ListBox ID="ListBoxMaterias" runat="server" class="form-control input-lg" Height="217px" Width="222px" SelectionMode="Multiple" AutoPostBack="false" ></asp:ListBox>
+                    <%--<asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [NOMBRE] FROM [PROFESOR]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSourceMAT" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_FILTRAR_MATERIA" SelectCommandType="StoredProcedure">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="ddlArea" PropertyName="SelectedValue" Name="idArea" Type="Int32" DefaultValue="0" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>--%>
+                            </ContentTemplate>
+                   </asp:UpdatePanel>
                 </td>
+                 
                 <td class="auto-style6">
                     <asp:Button ID="Button1" runat="server" Text="&gt;&gt;" OnClick="Button1_Click" />
-                    <asp:Button ID="Button2" runat="server" Text="&lt;&lt;" />
                 </td>
-                <td>
-                    <asp:ListBox ID="ListBoxMateriasP" runat="server" class="form-control input-lg" Height="217px" Width="222px" AutoPostBack="True" OnSelectedIndexChanged="ListBoxMateriasP_SelectedIndexChanged" SelectionMode="Multiple"></asp:ListBox>
+                <td rowspan="2">
+                    <asp:ListBox ID="ListBoxMateriasP" runat="server" class="form-control input-lg" Height="217px" Width="222px" OnSelectedIndexChanged="ListBoxMateriasP_SelectedIndexChanged" SelectionMode="Multiple"></asp:ListBox>
                     <br />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style6">
+                    <asp:Button ID="ButtondellMateria" runat="server" Text="&lt;&lt;" OnClick="ButtondellMateria_Click" />
                 </td>
             </tr>
             <tr>
@@ -156,21 +194,39 @@
             <tr>
                 <td colspan="3">Integrantes</td>
             </tr>
+        
             <tr>
-                <td class="auto-style2">
-                    <asp:ListBox ID="ListBoxProfesor" runat="server" class="form-control input-lg"  Height="240px" Width="297px"  DataSourceID="SqlDataSource4" DataTextField="NOMBRE" DataValueField="NOMBRE" SelectionMode="Multiple"></asp:ListBox>
-                    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [NOMBRE] FROM [PROFESOR]"></asp:SqlDataSource>
+                <td class="auto-style2" rowspan="2">
+                    
+
+                             
+
+                    <asp:ListBox ID="ListBoxProfesor" runat="server" class="form-control input-lg"  Height="240px" Width="297px" SelectionMode="Multiple" AutoPostBack="false"></asp:ListBox>
+<%--        </asp:SqlDataSource>      <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_OBTENER_INTEGRANTE" SelectCommandType="StoredProcedure">  DataSourceID="SqlDataSource4" 
+                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_OBTENER_INTEGRANTE" SelectCommandType="StoredProcedure" >
+                     
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="ddlPlantel" PropertyName="SelectedValue" Name="ID_PLANTEL" Type="Int32" DefaultValue="0" />
+                        </SelectParameters>                    	
+                    </asp:SqlDataSource>--%>
+                          
                 </td>
                 <td class="auto-style5">
-                    <asp:Button ID="ButtonAddProf" runat="server" Text="&gt;&gt;" Width="82px" OnClick="ButtonAddProf_Click" />
+                    <asp:Button ID="ButtonAddProf" runat="server" Text="&gt;&gt;" Width="27px" OnClick="ButtonAddProf_Click" />
                 </td>
-                <td colspan="2">
+                <td colspan="2" rowspan="2">
+                    
                     <asp:ListBox ID="ListBoxProfProy" runat="server" class="form-control input-lg" Height="231px" Width="240px" SelectionMode="Multiple"></asp:ListBox>
                 </td>
             </tr>
             <tr>
+                <td class="auto-style5">
+                    <asp:Button ID="Buttondelprof" runat="server" Text="&lt;&lt;" />
+                </td>
+            </tr>
+    
+             <tr>
                 <td class="auto-style2">&nbsp;</td>
-                <asp:Button ID="Button4" runat="server" Text="Button" />
                 <td colspan="2">
                     <asp:Button ID="btGuardarProy" runat="server" Text="Guardar Proyecto" OnClick="btnGuardarProy" class="btn btn-primary"  />
                 </td>
@@ -180,12 +236,14 @@
 
           </tbody>
         </table>
+    </ContentTemplate>
+    </asp:UpdatePanel>
     </div>
     </div>
     </div>           
 </div>
         
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
-      <script src= "/newdcdpa/Scripts/Templates/Formularioggroups.js" type="text/javascript"></script>
-      <script src= "/newdcdpa/Scripts/habilitar_inhabilitar_controles.js" type="text/javascript" > </script>
+      <script src= "/WebApplcation1/Scripts/Templates/Formularioggroups.js" type="text/javascript"></script>
+      <script src= "/WebApplication1/Scripts/habilitar_inhabilitar_controles.js" type="text/javascript" > </script>
 </asp:Content>
