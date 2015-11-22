@@ -1,5 +1,4 @@
-﻿<%@ Page Title="DGCCH" Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ActualizarProyecto.aspx.cs" Inherits="WebApplication1.AltaProyecto" %>
-
+<%@ Page Title="DGCCH" Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ActualizarProyecto.aspx.cs" Inherits="WebApplication1.ActualizarProyecto" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <style type="text/css">
@@ -34,6 +33,7 @@
            <div class="panel-heading">
 
               
+<<<<<<< HEAD
               <h2>Alta Proyecto
                   <asp:Label ID="lblTitulo" runat="server" ></asp:Label>
         
@@ -42,32 +42,23 @@
                             <asp:LinkButton ID="LnkAlta" runat="server" text="Alta Firmantes"
                             data-original-title="Alta Firmantes" data-toggle="tooltip" type="button" 
                             class="btn btn-primary" onclick="LnkNuevo_Click"></asp:LinkButton>
-                              </span>
+               </span>
+              <h2>Actualizar Proyecto
+                  <asp:Label ID="lblTitulo" runat="server" ></asp:Label>
                </h2>   
-               
-              
-                             
-              
           </div>
             
-
-            
            <div class="panel-body">
-                <div class=" col-md-10 col-lg-10 "> 
-          <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-             <Triggers><asp:AsyncPostBackTrigger ControlID="ButtonAddProf" EventName="Click"/>
-                       <asp:AsyncPostBackTrigger ControlID="Buttondelprof" EventName="Click"/>
-             </Triggers>
-          <ContentTemplate>
-        
-                     <table class="table table-user-information">
+             <div class=" col-md-10 col-lg-10 "> 
+               <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                 <Triggers><asp:AsyncPostBackTrigger ControlID="ButtonAddProf" EventName="Click"/>
+                   <asp:AsyncPostBackTrigger ControlID="Buttondelprof" EventName="Click"/>
+                 </Triggers>
+                 <ContentTemplate>
+                   <table class="table table-user-information">
                      <tbody>
-               <tr>
-               
-                <td >
-                   Plantel 
-                    <asp:Label ID="lblPlantel" runat="server" Text="Label" ></asp:Label>
-                </td>
+                       <tr>
+                           <td >Plantel <asp:Label ID="lblPlantel" runat="server" Text="Label" ></asp:Label></td>
                 <td class="auto-style5">
                     Grupo<asp:Label ID="lblGrupo" runat="server" Text="Label"></asp:Label>
                 </td>

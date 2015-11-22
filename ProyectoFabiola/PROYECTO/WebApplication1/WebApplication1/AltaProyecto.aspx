@@ -43,6 +43,14 @@
                             data-original-title="Alta Firmantes" data-toggle="tooltip" type="button" 
                             class="btn btn-primary" onclick="LnkNuevo_Click"></asp:LinkButton>
                               </span>
+
+                  <span class="pull-right">
+                            <asp:LinkButton ID="LinkConsulta" runat="server" text="Consulta Firmantes"
+                            data-original-title="Consulta Firmantes" data-toggle="tooltip" type="button" 
+                            class="btn btn-primary" onclick="LnkNuevo_ClickConsulta"></asp:LinkButton>
+                              </span>
+
+
                </h2>   
                
               

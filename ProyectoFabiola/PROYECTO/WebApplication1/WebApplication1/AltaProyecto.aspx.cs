@@ -147,6 +147,13 @@ namespace WebApplication1
         }
 
 
+        protected void LnkNuevo_ClickConsulta(object sender, EventArgs e)
+        {
+
+            Response.Redirect("ActualizarProyecto.aspx", false);
+        }
+
+
         protected void btnGuardarProy(object sender, EventArgs e)
         {
             try
