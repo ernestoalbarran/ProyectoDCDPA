@@ -138,6 +138,7 @@
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="AltaProyecto.aspx" />
     <Content Include="ConsultaProyecto.aspx" />
+    <Content Include="ActualizarProyecto.aspx" />
     <Content Include="DefaultCampos.aspx" />
     <Content Include="DefaultLema.aspx" />
     <Content Include="DefaultPeriodo.aspx" />
@@ -293,6 +294,13 @@
     </Compile>
     <Compile Include="ConsultaProyecto.aspx.designer.cs">
       <DependentUpon>ConsultaProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizarProyecto.aspx.cs">
+      <DependentUpon>ActualizarProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarProyecto.aspx.designer.cs">
+      <DependentUpon>ActualizarProyecto.aspx</DependentUpon>
     </Compile>
     <Compile Include="DefaultCampos.aspx.cs">
       <DependentUpon>DefaultCampos.aspx</DependentUpon>

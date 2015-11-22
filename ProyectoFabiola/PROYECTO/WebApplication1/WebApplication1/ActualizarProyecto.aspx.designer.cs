@@ -10,7 +10,7 @@
 namespace WebApplication1 {
     
     
-    public partial class AltaProyecto {
+    public partial class ActualizarProyecto {
         
         /// <summary>
         /// Control lblTitulo.
@@ -20,24 +20,6 @@ namespace WebApplication1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTitulo;
-        
-        /// <summary>
-        /// Control LnkAlta.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LnkAlta;
-        
-        /// <summary>
-        /// Control LinkConsulta.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkConsulta;
         
         /// <summary>
         /// Control UpdatePanel1.

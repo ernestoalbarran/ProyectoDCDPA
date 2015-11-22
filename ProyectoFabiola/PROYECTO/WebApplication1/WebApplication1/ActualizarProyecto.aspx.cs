@@ -16,7 +16,7 @@ using Comun;
 
 namespace WebApplication1
 {
-    public partial class AltaProyecto : System.Web.UI.Page
+    public partial class ActualizarProyecto : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -140,18 +140,7 @@ namespace WebApplication1
 
         }
 
-        protected void LnkNuevo_Click(object sender, EventArgs e)
-        {
-
-            Response.Redirect("Firmantes.aspx",false);
-        }
-
-
-        protected void LnkNuevo_ClickConsulta(object sender, EventArgs e)
-        {
-
-            Response.Redirect("ActualizarProyecto.aspx", false);
-        }
+     
 
 
         protected void btnGuardarProy(object sender, EventArgs e)

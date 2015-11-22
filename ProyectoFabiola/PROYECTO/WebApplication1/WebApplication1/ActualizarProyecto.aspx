@@ -1,4 +1,4 @@
-﻿<%@ Page Title="DGCCH" Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AltaProyecto.aspx.cs" Inherits="WebApplication1.AltaProyecto" %>
+﻿<%@ Page Title="DGCCH" Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ActualizarProyecto.aspx.cs" Inherits="WebApplication1.ActualizarProyecto" %>
 
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
@@ -34,23 +34,11 @@
            <div class="panel-heading">
 
               
-              <h2>Alta Proyecto
+              <h2>Actualizar Proyecto
                   <asp:Label ID="lblTitulo" runat="server" ></asp:Label>
         
    
-               <span class="pull-right">
-                            <asp:LinkButton ID="LnkAlta" runat="server" text="Alta Firmantes"
-                            data-original-title="Alta Firmantes" data-toggle="tooltip" type="button" 
-                            class="btn btn-primary" onclick="LnkNuevo_Click"></asp:LinkButton>
-                              </span>
-
-                  <span class="pull-right">
-                            <asp:LinkButton ID="LinkConsulta" runat="server" text="Consulta Firmantes"
-                            data-original-title="Consulta Firmantes" data-toggle="tooltip" type="button" 
-                            class="btn btn-primary" onclick="LnkNuevo_ClickConsulta"></asp:LinkButton>
-                              </span>
-
-
+               
                </h2>   
                
               
