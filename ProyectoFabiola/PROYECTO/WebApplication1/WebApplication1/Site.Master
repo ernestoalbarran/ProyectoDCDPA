@@ -41,10 +41,7 @@
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <asp:Menu ID="Menu1" runat="server" EnableViewState="false" IncludeStyleBlock="false"
-                            Orientation="Horizontal" CssClass="nav navbar" StaticMenuStyle-CssClass="nav" DataSourceID="SiteMapDSMenuPrincipal"
-                            StaticSelectedStyle-CssClass="active" DynamicMenuStyle-CssClass="dropdown-menu" StaticDisplayLevels="2">
-                        </asp:Menu>
+                        
                         <div class="nav navbar navbar-right">
                         <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                             <AnonymousTemplate>
