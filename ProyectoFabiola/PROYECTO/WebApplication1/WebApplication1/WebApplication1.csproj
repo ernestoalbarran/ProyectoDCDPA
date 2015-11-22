@@ -136,6 +136,7 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="ActualizarProyecto.aspx" />
     <Content Include="AltaProyecto.aspx" />
     <Content Include="ConsultaProyecto.aspx" />
     <Content Include="DefaultCampos.aspx" />
@@ -280,6 +281,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizarProyecto.aspx.cs">
+      <DependentUpon>ActualizarProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizarProyecto.aspx.designer.cs">
+      <DependentUpon>ActualizarProyecto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AltaProyecto.aspx.cs">
       <DependentUpon>AltaProyecto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
