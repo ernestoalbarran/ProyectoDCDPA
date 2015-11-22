@@ -2,11 +2,11 @@
 <siteMap>
   <siteMapNode title="Administrador" description="Área del Administrador"
        url="~/Principal.aspx" >
-   
+
     <siteMapNode title="Sesiones" description="Página de Informes y proyetos"
        url="~/AdminPages/Admin.aspx">
     </siteMapNode>
-     <!--<siteMapNode title="Consejeros-Firmas" description="Página de Consejeros-Firmas"
+    <!--<siteMapNode title="Consejeros-Firmas" description="Página de Consejeros-Firmas"
        url="~/Firmantes.aspx">
     </siteMapNode>-->
     <siteMapNode title="Permisos Planteles" description="Página de Permisos Planteles "
@@ -15,38 +15,26 @@
     <siteMapNode title="Documentos" description="Documentos disponibless en PDF"
        url="~/AdminPages/nada2.aspx">
     </siteMapNode>
-    
+
     <!--<siteMapNode title="Administrador" description="Página administrador">-->
 
-      <siteMapNode title="Lemas"
-           description="Lemas"
-           url="~/DefaultLema.aspx"/>
-      <siteMapNode title="Periodos"
-           description="Periodos"
-           url="~/DefaultPeriodo.aspx"/>
-      <siteMapNode title="Campos"
-           description="Campos"
-           url="~/DefaultCampos.aspx"/>
-      <!--<siteMapNode title="Alta Proyectos"
+    <siteMapNode title="Lemas"
+         description="Lemas"
+         url="~/DefaultLema.aspx"/>
+    <siteMapNode title="Periodos"
+         description="Periodos"
+         url="~/DefaultPeriodo.aspx"/>
+    <siteMapNode title="Campos"
+         description="Campos"
+         url="~/DefaultCampos.aspx"/>
+    <!--<siteMapNode title="Alta Proyectos"
            description="Alta Proyectos"
-<<<<<<< HEAD
-           url="~/AltaProyecto.aspx"/>
-
-     
-   
-  </siteMapNode>
-=======
            url="~/AltaProyecto.aspx"/>-->
-      <siteMapNode title="Usuarios"
-           description="Administración de cuentas de usuarios"
-           url="~/Account/Register.aspx"/>
-
-    <!--</siteMapNode>-->
->>>>>>> b7d400999f1d07e3e866129a60a8bbd4d9a8b607
-  
+    <siteMapNode title="Usuarios"
+         description="Administración de cuentas de usuarios"
+         url="~/Account/Register.aspx"/>
     <siteMapNode title="Acerca de" description="About"
-       url="~/About.aspx"/>
-  
-    </siteMapNode>
-
+     url="~/About.aspx"/>
+    <siteMapNode title="Consulta Proyecto" description="Consultar proyectos" url="~/ConsultaProyecto.aspx"/>
+  </siteMapNode>
 </siteMap>

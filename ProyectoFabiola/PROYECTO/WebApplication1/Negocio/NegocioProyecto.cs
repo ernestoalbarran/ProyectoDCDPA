@@ -70,5 +70,17 @@ namespace PCEPI.Negocio
             };
             return DBHelper.ExecuteDataSet("usp_ListProyecto_DeleteProyecto", dbParams);
         }
+
+        public static DataSet GetProfesor(ProfesorProyecto profesor, MateriaProyecto materia)
+        {
+            /*SqlParameter[] dbParams = new SqlParameter[]
+            {   
+                DBHelper.MakeParam("@ID_PLANTEL",SqlDbType.VarChar,0,profesor.ID_PLANTEL)
+
+            };*/
+            
+            return DBHelper.ListarProfesores(profesor, materia);
+        }
+
     }
 }
