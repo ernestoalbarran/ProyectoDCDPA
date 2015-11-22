@@ -186,6 +186,63 @@ namespace PCEPI.Datos
             return retVal;
         }
 
+        public static DataSet ListarProfesores(ProfesorProyecto profesor, MateriaProyecto materia) 
+        {
+            DataSet ds = new DataSet();
+
+            DataTable dtMaterias = new DataTable();
+            DataTable dtProfesores = new DataTable();
+            try
+            {
+                SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings.Get("connectionString"));
+                SqlConnection connM = new SqlConnection(ConfigurationManager.AppSettings.Get("connectionString"));
+                SqlDataAdapter adaptador;
+                
+
+                conn.Open();
+                connM.Open();
+
+                SqlCommand sqlcomando = new SqlCommand();
+                SqlCommand sqlcomandoMateria = new SqlCommand();
+                sqlcomando.Connection = conn;
+                
+                sqlcomando.CommandType = CommandType.StoredProcedure;
+                sqlcomando.CommandText = "SP_OBTENER_INTEGRANTE";
+
+                sqlcomandoMateria.Connection = connM;
+                sqlcomandoMateria.CommandType = CommandType.StoredProcedure;
+                sqlcomandoMateria.CommandText = "SP_FILTRAR_MATERIA";
+
+
+
+                SqlParameter parID_PLANTEL = new SqlParameter("@ID_PLANTEL", profesor.ID_PLANTEL);
+                sqlcomando.Parameters.Add(parID_PLANTEL);
+
+
+                SqlParameter parID_AREA = new SqlParameter("@ID_AREA", materia.AREA);
+                sqlcomandoMateria.Parameters.Add(parID_AREA);
+
+                adaptador = new SqlDataAdapter(sqlcomando);
+                adaptador.Fill(dtProfesores);
+                //dtProfesores.Tables[0].TableName = "TabProfesores";
+                adaptador = new SqlDataAdapter(sqlcomandoMateria);
+                adaptador.Fill(dtMaterias);
+
+                ds.Tables.Add(dtProfesores);
+                ds.Tables.Add(dtMaterias);
+               
+            }
+            catch (Exception ex )
+            {
+
+                throw ex;
+                
+            }
+
+           return ds;
+
+        }
+
         public static object ExecuteScalar(string sqlSpName, SqlParameter[] dbParams,SqlTransaction trx,SqlConnection conn)
         {
             object retVal = null;

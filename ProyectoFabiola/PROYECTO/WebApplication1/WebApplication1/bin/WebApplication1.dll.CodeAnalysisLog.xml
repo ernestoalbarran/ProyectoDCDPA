@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="11.0">
+ <Localized>
+  <String Key="Category">Categoría</String>
+  <String Key="Certainty">Certeza</String>
+  <String Key="CollapseAll">Contraer todo</String>
+  <String Key="CheckId">Comprobar id.</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">errores</String>
+  <String Key="ExpandAll">Expandir todo</String>
+  <String Key="Help">Ayuda</String>
+  <String Key="Line">Línea</String>
+  <String Key="Messages">mensajes</String>
+  <String Key="LocationNotStoredInPdb">[Ubicación no almacenada en Pdb]</String>
+  <String Key="Project">Proyecto</String>
+  <String Key="Resolution">Resolución</String>
+  <String Key="Rule">Regla</String>
+  <String Key="RuleFile">Archivo de regla</String>
+  <String Key="RuleDescription">Descripción de la regla</String>
+  <String Key="Source">Origen</String>
+  <String Key="Status">Estado</String>
+  <String Key="Target">Círculos concéntricos</String>
+  <String Key="Warning">Advertencia</String>
+  <String Key="Warnings">advertencias</String>
+  <String Key="ReportTitle">Informe de análisis del código</String>
+ </Localized>
+ <Exceptions>
+  <Exception Keyword="CA0055" Kind="AssemblyLoad">
+   <Type>Microsoft.FxCop.Common.AssemblyLoadException</Type>
+   <ExceptionMessage>No se pudo cargar C:\FABIOLA\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\WebApplication1.dll. Se detectó el siguiente error al leer el módulo 'Microsoft.AspNet.Membership.OpenAuth': No se puede resolver la referencia de ensamblado: DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246.</ExceptionMessage>
+   <InnerType>Microsoft.FxCop.Sdk.InvalidMetadataException</InnerType>
+   <InnerExceptionMessage>Se detectó el siguiente error al leer el módulo 'Microsoft.AspNet.Membership.OpenAuth': No se puede resolver la referencia de ensamblado: DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246.</InnerExceptionMessage>
+   <InnerStackTrace>   en Microsoft.FxCop.Sdk.Reader.HandleError(ModuleNode mod, String errorMessage)
+   en Microsoft.FxCop.Sdk.Reader.GetAssemblyFromReference(AssemblyReference assemblyReference)
+   en Microsoft.FxCop.Sdk.AssemblyReference.get_Assembly()
+   en Microsoft.FxCop.Sdk.Reader.GetTypeFromRef(Int32 i, Boolean expectStruct)
+   en Microsoft.FxCop.Sdk.Reader.DecodeAndGetTypeDefOrRefOrSpec(Int32 codedIndex)
+   en Microsoft.FxCop.Sdk.Reader.GetInterfaces(Int32 i, Int32 firstInterfaceIndex, InterfaceCollection interfaces)
+   en Microsoft.FxCop.Sdk.Reader.GetTypeFromDefHelper(Int32 i)
+   en Microsoft.FxCop.Sdk.Reader.GetTypeFromDef(Int32 i)
+   en Microsoft.FxCop.Sdk.Reader.GetTypeList(ModuleNode module)
+   en Microsoft.FxCop.Sdk.ModuleNode.get_Types()
+   en Microsoft.FxCop.Sdk.ModuleNode.get_ModuleReferences()
+   en Microsoft.FxCop.Common.AssemblyNodeEx.GetAllModuleReferences(AssemblyNode assembly)
+   en Microsoft.FxCop.Common.CommonUtilitiesProvider.GetAssemblyThread()
+   en Microsoft.FxCop.Common.CommonUtilitiesProvider.GetAssembly(String fileName, Boolean hookUpResolver, Boolean getDebugInfo, Boolean useGlobalCache)
+   en Microsoft.FxCop.Common.CommonUtilitiesProvider.GetAssembly(String fileName, Boolean hookUpResolver)
+   en Microsoft.FxCop.Common.CommonUtilitiesProvider.GetAssembly(String fileName)
+   en Microsoft.FxCop.Common.IntrospectionAssemblyResolver.GetAssembly(String assemblyPath)
+   en Microsoft.FxCop.Common.FxCopAssemblyResolver`1.Resolve(AssemblyName reference, String referencingModulePath)
+   en Microsoft.FxCop.Common.FxCopAssemblyResolver`1.ResolveAssembly(AssemblyName reference, String referencingModuleLocation, Boolean optional)
+   en Microsoft.FxCop.Common.IntrospectionAssemblyResolver.ResolveAssemblyReference(AssemblyReference reference, ModuleNode module)
+   en Microsoft.FxCop.Sdk.ModuleNode.Resolve(AssemblyReference assemblyReference)
+   en Microsoft.FxCop.Sdk.Reader.GetAssemblyFromReference(AssemblyReference assemblyReference)
+   en Microsoft.FxCop.Sdk.AssemblyReference.get_Assembly()
+   en Microsoft.FxCop.Sdk.Reader.GetTypeFromRef(Int32 i, Boolean expectStruct)
+   en Microsoft.FxCop.Sdk.Reader.DecodeAndGetTypeDefOrRefOrSpec(Int32 codedIndex)
+   en Microsoft.FxCop.Sdk.Reader.ParseTypeSignature(MemoryCursor sigReader, Boolean&amp; pinned, Boolean&amp; isTypeArgument)
+   en Microsoft.FxCop.Sdk.Reader.ParseTypeList(MemoryCursor sigReader)
+   en Microsoft.FxCop.Sdk.Reader.ParseTypeSignature(MemoryCursor sigReader, Boolean&amp; pinned, Boolean&amp; isTypeArgument)
+   en Microsoft.FxCop.Sdk.Reader.ParseTypeSignature(MemoryCursor sigReader)
+   en Microsoft.FxCop.Sdk.Reader.GetMethodFromDef(Int32 index, TypeNode declaringType)
+   en Microsoft.FxCop.Sdk.Reader.AddMethodsToType(TypeNode type, MethodPtrRow[] methodPtrs, Int32 start, Int32 end)
+   en Microsoft.FxCop.Sdk.Reader.GetTypeMembers(TypeNode type, Object handle)
+   en Microsoft.FxCop.Sdk.TypeNode.get_Members()
+   en Microsoft.FxCop.Engines.Introspection.BaseVisitor.VisitType(TypeNode type, TargetType target)
+   en Microsoft.FxCop.Engines.Introspection.LoadVisitor.VisitType(TypeNode type, TargetType target)
+   en Microsoft.FxCop.Engines.Introspection.BaseVisitor.VisitTypes(TypeNodeCollection types, TargetNamespaceDictionary targets)
+   en Microsoft.FxCop.Engines.Introspection.LoadVisitor.VisitModule(ModuleNode module, TargetModule target)
+   en Microsoft.FxCop.Engines.Introspection.BaseVisitor.VisitAssembly(AssemblyNode assembly, TargetFile target)
+   en Microsoft.FxCop.Engines.Introspection.LoadVisitor.VisitAssembly(AssemblyNode assembly, TargetFile target)
+   en Microsoft.FxCop.Engines.Introspection.LoadVisitor.Load(TargetFile target, Boolean buildTree, Boolean queueItems, AssemblyNode loadedAssembly)
+   en Microsoft.FxCop.Engines.Introspection.IntrospectionAnalysisEngine.LoadTargets(TargetFile target)
+   en Microsoft.FxCop.Common.EngineManager.LoadTargets(TargetFile target, Boolean resetCounts, String loadEngine)</InnerStackTrace>
+  </Exception>
+  <Exception Keyword="CA0052" Kind="Engine">
+   <Type>Microsoft.FxCop.Sdk.FxCopException</Type>
+   <ExceptionMessage>No se seleccionaron destinos.</ExceptionMessage>
+  </Exception>
+  <Exception Keyword="CA0058" Kind="Engine">
+   <Type>Microsoft.FxCop.Sdk.FxCopException</Type>
+   <ExceptionMessage>No se encontró el ensamblado 'DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246' al que se hace referencia. Este ensamblado es necesario para el análisis y C:\FABIOLA\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\WebApplication1\bin\WebApplication1.dll, C:\FABIOLA\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.1\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll hacía referencia a él.</ExceptionMessage>
+  </Exception>
+ </Exceptions>
+</FxCopReport>

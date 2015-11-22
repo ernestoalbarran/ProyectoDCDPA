@@ -1,0 +1,142 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>DCDPA Seg. General</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/normalize.css" />
+    <link href="~/Styles/customized.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/formularioggroups.css" rel="stylesheet" type="text/css" />
+    <!--<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />-->
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="container">
+        <div class="row page-headercustomized vertical-align">
+            <div class="col-md-11">
+                <h1>Colegio de Ciencias y Humanidades</h1>
+            </div>
+            <div class="col-md-1">
+                <img id="logo" runat="server" src="~/Images/DGCCH.png" alt="Logo DGCCH"/>
+            </div>
+            
+        </div>
+            
+        <div class="row">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                                class="icon-bar"></span><span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">DCDPA</a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        
+                        <div class="nav navbar navbar-right">
+                        <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                            <AnonymousTemplate>
+                                <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server" class="btn btn-default navbar-btn">
+                                    Iniciar Sesión</a>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                ¡ Bienvenido al DCDPA <span class="bold">
+                                    <asp:LoginName ID="HeadLoginName" runat="server" />
+                                </span>!
+                                <br />
+                                <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión"
+                                    LogoutPageUrl="~/" class="btn btn-default navbar-btn" />
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                        </div>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-md-2 well">
+                <div>
+                <td>Plantel:</td>
+                        <td colspan=2>
+                            <asp:DropDownList ID="ddlPlantel" runat="server" class="form-control" tabindex="3" 
+                                DataSourceID="SqlDataSource1"
+                                 DataTextField="NOMBRE" 
+                                DataValueField="ID_PLANTEL">
+                            </asp:DropDownList>
+                            
+                 </td>
+                <tr>
+                        <td>Proyecto:</td>
+                        <td colspan=2><asp:DropDownList ID="ddlProyecto" runat="server" class="form-control" tabindex="4" 
+                                DataSourceID="SqlDataSource2"
+                                 DataTextField="NOMBRE_PERIODO" 
+                                DataValueField="ID_PERIODO">
+                            </asp:DropDownList>
+                        </td>
+                </tr>
+                <tr>
+                        <td>Area:</td>
+                        <td colspan=2><asp:DropDownList ID="ddlArea" runat="server" class="form-control" tabindex="5" 
+                                 DataSourceID="SqlDataSource3" 
+                                DataTextField="NOMBRE_CORTO" 
+                                DataValueField="ID_AREA">
+                            </asp:DropDownList>
+                        </td>
+                   </tr>
+<%--                 <tr>
+                        <td>Materia:</td>
+                        <td colspan=2><asp:DropDownList ID="ddlMateria" runat="server" class="form-control" tabindex="5" 
+                                DataSourceID="SqlDataSource4" 
+                                DataTextField="NOMBRE_PERIODO" 
+                                DataValueField="ID_PERIODO">
+                            </asp:DropDownList>
+                        </td>
+                   </tr>--%>
+                     <!--<a href="#" class="btn btn-primary" >Enviar</a>-->
+                    <br />
+                    <asp:Button ID="btnEnviar" class="btn btn-primary" runat="server" Text="Enviar" OnClick="btnEnviar_Click" />
+                  
+                </div>
+
+                <br />
+                <br />
+
+                <asp:TreeView ID="TreeView1" runat="server" DataSourceID ="SiteMapDSMenuPrincipal">
+                </asp:TreeView>
+
+            </div>
+            <div class="col-md-10">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src= "/WebApplocation1/Scripts/modernizr.custom.54131.js" type="text/javascript"></script>
+
+        <asp:SiteMapDataSource ID="SiteMapDSMenuPrincipal" runat="server" />
+
+       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_PLANTEL], [NOMBRE] FROM [PLANTEL]" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_PERIODO], [NOMBRE_PERIODO] FROM [PERIODO]" OnSelecting="SqlDataSource2_Selecting"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_AREA], [NOMBRE_CORTO] FROM [AREA]" OnSelecting="SqlDataSource3_Selecting"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_PERIODO], [NOMBRE_PERIODO] FROM [PERIODO]" OnSelecting="SqlDataSource4_Selecting"></asp:SqlDataSource>
+                             
+
+               
+
+    </form>
+    </body>
+</html>
