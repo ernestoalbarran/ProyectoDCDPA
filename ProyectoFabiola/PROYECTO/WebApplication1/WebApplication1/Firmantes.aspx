@@ -117,10 +117,9 @@
                         <tr>
                  <td >
 
-                     <div class="center-block">
+                     
                         <asp:Button ID="btnInsert" runat="server" Text="Guardar
                             " OnClick="btnInsert_Click" class="btn btn-primary" />
-                         </div>
                  </td>      
                
             </tr>   

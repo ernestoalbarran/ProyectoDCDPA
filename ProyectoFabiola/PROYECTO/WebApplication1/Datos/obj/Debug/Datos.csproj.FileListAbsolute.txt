@@ -19,3 +19,17 @@ D:\WebApplication1\Datos\bin\Debug\Datos.dll
 D:\WebApplication1\Datos\bin\Debug\Datos.pdb
 D:\WebApplication1\Datos\bin\Debug\Comun.dll
 D:\WebApplication1\Datos\bin\Debug\Comun.pdb
+C:\Users\GENESIS\Desktop\ProyectoDCDPA-master\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Datos.dll
+C:\Users\GENESIS\Desktop\ProyectoDCDPA-master\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Datos.pdb
+C:\Users\GENESIS\Desktop\ProyectoDCDPA-master\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Comun.dll
+C:\Users\GENESIS\Desktop\ProyectoDCDPA-master\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Comun.pdb
+C:\Users\GENESIS\Desktop\ProyectoDCDPA-master\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\GENESIS\Desktop\ProyectoDCDPA-master\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.dll
+C:\Users\GENESIS\Desktop\ProyectoDCDPA-master\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.pdb
+C:\FABIOLA\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Datos.dll
+C:\FABIOLA\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Datos.pdb
+C:\FABIOLA\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Comun.dll
+C:\FABIOLA\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Comun.pdb
+C:\FABIOLA\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\FABIOLA\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.dll
+C:\FABIOLA\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.pdb

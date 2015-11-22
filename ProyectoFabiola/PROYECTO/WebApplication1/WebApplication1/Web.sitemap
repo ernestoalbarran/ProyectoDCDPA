@@ -6,9 +6,13 @@
     <siteMapNode title="Sesiones" description="Página de Informes y proyetos"
        url="~/AdminPages/Admin.aspx">
     </siteMapNode>
+<<<<<<< HEAD
     <!--<siteMapNode title="Consejeros-Firmas" description="Página de Consejeros-Firmas"
        url="~/Firmantes.aspx">
     </siteMapNode>-->
+=======
+
+>>>>>>> fe1e69aa4303a5c1ff3b122f000e7e9b539eb24a
     <siteMapNode title="Permisos Planteles" description="Página de Permisos Planteles "
        url="~/AdminPages/nada1.aspx">
     </siteMapNode>
