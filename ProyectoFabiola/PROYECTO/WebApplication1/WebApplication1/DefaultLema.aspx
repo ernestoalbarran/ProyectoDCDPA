@@ -37,6 +37,7 @@
                 <td colspan=5>
                     <asp:TextBox TextMode="Multiline" ID="txdescripcion" runat="server" class="form-control input-lg" placeholder="DESCRIPCION"
                                   TabIndex="2"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txdescripcion" ErrorMessage="Un Lema necesita una descripción" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>

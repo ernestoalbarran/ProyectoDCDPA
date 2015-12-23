@@ -221,7 +221,7 @@
              <tr>
                 <td class="auto-style2">&nbsp;</td>
                 <td colspan="2">
-                    <asp:Button ID="btGuardarProy" runat="server" Text="Guardar Proyecto" OnClick="btnGuardarProy" class="btn btn-primary"  />
+                    <asp:Button ID="btActualizarProy" runat="server" Text="Actualizar Proyecto" OnClick="btnActualizarProy" class="btn btn-primary"  />
                 </td>
                 <td>
                     &nbsp;</td>

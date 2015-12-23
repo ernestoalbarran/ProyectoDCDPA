@@ -24,12 +24,13 @@
              </tr>-->
             <tr >
                 <td >
-                    FECHA DE INICIO DEL PERIODO:
+                    FECHA DE INICIO DEL PERIODO:los illuminati
                 </td>
                 <td colspan=2>
                     <asp:TextBox ID="txFechaI" runat="server" class="form-control input-lg"  Enabled="False"  />
                     <asp:ImageButton ID="ImageButton1" runat="server" Height="20px" ImageUrl="~/Images/calendario1.jpg" OnClick="ImageButton1_Click" Width="27px" />
-                    <br />
+                    &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Es necesario ingresar fecha de inicio y fin del periodo" ControlToValidate="txFechaI"></asp:RequiredFieldValidator>
+                    &nbsp;<br />
                     <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="98px" OnSelectionChanged="Calendar1_SelectionChanged" Width="149px">
                         <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
                         <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
@@ -49,8 +50,8 @@
                 <td colspan=2>
                     <asp:TextBox ID="txFechaF" runat="server"  class="form-control input-lg" Enabled="False"  />
                 <asp:ImageButton ID="ImageButton2" runat="server" Height="20px" ImageUrl="~/Images/calendario2.jpg" Width="26px" OnClick="ImageButton2_Click1" />
-
-                    <br />
+                    <asp:comparevalidator id="cvFecha" runat="server" Display="Dynamic" ControlToValidate="txFechaF" ErrorMessage="Debes ingresar Fecha de inicio del periodo" Type="String" Operator="LessThan">*</asp:comparevalidator>
+                <br />
                     <asp:Calendar ID="Calendar2" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="114px" Width="151px" OnSelectionChanged="Calendar2_SelectionChanged" style="margin-right: 0px">
                         <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
                         <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />

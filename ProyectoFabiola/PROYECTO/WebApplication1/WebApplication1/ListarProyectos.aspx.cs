@@ -27,23 +27,24 @@ namespace WebApplication1
             }
         }
 
-        protected void GridProyectos_RowCommand(object sender, GridViewCommandEventArgs e)
+       /* protected void GridProyectos_RowCommand(object sender, GridViewCommandEventArgs e)
          {
-             /*if (e.CommandName == "EditarProyecto")
+             if (e.CommandName == "EditarProyecto")
              {
                  string sProyectoId = e.CommandArgument.ToString();
-                 Response.Redirect("AltaProyecto.aspx?=" + sProyectoId);
-             }*/
+                 Response.Redirect("ActualizarProyecto.aspx?Id="+ sProyectoId, false);
+                 Context.ApplicationInstance.CompleteRequest();
+             }
             if (e.CommandName == "EliminarProyecto")
              {
                  Proyecto proyecto = new Proyecto();
-                 proyecto.ID_PROYECTO=Convert.ToInt32(e.CommandArgument.ToString());
+                 proyecto.Grupo=e.CommandArgument.ToString();
                  NegocioProyecto.DeleteProyecto(proyecto);
                  DataSet ds = NegocioProyecto.GetProyecto();
                  GridProyectos.DataSource = ds.Tables[0];
                  GridProyectos.DataBind();
              }
-         }
+         }*/
 
 
         protected void GridProyectos_SelectedIndexChanged(object sender, EventArgs e)

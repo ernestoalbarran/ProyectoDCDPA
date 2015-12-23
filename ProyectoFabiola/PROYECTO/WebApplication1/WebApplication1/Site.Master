@@ -73,7 +73,7 @@
                             <asp:DropDownList ID="ddlPlantel" runat="server" class="form-control" tabindex="3" 
                                 DataSourceID="SqlDataSource1"
                                  DataTextField="NOMBRE" 
-                                DataValueField="ID_PLANTEL">
+                                DataValueField="ID_PLANTEL" OnSelectedIndexChanged="ddlPlantel_SelectedIndexChanged">
                             </asp:DropDownList>
                             
                  </td>

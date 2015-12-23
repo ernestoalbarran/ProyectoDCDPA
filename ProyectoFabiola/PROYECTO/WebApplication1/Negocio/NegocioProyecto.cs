@@ -17,24 +17,50 @@ namespace PCEPI.Negocio
         {
             SqlParameter[] dbParams = new SqlParameter[]
             {
-                DBHelper.MakeParam("@PLANTEL", SqlDbType.VarChar,0,proyecto.PLANTEL),
-                DBHelper.MakeParam("@PERIODO", SqlDbType.VarChar,0,proyecto.PERIODO),
-                DBHelper.MakeParam("@ID_AREA", SqlDbType.Int,0,proyecto.ID_AREA),
-                DBHelper.MakeParam("@NUM_OFICIO", SqlDbType.VarChar,0,proyecto.NUM_OFICIO),
-                DBHelper.MakeParam("@FECHA_EVAL", SqlDbType.DateTime,0,proyecto.FECHA_EVAL),
-                DBHelper.MakeParam("@TITULO", SqlDbType.VarChar,0,proyecto.TITULO),
-                DBHelper.MakeParam("@PRODUCTO", SqlDbType.VarChar,0,proyecto.PRODUCTO),
-                DBHelper.MakeParam("@CAMPO", SqlDbType.VarChar,0,proyecto.CAMPO),
-                DBHelper.MakeParam("@MATERIA", SqlDbType.Char,0,proyecto.MATERIA),
-                DBHelper.MakeParam("@DESCRIPCION_PROY", SqlDbType.VarChar,0,proyecto.DESCRIPCION_PROY),
-                DBHelper.MakeParam("@OPINION_DIR", SqlDbType.VarChar,0,proyecto.OPINION_DIR),
-                DBHelper.MakeParam("@OBSERVACIONES", SqlDbType.VarChar,0,proyecto.OBSERVACIONES),
-                DBHelper.MakeParam("@PROFESOR", SqlDbType.Char,0,proyecto.PROFESOR)
-
+                DBHelper.MakeParam("@Grupo", SqlDbType.Char,0,proyecto.Grupo),
+                DBHelper.MakeParam("@Periodo", SqlDbType.Char,0,proyecto.Periodo),
+                DBHelper.MakeParam("@Interarea", SqlDbType.Char,0,proyecto.Interarea),
+                DBHelper.MakeParam("@Interplantel", SqlDbType.Char,0,proyecto.Interplantel),
+                DBHelper.MakeParam("@P_asignatura", SqlDbType.Char,0,proyecto.P_asignatura),
+                DBHelper.MakeParam("@Oficio", SqlDbType.Char,0,proyecto.Oficio),
+                DBHelper.MakeParam("@Fecha_ev1", SqlDbType.DateTime,0,proyecto.Fecha_ev1),
+                DBHelper.MakeParam("@Fecha_ev2", SqlDbType.DateTime,0,proyecto.Fecha_ev2),
+                DBHelper.MakeParam("@Titulo", SqlDbType.VarChar,0,proyecto.Titulo),
+                DBHelper.MakeParam("@Producto", SqlDbType.VarChar,0,proyecto.Producto),
+                DBHelper.MakeParam("@Campo", SqlDbType.Char,0,proyecto.Campo),
+                DBHelper.MakeParam("@Asignaturas", SqlDbType.VarChar,0,proyecto.Asignaturas),
+                DBHelper.MakeParam("@Descripcion", SqlDbType.VarChar,0,proyecto.Descripcion),
+                DBHelper.MakeParam("@Opinion_dir", SqlDbType.Char,0,proyecto.Opinion_dir),
+                DBHelper.MakeParam("@Observaciones", SqlDbType.VarChar,0,proyecto.Observaciones)
             };
 
-        return Convert.ToInt32(DBHelper.ExecuteScalar("usp_AltaProyecto_Insertar",dbParams));
+            return Convert.ToInt32(DBHelper.ExecuteScalar("usp_Insertar_Proyectogrupos1", dbParams));
         }
+
+
+
+      /*  public static int Actualizar(Proyecto proyecto)
+        {
+            SqlParameter[] dbParams = new SqlParameter[]
+            {
+               DBHelper.MakeParam("@Grupo", SqlDbType.Char,0,proyecto.Grupo),
+                DBHelper.MakeParam("@Periodo", SqlDbType.Char,0,proyecto.Periodo),
+                DBHelper.MakeParam("@Interarea", SqlDbType.Char,0,proyecto.Interarea),
+                DBHelper.MakeParam("@Interplantel", SqlDbType.Char,0,proyecto.Interplantel),
+                DBHelper.MakeParam("@P_asignatura", SqlDbType.Char,0,proyecto.P_asignatura),
+                DBHelper.MakeParam("@Oficio", SqlDbType.Char,0,proyecto.Oficio),
+                DBHelper.MakeParam("@Fecha_ev1", SqlDbType.DateTime,0,proyecto.Fecha_ev1),
+                DBHelper.MakeParam("@Fecha_ev2", SqlDbType.DateTime,0,proyecto.Fecha_ev2),
+                DBHelper.MakeParam("@Titulo", SqlDbType.VarChar,0,proyecto.Titulo),
+                DBHelper.MakeParam("@Producto", SqlDbType.VarChar,0,proyecto.Producto),
+                DBHelper.MakeParam("@Campo", SqlDbType.Char,0,proyecto.Campo),
+                DBHelper.MakeParam("@Asignaturas", SqlDbType.VarChar,0,proyecto.Asignaturas),
+                DBHelper.MakeParam("@Descripcion", SqlDbType.VarChar,0,proyecto.Descripcion),
+                DBHelper.MakeParam("@Opinion_dir", SqlDbType.Char,0,proyecto.Opinion_dir),
+                DBHelper.MakeParam("@Observaciones", SqlDbType.VarChar,0,proyecto.Observaciones)
+            };
+            return Convert.ToInt32(DBHelper.ExecuteScalar("usp_Actualizar_Proyecto", dbParams));
+        }*/
 
         public static DataSet GetProyecto()
         {
@@ -44,7 +70,7 @@ namespace PCEPI.Negocio
             return DBHelper.ExecuteDataSet("usp_ListProyecto_GetProyecto", dbParams);
         }
 
-        public static DataSet GetProyectoID(Proyecto proyecto)
+        /*public static DataSet GetProyectoID(Proyecto proyecto)
         {
             SqlParameter[] dbParams = new SqlParameter[]
             {
@@ -69,17 +95,28 @@ namespace PCEPI.Negocio
                 DBHelper.MakeParam("@Id",SqlDbType.Int,0,proyecto.ID_PROYECTO)
             };
             return DBHelper.ExecuteDataSet("usp_ListProyecto_DeleteProyecto", dbParams);
-        }
+        }*/
 
         public static DataSet GetProfesor(ProfesorProyecto profesor, MateriaProyecto materia)
         {
-            /*SqlParameter[] dbParams = new SqlParameter[]
+            SqlParameter[] dbParams = new SqlParameter[]
             {   
                 DBHelper.MakeParam("@ID_PLANTEL",SqlDbType.VarChar,0,profesor.ID_PLANTEL)
 
-            };*/
+            };
             
             return DBHelper.ListarProfesores(profesor, materia);
+        }
+
+        public static DataSet GetProfesorActualizar(ProfesorProyecto profesorA, MateriaProyecto materiaA, Proyecto proyecto)
+        {
+           /* SqlParameter[] dbParams = new SqlParameter[]
+            {   
+                DBHelper.MakeParam("@ID_PLANTEL",SqlDbType.VarChar,0,profesorA.ID_PLANTEL)
+
+            };*/
+
+            return DBHelper.ListarProfesoresActualizar(profesorA, materiaA, proyecto);
         }
 
     }

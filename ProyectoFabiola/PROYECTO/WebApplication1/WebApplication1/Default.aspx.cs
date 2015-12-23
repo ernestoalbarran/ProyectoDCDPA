@@ -13,7 +13,7 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           if (Roles.IsUserInRole("Administrador"))
+           if (Roles.IsUserInRole("Administrador")) 
            {
                /*
                LinkButton link = (LinkButton)LoginView1.FindControl("btnAdmin");
@@ -34,6 +34,8 @@ namespace WebApplication1
                Response.Redirect("~/Principal.aspx");
            
            }
+
+           if (Roles.IsUserInRole("Jefe Sección")) { Response.Redirect("~/Principal.aspx"); }
         }
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)

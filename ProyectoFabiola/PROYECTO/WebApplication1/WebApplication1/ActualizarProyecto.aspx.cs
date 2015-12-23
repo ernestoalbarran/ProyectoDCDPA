@@ -18,21 +18,56 @@ namespace WebApplication1
 {
     public partial class ActualizarProyecto : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+     /*   protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
+
+               /* 
                 lblPeriodo.Text = Session["Proyecto"].ToString();
                 lblMateria.Text = Session["Area"].ToString(); // se debe hacer el cambio de materia por area en la pagina donde se despliega
                 lblPlantel.Text = Session["Plantel"].ToString();
 
-                ProfesorProyecto profesor = new ProfesorProyecto();
-                profesor.ID_PLANTEL = Session["Id_Plantel"].ToString();
+               */
+        /*
+                string IdP = Request.QueryString["Id"];
+                int ProyectoID = Convert.ToInt32(IdP);
 
-                MateriaProyecto materia = new MateriaProyecto();
-                materia.AREA = Convert.ToInt32(Session["Id_Area"].ToString()); ;
+                Proyecto proyecto = new Proyecto();
+                proyecto.Grupo = ProyectoID;
 
-                DataSet dsProfesor = NegocioProyecto.GetProfesor(profesor,materia);
+
+                DataSet ds = NegocioProyecto.GetProyectoIDActualizar(proyecto);
+                DataRow dr = ds.Tables[0].Rows[0];
+
+                lblPlantel.Text = dr["PLANTEL"].ToString();
+                lblPeriodo.Text = dr["PERIODO"].ToString();
+                lblMateria.Text = dr["ID_AREA"].ToString();
+                txtNumOfice.Text = dr["NUM_OFICIO"].ToString();
+                txtFechaEval.Text = Convert.ToString(dr["FECHA_EVAL"].ToString());
+                txtTitulo.Text = dr["TITULO"].ToString();
+                txtProducto.Text = dr["PRODUCTO"].ToString();
+                ddlCampo.SelectedItem.Text = dr["CAMPO"].ToString();
+                ListBoxMateriasP.Items.Add(dr["MATERIA40"].ToString());          
+                txtADescProy.Text = dr["DESCRIPCION_PROY"].ToString();
+                ddlOpinion.SelectedItem.Text = dr["OPINION_DIR"].ToString();
+                txtObservaciones.Text = dr["OBSERVACIONES"].ToString();
+                ListBoxProfProy.Items.Add(dr["NOMBRE"].ToString());
+               
+                
+                
+                
+                ProfesorProyecto profesorA = new ProfesorProyecto();
+                profesorA.ID_PLANTEL = dr["Id_Plantel"].ToString();
+
+                MateriaProyecto materiaA = new MateriaProyecto();
+                materiaA.AREA = Convert.ToInt32(dr["ID_AREA"].ToString());
+               
+                
+                
+               //DataSet dsProfesor = NegocioProyecto.GetProfesor(profesorA, materiaA);
+              DataSet dsProfesor = NegocioProyecto.GetProfesorActualizar(profesorA,materiaA, proyecto);
+
 
                 ListBoxProfesor.DataSource = dsProfesor.Tables[0];
                 ListBoxProfesor.DataTextField ="NOMBRE";
@@ -44,8 +79,13 @@ namespace WebApplication1
                 ListBoxMaterias.DataValueField = "ID_AREA";
                 ListBoxMaterias.DataBind();
 
+                
+              
 
-            }
+                
+
+
+            }*/
            /* if (!Page.IsPostBack)
             {
                 if (Request.QueryString["Id"] != null)
@@ -61,10 +101,10 @@ namespace WebApplication1
             //NegocioMateria ltMaterias = new NegocioMateria();
 
             //ListBoxMaterias.DataSource = ltMaterias.ObtenerMat(id_Area);
-            
+      /*      
         }
 
-       /* private void CargarDatos(int ProyectoID)
+       private void CargarDatos(int ProyectoID)
         {
             Proyecto proyecto = new Proyecto();
             proyecto.ID_PROYECTO = ProyectoID;
@@ -79,12 +119,12 @@ namespace WebApplication1
             txtTitulo.Text=dr["TITULO"].ToString();
             txtProducto.Text=dr["PRODUCTO"].ToString();
             ddlCampo.SelectedItem.Text=dr["CAMPO"].ToString();
-            ListBoxMateriasP.SelectedItem.Text=dr["MATERIA"].ToString();
+            ListBoxMateriasP.SelectedItem.Text=dr["MATERIA40"].ToString();
             txtADescProy.Text=dr["DESCRIPCION_PROY"].ToString();
-            ddlOpinion.SelectedItem.Text=dr["OPINION"].ToString();
+            ddlOpinion.SelectedItem.Text=dr["OPINION_DIR"].ToString();
             txtObservaciones.Text=dr["OBSERVACIONES"].ToString();
-            ListBoxProfProy.SelectedItem.Text=dr["PROFESOR"].ToString();
-        }*/
+            ListBoxProfProy.SelectedItem.Text=dr["NOMBRE"].ToString();
+        }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -138,33 +178,37 @@ namespace WebApplication1
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
 
-        }
+        }*/
 
      
 
 
-        protected void btnGuardarProy(object sender, EventArgs e)
+       /* protected void btnActualizarProy(object sender, EventArgs e)
         {
             try
             {
+                string IdP = Request.QueryString["Id"];
+                int ProyectoID = Convert.ToInt32(IdP);
+
                 Proyecto proyecto = new Proyecto();
+                proyecto.ID_PROYECTO = ProyectoID;
                 proyecto.PLANTEL = lblPlantel.Text;
                 proyecto.PERIODO = lblPeriodo.Text;
-                proyecto.ID_AREA = Convert.ToInt32(Session["Id_Area"].ToString());
+                proyecto.ID_AREA = Convert.ToInt32(lblMateria.Text);
                 proyecto.NUM_OFICIO = txtNumOfice.Text;
                 proyecto.FECHA_EVAL = Convert.ToDateTime(txtFechaEval.Text);
                 proyecto.TITULO = txtTitulo.Text;
                 proyecto.PRODUCTO = txtProducto.Text;
                 proyecto.CAMPO = ddlCampo.SelectedItem.Text;
-                proyecto.MATERIA = ListBoxMateriasP.SelectedItem.Text;
                 proyecto.DESCRIPCION_PROY = txtADescProy.Text;
                 proyecto.OPINION_DIR = ddlOpinion.SelectedItem.Text;
                 proyecto.OBSERVACIONES = txtObservaciones.Text;
-                proyecto.PROFESOR = ListBoxProfProy.SelectedItem.Text;
+                //proyecto.PROFESOR = ListBoxProfProy.SelectedItem.Text;
+                //proyecto.MATERIA = ListBoxMateriasP.SelectedItem.Text;
 
-                if (NegocioProyecto.Insertar(proyecto) > 0)
+                if (NegocioProyecto.Actualizar(proyecto) > 0)
                 {
-                    MessageBox.Show("Se inserto el proyecto correctamente");
+                    MessageBox.Show("Se actualizo el proyecto correctamente");
                     Response.Redirect("ListarProyectos.aspx", false);
 
                 }
@@ -177,9 +221,9 @@ namespace WebApplication1
 
 
             //AltaProyecto.Insertar(proyecto);
+            */
 
-
-        }
+       /* }
 
         protected void ButtondellMateria_Click(object sender, EventArgs e)
         {
@@ -188,18 +232,18 @@ namespace WebApplication1
                 MessageBox.Show("No se eligieron materias para eliminar de la lista");
             }
             else
-            {
+            {*/
                 /*ListItem materiaProy = ListBoxMateriasP.SelectedItem;
                 ListBoxMaterias.Items.Add(materiaProy);
                 ListBoxMateriasP.Items.Remove(ListBoxMaterias.SelectedItem);*/
 
-                ListBoxMaterias.Items.Add(ListBoxMateriasP.SelectedItem);
+              /*  ListBoxMaterias.Items.Add(ListBoxMateriasP.SelectedItem);
                 ListBoxMateriasP.Items.Remove(ListBoxMaterias.SelectedItem);
             }
         
-        }
+        */
 
-        protected void ButtondelProf_Click(object sender, EventArgs e)
+       /* protected void ButtondelProf_Click(object sender, EventArgs e)
         {
 
             if (ListBoxProfProy.SelectedIndex == -1)
@@ -213,5 +257,5 @@ namespace WebApplication1
             }
         }
        
-    }
+    */}
 }

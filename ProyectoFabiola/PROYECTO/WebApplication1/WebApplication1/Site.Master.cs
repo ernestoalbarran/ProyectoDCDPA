@@ -100,7 +100,12 @@ namespace WebApplication1
             Session.Add("Id_Area", ddlArea.SelectedItem.Value);
             //Session.Add("Materia", ddlMateria.SelectedItem.Text);
             //Session.Add("id_Materia", ddlMateria.SelectedItem.Value);
-            Response.Redirect("~/AltaProyecto.aspx");
+            Response.Redirect("~/DefaultProyecto.aspx");
+        }
+
+        protected void ddlPlantel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

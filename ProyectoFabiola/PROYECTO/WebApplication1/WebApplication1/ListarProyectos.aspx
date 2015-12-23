@@ -63,6 +63,13 @@
                           <asp:Label runat="server" ID="lblTITULO" Text='<%# Eval("TITULO") %>'></asp:Label>
                       </ItemTemplate>
                   </asp:TemplateField>
+
+                            <asp:TemplateField HeaderText="Acciones" HeaderStyle-Width="100px">
+                      <ItemTemplate>
+                          <asp:ImageButton runat="server" ID="btnEditar" AlternateText="Editar Proyecto" ToolTip="Editar Proyecto" CssClass="cBotones" ImageUrl="~/Images/edit.png" CommandName="EditarProyecto"  CommandArgument='<%# Eval("ID_PROYECTO") %>'/>
+                          <asp:ImageButton runat="server" ID="btnEliminar" AlternateText="Eliminar Proyecto" ToolTip="Eliminar Proyecto" CssClass="cBotones" ImageUrl="~/Images/eliminar.gif"  CommandName="EliminarProyecto" CommandArgument='<%# Eval("ID_PROYECTO") %>'/>
+                      </ItemTemplate>
+                  </asp:TemplateField>
                
                   
               </Columns>

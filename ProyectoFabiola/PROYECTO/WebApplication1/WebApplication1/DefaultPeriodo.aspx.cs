@@ -17,6 +17,7 @@ namespace PCEPI.Presentacion
         {
             if (!IsPostBack)
             {
+          
                 Calendar1.Visible = false;
                 Calendar2.Visible = false;
                 LoadGrid();
@@ -27,25 +28,32 @@ namespace PCEPI.Presentacion
         protected void btnInsert_Click(object sender, EventArgs e)
         {
 
-
             NegocioPeriodo NegPer = new NegocioPeriodo();
 
             String nombre = "";
             String fechaIni = Calendar1.SelectedDate.ToShortDateString();
             String fechaFin = Calendar2.SelectedDate.ToShortDateString();
-
+            String F = "0001";
+            
 
             nombre = fechaIni.Substring(6, 4) + " - " + fechaFin.Substring(6, 4);
-
-            if (NegPer.AltaPeriodo(nombre, DateTime.Parse(fechaIni), DateTime.Parse(fechaFin)) > 0)
-            {
-                //se manda a llamar al load grid para que cada vez que 
-                //se inserte un auto se refleje a la hora de cargar el grid
-                LoadGrid();
-                MessageBox.Show("Lema Insertado");
+            bool b = nombre.Contains(F);
+            if (b!=true)
+               {
+                    if (NegPer.AltaPeriodo(nombre, DateTime.Parse(fechaIni), DateTime.Parse(fechaFin)) > 0)
+                    {
+                        //se manda a llamar al load grid para que cada vez que 
+                        //se inserte un auto se refleje a la hora de cargar el grid 
+                        LoadGrid();
+                        MessageBox.Show("Lema Insertado");
+                    }
             }
-
-        }
+            else
+            {
+                MessageBox.Show("Necesitas ingresar una fecha para periodo que sea valida");
+            }
+                
+         }
 
 
         protected void Reset_Lemas_Click(object sender, EventArgs e)

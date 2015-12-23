@@ -34,21 +34,28 @@ namespace PCEPI.Presentacion
            
 
             NegocioLemas NegLem = new NegocioLemas();
-
-            int id_periodo = int.Parse(periodo.SelectedValue);
-            MessageBox.Show("ID periodo" + id_periodo);
-           //NegLem.RELACION_LP(txtitulo.Text, txdescripcion.Text, id_periodo);
             
-            if (NegLem.RELACION_LP(txtitulo.Text, txdescripcion.Text,id_periodo)>0)
+            String Validacion=txdescripcion.Text;
+            Int64 valida = Validacion.LongCount();
+            if (valida != 0)
             {
-                //se manda a llamar al load grid para que cada vez que 
-                //se inserte un auto se refleje a la hora de cargar el grid
-                LoadGrid();
-                MessageBox.Show("Lema Insertado");
-                
+                int id_periodo = int.Parse(periodo.SelectedValue);
+                MessageBox.Show("ID periodo" + id_periodo);
+                //NegLem.RELACION_LP(txtitulo.Text, txdescripcion.Text, id_periodo);
+
+                if (NegLem.RELACION_LP(txtitulo.Text, txdescripcion.Text, id_periodo) > 0)
+                {
+                    //se manda a llamar al load grid para que cada vez que 
+                    //se inserte un auto se refleje a la hora de cargar el grid
+                    LoadGrid();
+                    MessageBox.Show("Lema Insertado");
+
+                }
+                Reset_Lemas_Click(NegLem, e);
+                grvLemas.SetPageIndex(grvLemas.PageCount);
             }
-            Reset_Lemas_Click(NegLem, e);
-            grvLemas.SetPageIndex(grvLemas.PageCount);
+            else
+                MessageBox.Show("Debes de ingresar una descripcion al lema");
             
         }
 
