@@ -1,0 +1,20 @@
+USE [PCEPI2]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_OBTENER_INTEGRANTE_ACTUALIZAR]    Script Date: 11/22/2015 12:28:36 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+alter PROCEDURE [dbo].[SP_ACTUALIZAR]
+	@ID_PLANTEL int,
+	@idProyecto int
+AS	
+
+declare @@var varchar(6)
+SET @@var = CONVERT(varchar(6),@ID_PLANTEL)
+
+SELECT NOMBRE, RFC FROM PROFESOR 
+WHERE ID_PLANTEL LIKE '%' + @@var + '%' AND RFC <> (SELECT RFC FROM PROYECTO_MP WHERE ID_PROYECTO LIKE @idProyecto) ORDER BY RFC
+
+
+

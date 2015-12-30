@@ -53,6 +53,14 @@ namespace WebApplication1
                 // Set Anti-XSRF token
                 ViewState[AntiXsrfTokenKey] = Page.ViewStateUserKey;
                 ViewState[AntiXsrfUserNameKey] = Context.User.Identity.Name ?? String.Empty;
+
+                if ((string)Session["usuario"] == "Administrador") 
+                {
+                    lplantel.Visible = true;
+                    ddlPlantel.Visible = true;
+                    larea.Visible = true;
+                    ddlArea.Visible = true;
+                }
             }
             else
             {
@@ -92,15 +100,23 @@ namespace WebApplication1
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
-            Session.Add("Plantel", ddlPlantel.SelectedItem.Text);
-            Session.Add("Id_Plantel", ddlPlantel.SelectedItem.Value);
-            Session.Add("Proyecto", ddlProyecto.SelectedItem.Text);
-            Session.Add("Id_Proyecto", ddlProyecto.SelectedItem.Value);
-            Session.Add("Area", ddlArea.SelectedItem.Text);
-            Session.Add("Id_Area", ddlArea.SelectedItem.Value);
-            //Session.Add("Materia", ddlMateria.SelectedItem.Text);
-            //Session.Add("id_Materia", ddlMateria.SelectedItem.Value);
-            Response.Redirect("~/AltaProyecto.aspx");
+            if ((string)Session["usuario"] == "Administrador")
+            {
+                Session.Add("Plantel", ddlPlantel.SelectedItem.Text);
+                Session.Add("Id_Plantel", ddlPlantel.SelectedItem.Value);
+                Session.Add("Proyecto", ddlProyecto.SelectedItem.Text);
+                Session.Add("Id_Proyecto", ddlProyecto.SelectedItem.Value);
+                Session.Add("Area", ddlArea.SelectedItem.Text);
+                Session.Add("Id_Area", ddlArea.SelectedItem.Value);
+                //Session.Add("Materia", ddlMateria.SelectedItem.Text);
+                //Session.Add("id_Materia", ddlMateria.SelectedItem.Value);
+                Response.Redirect("~/DefaultProyecto.aspx");
+            }
+        }
+
+        protected void ddlPlantel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

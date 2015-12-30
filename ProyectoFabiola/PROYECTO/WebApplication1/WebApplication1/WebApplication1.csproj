@@ -38,6 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=15.1.4.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -131,22 +135,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Account\Actividad.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Manage.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\Usuarios.aspx" />
     <Content Include="AltaProyecto.aspx" />
-    <Content Include="DefaultCampos.aspx" />
-    <Content Include="DefaultLema.aspx" />
-    <Content Include="DefaultPeriodo.aspx" />
+    <Content Include="Documentos.aspx" />
+    <Content Include="Members\PROYECTOS\ConsultaProyecto.aspx" />
+    <Content Include="ActualizarProyecto.aspx" />
+    <Content Include="Members\CAMPOS\DefaultCampos.aspx" />
+    <Content Include="Members\LEMAS\DefaultLema.aspx" />
+    <Content Include="Members\PERIODO\DefaultPeriodo.aspx" />
+    <Content Include="DefaultProyecto.aspx" />
+    <Content Include="Firmantes.aspx" />
+    <Content Include="Images\Actualizacion_del_Protocolo_de_equivalencias.png" />
     <Content Include="Images\calendario1.jpg" />
     <Content Include="Images\calendario2.jpg" />
+    <Content Include="Images\Campos_de_Actividad_Proyectos_2015-2016.png" />
+    <Content Include="Images\Creacion_de_Grupos.png" />
     <Content Include="Images\dcdpa.jpg" />
     <Content Include="Images\dcdpa_logo.png" />
     <Content Include="Images\DGCCH.png" />
     <Content Include="Images\edit.png" />
     <Content Include="Images\eliminar.gif" />
+    <Content Include="Images\Protocolo_de_equivalencias.png" />
     <Content Include="Images\sin_foto.jpg" />
     <Content Include="Interface\Administracion\administrador.aspx" />
     <Content Include="Contact.aspx" />
@@ -223,9 +238,16 @@
     <Content Include="Global.asax" />
     <Content Include="Interface\Jefe_Seccion\jefeSeccion.aspx" />
     <Content Include="ListarProyectos.aspx" />
+    <Content Include="Members\PERMISOS_PLANTELES\permisosPlanteles.aspx" />
+    <Content Include="Members\SESIONES\sesiones_Inf_Proy.aspx" />
     <Content Include="packages.config" />
     <Content Include="Images\dcdpa only circle.psd" />
+    <Content Include="Documentos\Protocolo.pdf" />
+    <Content Include="Documentos\Protocolo2008.pdf" />
+    <Content Include="Documentos\Suplemento2015-2016.pdf" />
+    <Content Include="Documentos\Suplemento_Especial_13.pdf" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Periodos.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -278,6 +300,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\Actividad.aspx.cs">
+      <DependentUpon>Actividad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Actividad.aspx.designer.cs">
+      <DependentUpon>Actividad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Usuarios.aspx.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Usuarios.aspx.designer.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AltaProyecto.aspx.cs">
       <DependentUpon>AltaProyecto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -285,26 +321,61 @@
     <Compile Include="AltaProyecto.aspx.designer.cs">
       <DependentUpon>AltaProyecto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DefaultCampos.aspx.cs">
+    <Compile Include="Documentos.aspx.cs">
+      <DependentUpon>Documentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Documentos.aspx.designer.cs">
+      <DependentUpon>Documentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\PROYECTOS\ConsultaProyecto.aspx.cs">
+      <DependentUpon>ConsultaProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\PROYECTOS\ConsultaProyecto.aspx.designer.cs">
+      <DependentUpon>ConsultaProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizarProyecto.aspx.cs">
+      <DependentUpon>ActualizarProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarProyecto.aspx.designer.cs">
+      <DependentUpon>ActualizarProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\CAMPOS\DefaultCampos.aspx.cs">
       <DependentUpon>DefaultCampos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DefaultCampos.aspx.designer.cs">
+    <Compile Include="Members\CAMPOS\DefaultCampos.aspx.designer.cs">
       <DependentUpon>DefaultCampos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DefaultLema.aspx.cs">
+    <Compile Include="Members\LEMAS\DefaultLema.aspx.cs">
       <DependentUpon>DefaultLema.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DefaultLema.aspx.designer.cs">
+    <Compile Include="Members\LEMAS\DefaultLema.aspx.designer.cs">
       <DependentUpon>DefaultLema.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DefaultPeriodo.aspx.cs">
+    <Compile Include="Members\PERIODO\DefaultPeriodo.aspx.cs">
       <DependentUpon>DefaultPeriodo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DefaultPeriodo.aspx.designer.cs">
+    <Compile Include="Members\PERIODO\DefaultPeriodo.aspx.designer.cs">
       <DependentUpon>DefaultPeriodo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultProyecto.aspx.cs">
+      <DependentUpon>DefaultProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultProyecto.aspx.designer.cs">
+      <DependentUpon>DefaultProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Firmantes.aspx.cs">
+      <DependentUpon>Firmantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Firmantes.aspx.designer.cs">
+      <DependentUpon>Firmantes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interface\Administracion\administrador.aspx.cs">
       <DependentUpon>administrador.aspx</DependentUpon>
@@ -388,6 +459,27 @@
     </Compile>
     <Compile Include="ListarProyectos.aspx.designer.cs">
       <DependentUpon>ListarProyectos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\PERMISOS_PLANTELES\permisosPlanteles.aspx.cs">
+      <DependentUpon>permisosPlanteles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\PERMISOS_PLANTELES\permisosPlanteles.aspx.designer.cs">
+      <DependentUpon>permisosPlanteles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\SESIONES\sesiones_Inf_Proy.aspx.cs">
+      <DependentUpon>sesiones_Inf_Proy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\SESIONES\sesiones_Inf_Proy.aspx.designer.cs">
+      <DependentUpon>sesiones_Inf_Proy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Periodos.aspx.cs">
+      <DependentUpon>Periodos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Periodos.aspx.designer.cs">
+      <DependentUpon>Periodos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.aspx.cs">
       <DependentUpon>Principal.aspx</DependentUpon>

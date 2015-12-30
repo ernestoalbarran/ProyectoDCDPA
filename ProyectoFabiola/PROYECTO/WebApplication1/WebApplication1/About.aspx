@@ -3,32 +3,32 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <hgroup class="title">
         <h1><%: Title %>.</h1>
-        <h2>Your app description page.</h2>
+        <h2>DCDPA</h2>
     </hgroup>
 
     <article>
         <p>        
-            Use this area to provide additional information.
+            Dirección General del CCH
         </p>
 
         <p>        
-            Use this area to provide additional information.
+            Secretaría General
         </p>
 
         <p>        
-            Use this area to provide additional information.
+            Departamento de Control de Datos del Personal Académico
         </p>
     </article>
 
     <aside>
-        <h3>Aside Title</h3>
+        <h3>Contáctenos</h3>
         <p>        
-            Use this area to provide additional information.
+            5622 0182
         </p>
         <ul>
-            <li><a runat="server" href="~/">Home</a></li>
-            <li><a runat="server" href="~/About">About</a></li>
-            <li><a runat="server" href="~/Contact">Contact</a></li>
+            <li><a runat="server" href="~/">Inicio</a></li>
+            <li><a runat="server" href="http://www.cch.unam.mx/" Target="_blank">Colegio de Ciencias y Humanidades</a></li>
+            <li><a runat="server" href="https://www.unam.mx/" Target="_blank">UNAM</a></li>
         </ul>
     </aside>
 </asp:Content>

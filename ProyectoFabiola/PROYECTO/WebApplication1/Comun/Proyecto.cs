@@ -8,125 +8,161 @@ namespace PCEPI.Comun
 {
     public class Proyecto
     {
-        private int _ID_PROYECTO;
+        private String _grupo;
 
-        public int ID_PROYECTO
+        public String Grupo
         {
-            get { return _ID_PROYECTO; }
-            set { _ID_PROYECTO = value; }
+            get { return _grupo; }
+            set { _grupo = value; }
         }
-        private string _PLANTEL;
+        private String _periodo;
 
-        public string PLANTEL
+        public String Periodo
         {
-            get { return _PLANTEL; }
-            set { _PLANTEL = value; }
+            get { return _periodo; }
+            set { _periodo = value; }
         }
-        private string _PERIODO;
+        private String _interarea;
 
-        public string PERIODO
+        public String Interarea
         {
-            get { return _PERIODO; }
-            set { _PERIODO = value; }
+            get { return _interarea; }
+            set { _interarea = value; }
         }
-        private int _ID_AREA;
+        private String _interplantel;
 
-        public int ID_AREA
+        public String Interplantel
         {
-            get { return _ID_AREA; }
-            set { _ID_AREA = value; }
+            get { return _interplantel; }
+            set { _interplantel = value; }
         }
-        private string _NUM_OFICIO;
+        private String _p_asignatura;
 
-        public string NUM_OFICIO
+        public String P_asignatura
         {
-            get { return _NUM_OFICIO; }
-            set { _NUM_OFICIO = value; }
+            get { return _p_asignatura; }
+            set { _p_asignatura = value; }
         }
-        private DateTime _FECHA_EVAL;
+        private String _oficio;
 
-        public DateTime FECHA_EVAL
+        public String Oficio
         {
-            get { return _FECHA_EVAL; }
-            set { _FECHA_EVAL = value; }
+            get { return _oficio; }
+            set { _oficio = value; }
         }
-        private string _TITULO;
+        private DateTime _fecha_ev1;
 
-        public string TITULO
+        public DateTime Fecha_ev1
         {
-            get { return _TITULO; }
-            set { _TITULO = value; }
+            get { return _fecha_ev1; }
+            set { _fecha_ev1 = value; }
         }
-        private string _PRODUCTO;
+        private DateTime _fecha_ev2;
 
-        public string PRODUCTO
+        public DateTime Fecha_ev2
         {
-            get { return _PRODUCTO; }
-            set { _PRODUCTO = value; }
+            get { return _fecha_ev2; }
+            set { _fecha_ev2 = value; }
         }
-        private string _CAMPO;
+        private String _titulo;
 
-        public string CAMPO
+        public String Titulo
         {
-            get { return _CAMPO; }
-            set { _CAMPO = value; }
+            get { return _titulo; }
+            set { _titulo = value; }
         }
-        private string _MATERIA;
+        private String _producto;
 
-        public string MATERIA
+        public String Producto
         {
-            get { return _MATERIA; }
-            set { _MATERIA = value; }
+            get { return _producto; }
+            set { _producto = value; }
         }
-        private string _DESCRIPCION_PROY;
+        private String _campo;
 
-        public string DESCRIPCION_PROY
+        public String Campo
         {
-            get { return _DESCRIPCION_PROY; }
-            set { _DESCRIPCION_PROY = value; }
+            get { return _campo; }
+            set { _campo = value; }
         }
-        private string _OPINION_DIR;
+        private String _asignaturas;
 
-        public string OPINION_DIR
+        public String Asignaturas
         {
-            get { return _OPINION_DIR; }
-            set { _OPINION_DIR = value; }
+            get { return _asignaturas; }
+            set { _asignaturas = value; }
         }
-        private string _OBSERVACIONES;
+        private String _descripcion;
 
-        public string OBSERVACIONES
+        public String Descripcion
         {
-            get { return _OBSERVACIONES; }
-            set { _OBSERVACIONES = value; }
+            get { return _descripcion; }
+            set { _descripcion = value; }
         }
-        private string _PROFESOR;
+        private String _opinion_dir;
 
-        public string PROFESOR
+        public String Opinion_dir
         {
-            get { return _PROFESOR; }
-            set { _PROFESOR = value; }
+            get { return _opinion_dir; }
+            set { _opinion_dir = value; }
         }
+        private String _observaciones;
+
+        public String Observaciones
+        {
+            get { return _observaciones; }
+            set { _observaciones = value; }
+        }
+       /* private String _donde;
+
+        public String Donde
+        {
+            get { return _donde; }
+            set { _donde = value; }
+        }
+        private String _quien;
+
+        public String Quien
+        {
+            get { return _quien; }
+            set { _quien = value; }
+        }
+        private DateTime _cuando;
+
+        public DateTime Cuando
+        {
+            get { return _cuando; }
+            set { _cuando = value; }
+        }
+        private String _firma;
+
+        public String Firma
+        {
+            get { return _firma; }
+            set { _firma = value; }
+        }*/
 
         public Proyecto() { }
 
-        public Proyecto(int ID_PROYECTO, string PLANTEL, string PERIODO, int ID_AREA, string NUM_OFICIO, DateTime FECHA_EVAL, string TITULO,  string PRODUCTO, string _MATERIA, string CAMPO, string DESCRIPCION_PROY, string OPINION_DIR, string OBSERVACIONES, string PROFESOR)
+        public Proyecto(String Grupo, String Periodo, String Interarea, String Interplantel, String P_asignatura, String Oficio, DateTime Fecha_ev1, DateTime Fecha_ev2, String Titulo, String Producto, String Campo, String Asignaturas, String Descripcion, String Opinion_dir, String Observaciones)
         {
-            this.ID_PROYECTO = ID_PROYECTO;
-            this.PLANTEL = PLANTEL;
-            this.PERIODO = PERIODO;
-            this.ID_AREA = ID_AREA;
-            this.NUM_OFICIO = NUM_OFICIO;
-            this.FECHA_EVAL = FECHA_EVAL;
-            this.TITULO = TITULO;
-            this.PRODUCTO = PRODUCTO;
-            this.CAMPO = CAMPO;
-            this.MATERIA = MATERIA;
-            this.DESCRIPCION_PROY = DESCRIPCION_PROY;
-            this.OPINION_DIR = OPINION_DIR;
-            this.OBSERVACIONES = OBSERVACIONES;
-            this.PROFESOR = PROFESOR;
+            this.Grupo = Grupo;
+            this.Periodo = Periodo;
+            this.Interarea = Interarea;
+            this.Interplantel = Interplantel;
+            this.P_asignatura = P_asignatura;
+            this.Oficio = Oficio;
+            this.Fecha_ev1 = Fecha_ev1;
+            this.Fecha_ev2 = Fecha_ev2;
+            this.Titulo = Titulo;
+            this.Producto = Producto;
+            this.Campo = Campo;
+            this.Asignaturas = Asignaturas;
+            this.Descripcion = Descripcion;
+            this.Opinion_dir = Opinion_dir;
+            this.Observaciones = Observaciones;
 
- 
+
         }
-     }
+    }
 }

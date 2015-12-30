@@ -25,6 +25,43 @@ namespace WebApplication1
                 lblPeriodo.Text = Session["Proyecto"].ToString();
                 lblMateria.Text = Session["Area"].ToString(); // se debe hacer el cambio de materia por area en la pagina donde se despliega
                 lblPlantel.Text = Session["Plantel"].ToString();
+                Label6.Text = Request.QueryString["opcion"]; // esto es para saber que se tienen guardadas las opciones del check box
+
+                ProyectoLabels labels = new ProyectoLabels();
+                labels.PERIODO = Session["Proyecto"].ToString();
+                labels.PLANTEL = Session["Id_Plantel"].ToString();
+                labels.ID_AREA = Session["Id_Area"].ToString();
+                labels.Fecha = "@Fecha";
+                labels.Grupo = "@Grupo";
+
+
+
+                DataSet texto=NegocioProyectoLabels.LabelsProyecto(labels);
+                DataRow dr = texto.Tables[0].Rows[0];
+                txtFechaEval.Text = dr["Fecha"].ToString();
+                lblGrupo.Text =dr["Grupo"].ToString() ;
+
+                
+
+                ProfesorProyecto profesor = new ProfesorProyecto();
+                profesor.ID_PLANTEL = Session["Id_Plantel"].ToString();
+
+                MateriaProyecto materia = new MateriaProyecto();
+                materia.AREA = Convert.ToInt32(Session["Id_Area"].ToString()); ;
+
+                DataSet dsProfesor = NegocioProyecto.GetProfesor(profesor,materia);
+
+                ListBoxProfesor.DataSource = dsProfesor.Tables[0];
+                ListBoxProfesor.DataTextField ="NOMBRE";
+                ListBoxProfesor.DataValueField ="RFC";
+                ListBoxProfesor.DataBind();
+
+                ListBoxMaterias.DataSource = dsProfesor.Tables[1];
+                ListBoxMaterias.DataTextField = "MATERIA40";
+                ListBoxMaterias.DataValueField = "ID_AREA";
+                ListBoxMaterias.DataBind();
+
+
             }
            /* if (!Page.IsPostBack)
             {
@@ -74,8 +111,10 @@ namespace WebApplication1
             }
             else
             {
-                ListBoxMateriasP.Items.Add(ListBoxMaterias.SelectedItem);
-                ListBoxMateriasP.Items.Remove(ListBoxMaterias.SelectedItem);
+
+                ListItem materia = ListBoxMaterias.SelectedItem;
+                ListBoxMateriasP.Items.Add(materia);
+                ListBoxMaterias.Items.Remove(ListBoxMateriasP.SelectedItem);
             }
         }
 
@@ -118,48 +157,138 @@ namespace WebApplication1
 
         }
 
+        protected void LnkNuevo_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("Firmantes.aspx",false);
+        }
+
+
+        protected void LnkNuevo_ClickConsulta(object sender, EventArgs e)
+        {
+
+            Response.Redirect("ListarProyectos.aspx", false);
+        }
+
+
         protected void btnGuardarProy(object sender, EventArgs e)
         {
             try
             {
+                int opcion = Convert.ToInt32(Request.QueryString["opcion"]);
+                String Fecha = txtFechaEval.Text;
+                DateTime FechaEv = Convert.ToDateTime(Fecha);
                 Proyecto proyecto = new Proyecto();
-                proyecto.PLANTEL = lblPlantel.Text;
-                proyecto.PERIODO = lblPeriodo.Text;
-                proyecto.ID_AREA = Convert.ToInt32(Session["Id_Area"].ToString());
-                proyecto.NUM_OFICIO = txtNumOfice.Text;
-                proyecto.FECHA_EVAL = Convert.ToDateTime(txtFechaEval.Text);
-                proyecto.TITULO = txtTitulo.Text;
-                proyecto.PRODUCTO = txtProducto.Text;
-                proyecto.CAMPO = ddlCampo.SelectedItem.Text;
-                proyecto.MATERIA = ListBoxMateriasP.SelectedItem.Text;
-                proyecto.DESCRIPCION_PROY = txtADescProy.Text;
-                proyecto.OPINION_DIR = ddlOpinion.SelectedItem.Text;
-                proyecto.OBSERVACIONES = txtObservaciones.Text;
-                proyecto.PROFESOR = ListBoxProfProy.SelectedItem.Text;
+                proyecto.Grupo = Session["ID_Plantel"].ToString() + Session["ID_AREA"].ToString() + lblGrupo.Text;
+                proyecto.Periodo = lblPeriodo.Text;
+
+                switch (opcion)
+                {
+                    case 0:
+                        proyecto.Interarea = "0";
+                        proyecto.Interplantel = "0";
+                        proyecto.P_asignatura = "0";
+                        break;
+
+                    case 1:
+                        proyecto.Interarea = "1";
+                        proyecto.Interplantel = "0";
+                        proyecto.P_asignatura = "0";
+                        break;
+                    case 2:
+                        proyecto.Interarea = "0";
+                        proyecto.Interplantel = "1";
+                        proyecto.P_asignatura = "0";
+                        break;
+                    case 3:
+                        proyecto.Interarea = "1";
+                        proyecto.Interplantel = "1";
+                        proyecto.P_asignatura = "0";
+                        break;
+                    case 4:
+                        proyecto.Interarea = "0";
+                        proyecto.Interplantel = "0";
+                        proyecto.P_asignatura = "1";
+                        break;
+                    case 5:
+                        proyecto.Interarea = "1";
+                        proyecto.Interplantel = "0";
+                        proyecto.P_asignatura = "1";
+                        break;
+                    case 6:
+                        proyecto.Interarea = "0";
+                        proyecto.Interplantel = "1";
+                        proyecto.P_asignatura = "1";
+                        break;
+                    case 7:
+                        proyecto.Interarea = "1";
+                        proyecto.Interplantel = "1";
+                        proyecto.P_asignatura = "1";;
+                        break;
+                    default:
+                        break;
+
+                }
+                proyecto.Oficio = txtNumOfice.Text;
+
+                proyecto.Fecha_ev1 = FechaEv;
+                proyecto.Campo = ddlCampo.SelectedValue.ToString();
+                proyecto.Asignaturas = ListBoxMateriasP.SelectedItem.Text; //esta es la concatenacion de las materias del listbox
+                proyecto.Descripcion = txtADescProy.Text;
+                proyecto.Opinion_dir = ddlOpinion.SelectedItem.Text;
+                proyecto.Observaciones = txtObservaciones.Text;
+                //proyecto.PROFESOR = ListBoxProfProy.SelectedItem.Text;
 
                 if (NegocioProyecto.Insertar(proyecto) > 0)
                 {
                     MessageBox.Show("Se inserto el proyecto correctamente");
-                    Response.Redirect("ListarProyectos.aspx");
+                    Response.Redirect("ListarProyectos.aspx", false);
 
                 }
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("Algo esta mal"+ ex.Message + ex.StackTrace);
             }
-            
-           
+
+
             //AltaProyecto.Insertar(proyecto);
 
 
         }
 
-        protected void SqlDataSource1_Selecting1(object sender, SqlDataSourceSelectingEventArgs e)
+        protected void ButtondellMateria_Click(object sender, EventArgs e)
+        {
+          if (ListBoxMateriasP.SelectedIndex == -1)
+            {
+                MessageBox.Show("No se eligieron materias para eliminar de la lista");
+            }
+            else
+            {
+                /*ListItem materiaProy = ListBoxMateriasP.SelectedItem;
+                ListBoxMaterias.Items.Add(materiaProy);
+                ListBoxMateriasP.Items.Remove(ListBoxMaterias.SelectedItem);*/
+
+                ListBoxMaterias.Items.Add(ListBoxMateriasP.SelectedItem);
+                ListBoxMateriasP.Items.Remove(ListBoxMaterias.SelectedItem);
+            }
+        
+        }
+
+        protected void ButtondelProf_Click(object sender, EventArgs e)
         {
 
+            if (ListBoxProfProy.SelectedIndex == -1)
+            {
+                MessageBox.Show("No se eligieron profesores para eliminar de la lista");
+            }
+            else
+            {
+                ListBoxProfesor.Items.Add(ListBoxProfProy.SelectedItem);
+                ListBoxProfProy.Items.Remove(ListBoxProfesor.SelectedItem);
+            }
         }
-   
+       
     }
 }

@@ -17,6 +17,7 @@
 </head>
 <body>
     <form id="Form1" runat="server">
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>  
     <div class="container">
         <div class="row page-headercustomized vertical-align">
             <div class="col-md-11">
@@ -41,10 +42,7 @@
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <asp:Menu ID="Menu1" runat="server" EnableViewState="false" IncludeStyleBlock="false"
-                            Orientation="Horizontal" CssClass="nav navbar" StaticMenuStyle-CssClass="nav" DataSourceID="SiteMapDSMenuPrincipal"
-                            StaticSelectedStyle-CssClass="active" DynamicMenuStyle-CssClass="dropdown-menu" StaticDisplayLevels="2">
-                        </asp:Menu>
+                        
                         <div class="nav navbar navbar-right">
                         <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                             <AnonymousTemplate>
@@ -70,15 +68,15 @@
         <div class="row">
             <div class="col-md-2 well">
                 <div>
-                <td>Plantel:</td>
+                <td><asp:Label ID="lplantel" Text="Plantel" runat="server" Visible="false"/></td>
                         <td colspan=2>
                             <asp:DropDownList ID="ddlPlantel" runat="server" class="form-control" tabindex="3" 
                                 DataSourceID="SqlDataSource1"
                                  DataTextField="NOMBRE" 
-                                DataValueField="ID_PLANTEL">
-                            </asp:DropDownList>
+                                DataValueField="ID_PLANTEL" OnSelectedIndexChanged="ddlPlantel_SelectedIndexChanged" Visible="false">
+                            </asp:DropDownList> 
                             
-                 </td>
+                 </td> 
                 <tr>
                         <td>Proyecto:</td>
                         <td colspan=2><asp:DropDownList ID="ddlProyecto" runat="server" class="form-control" tabindex="4" 
@@ -89,11 +87,11 @@
                         </td>
                 </tr>
                 <tr>
-                        <td>Area:</td>
+                        <td><asp:Label ID="larea" Text="Área" runat="server" Visible="false"/></td>
                         <td colspan=2><asp:DropDownList ID="ddlArea" runat="server" class="form-control" tabindex="5" 
                                  DataSourceID="SqlDataSource3" 
                                 DataTextField="NOMBRE_CORTO" 
-                                DataValueField="ID_AREA">
+                                DataValueField="ID_AREA" Visible="false">
                             </asp:DropDownList>
                         </td>
                    </tr>

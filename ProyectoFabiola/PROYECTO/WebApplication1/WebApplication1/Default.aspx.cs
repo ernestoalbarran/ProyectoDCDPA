@@ -13,8 +13,9 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           if (Roles.IsUserInRole("Administrador"))
+           if (Roles.IsUserInRole("Administrador")) 
            {
+               Session["usuario"] = "Administrador";
                /*
                LinkButton link = (LinkButton)LoginView1.FindControl("btnAdmin");
                link.Visible = true;
@@ -34,6 +35,27 @@ namespace WebApplication1
                Response.Redirect("~/Principal.aspx");
            
            }
+
+           if (Roles.IsUserInRole("Jefe Sección")) 
+           {
+               Session["usuario"] = "Jefe Sección";
+               
+               string usuarioActual = HttpContext.Current.User.Identity.Name;
+               Session["nombreUsuario"] = usuarioActual;
+               Console.WriteLine((string)Session["nombreUsuario"]);
+
+               int plantel = Int32.Parse(usuarioActual.Substring(5, 1));
+               Session["plantelUsuario"] = plantel;
+               Console.WriteLine((int)Session["plantelUsuario"]);
+
+
+               int area = Int32.Parse(usuarioActual.Substring(7, 1));
+               Session["areaUsuario"] = area;
+               Console.WriteLine((int)Session["areaUsuario"]);
+
+               Response.Redirect("~/Principal.aspx"); 
+           }
+              
         }
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
