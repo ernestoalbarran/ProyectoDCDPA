@@ -104,7 +104,7 @@
                             </td>
                             <td colspan="5">
                                 <asp:TextBox ID="tbFecha" runat="server" class="form-control input-lg" placeholder="Fecha Oficio"
-                                    TabIndex="18"></asp:TextBox>
+                                    TabIndex="18" TextMode="Date"></asp:TextBox>
                             </td>
                         </tr>
                     </tbody>

@@ -33,3 +33,10 @@ C:\Users\GENESIS\Desktop\Curso Java\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebAp
 C:\Users\GENESIS\Desktop\Curso Java\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Comun.dll
 C:\Users\GENESIS\Desktop\Curso Java\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Comun.pdb
 C:\Users\GENESIS\Desktop\Curso Java\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.pdb
+C:\Users\Bere\Desktop\Proyectos_Todos\UltimoProyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Datos.dll
+C:\Users\Bere\Desktop\Proyectos_Todos\UltimoProyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Datos.pdb
+C:\Users\Bere\Desktop\Proyectos_Todos\UltimoProyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Comun.dll
+C:\Users\Bere\Desktop\Proyectos_Todos\UltimoProyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\bin\Debug\Comun.pdb
+C:\Users\Bere\Desktop\Proyectos_Todos\UltimoProyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\Bere\Desktop\Proyectos_Todos\UltimoProyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.dll
+C:\Users\Bere\Desktop\Proyectos_Todos\UltimoProyecto\ProyectoDCDPA\ProyectoFabiola\PROYECTO\WebApplication1\Datos\obj\Debug\Datos.pdb

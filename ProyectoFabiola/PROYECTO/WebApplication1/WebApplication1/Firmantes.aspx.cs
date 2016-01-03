@@ -13,12 +13,24 @@ using Negocio;
 
 namespace WebApplication1
 {
+        
     public partial class Firmantes : System.Web.UI.Page
     {
+        public String activo;
+        public String periodoletra;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["proyecto_activo"] == null)
+            {
+                NegocioActivo obtenerActivo = new NegocioActivo();
+                Session["informe_activo"] = obtenerActivo.select_escalar("Informes");
+                Session["proyecto_activo"] = obtenerActivo.select_escalar("Proyecto");
+                //activo = Session["informe_activo"].ToString();
+            }
             if (!IsPostBack)
             {
+
 
             }
 

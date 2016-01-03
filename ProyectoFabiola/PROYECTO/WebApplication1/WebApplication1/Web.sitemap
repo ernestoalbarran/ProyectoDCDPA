@@ -16,6 +16,7 @@
     <siteMapNode roles="Administrador" title="Lemas" description="Lemas" url="~/Members/LEMAS/DefaultLema.aspx"/>
     <siteMapNode title="Periodos" description="Periodos" url="~/Members/PERIODO/DefaultPeriodo.aspx"/>
     <siteMapNode title="Campos" description="Campos" url="~/Members/CAMPOS/DefaultCampos.aspx"/>
+    <siteMapNode title="Firmantes" description="Alta Firmantes" url="~/Firmantes.aspx"/>
     <!--<siteMapNode title="Alta Proyectos" description="Alta Proyectos" url="~/AltaProyecto.aspx"/>-->
 
     <siteMapNode roles="Administrador" title="Usuarios" description="Administración de cuentas de usuarios" url="">

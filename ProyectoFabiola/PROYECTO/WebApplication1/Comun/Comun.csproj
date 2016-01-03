@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activos.cs" />
     <Compile Include="Campos.cs" />
     <Compile Include="Firmante1.cs" />
     <Compile Include="LemasPCEPI.cs" />

@@ -144,13 +144,13 @@
     <Content Include="Account\Usuarios.aspx" />
     <Content Include="AltaProyecto.aspx" />
     <Content Include="Documentos.aspx" />
+    <Content Include="Firmantes.aspx" />
     <Content Include="Members\PROYECTOS\ConsultaProyecto.aspx" />
     <Content Include="ActualizarProyecto.aspx" />
     <Content Include="Members\CAMPOS\DefaultCampos.aspx" />
     <Content Include="Members\LEMAS\DefaultLema.aspx" />
     <Content Include="Members\PERIODO\DefaultPeriodo.aspx" />
     <Content Include="DefaultProyecto.aspx" />
-    <Content Include="Firmantes.aspx" />
     <Content Include="Images\Actualizacion_del_Protocolo_de_equivalencias.png" />
     <Content Include="Images\calendario1.jpg" />
     <Content Include="Images\calendario2.jpg" />
@@ -328,6 +328,13 @@
     <Compile Include="Documentos.aspx.designer.cs">
       <DependentUpon>Documentos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Firmantes.aspx.cs">
+      <DependentUpon>Firmantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Firmantes.aspx.designer.cs">
+      <DependentUpon>Firmantes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Members\PROYECTOS\ConsultaProyecto.aspx.cs">
       <DependentUpon>ConsultaProyecto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -369,13 +376,6 @@
     </Compile>
     <Compile Include="DefaultProyecto.aspx.designer.cs">
       <DependentUpon>DefaultProyecto.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Firmantes.aspx.cs">
-      <DependentUpon>Firmantes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Firmantes.aspx.designer.cs">
-      <DependentUpon>Firmantes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interface\Administracion\administrador.aspx.cs">
       <DependentUpon>administrador.aspx</DependentUpon>
