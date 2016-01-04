@@ -23,7 +23,13 @@ namespace DGCCH.Negocio
             return DatCam.InsertCampo(Des_Corta, Des_Larga);
         }
 
-        //obtener todos los lemas 
+        public int RELACION_CP(string Des_Corta, string Des_Larga, int ID_PERIODO)
+        {
+            DatoCampo DatoCP = new DatoCampo();
+            return DatoCP.RELACION_CP(Des_Corta, Des_Larga, ID_PERIODO);
+        }
+
+        //obtener todos los Campos 
         public List<Campos> ObtenerCampos()
         {
             DatoCampo DatCam = new DatoCampo();

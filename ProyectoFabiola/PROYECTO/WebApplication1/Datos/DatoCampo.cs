@@ -89,6 +89,29 @@ namespace DGCCH.Datos
         return ejecutaNonQuery("AltasCampos", parametros);
         }
 
+        public int RELACION_CP(string Des_Corta, string Des_Larga, int ID_PERIODO)
+        {
+            List<DbParameter> parametros = new List<DbParameter>();
+
+            DbParameter paramDes_Corta = dpf.CreateParameter();
+            paramDes_Corta.Value = Des_Corta;
+            paramDes_Corta.ParameterName = "Des_Corta";
+            parametros.Add(paramDes_Corta);
+
+            DbParameter paramDes_Larga = dpf.CreateParameter();
+            paramDes_Larga.Value = Des_Larga;
+            paramDes_Larga.ParameterName = "Des_Larga";
+            parametros.Add(paramDes_Larga);
+
+            DbParameter paramIDP = dpf.CreateParameter();
+            paramIDP.Value = ID_PERIODO;
+            System.Console.WriteLine("Valor " + paramIDP.Value);
+            paramIDP.ParameterName = "ID_PERIODO";
+            parametros.Add(paramIDP);
+
+            return ejecutaNonQuery("RELACION_CP", parametros);
+        }
+
         public List<Campos> select_All_Campos()
         {
             List<Campos> LstCampos = new List<Campos>();

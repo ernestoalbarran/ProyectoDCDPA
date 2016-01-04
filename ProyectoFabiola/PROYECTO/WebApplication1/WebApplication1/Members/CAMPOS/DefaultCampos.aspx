@@ -23,13 +23,24 @@
                     <asp:TextBox ID="txDes_Corta" runat="server" class="form-control input-lg" placeholder="TITULO" tabindex="1"> </asp:TextBox>
                 </td>
                 </tr>
+                         <td >
+                    PERIODO
+                </td>
+                <td >
+                    <asp:DropDownList ID="periodo" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_periodo" DataValueField="ID_PERIODO" class="form-control input-lg">
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_PERIODO], [NOMBRE_PERIODO] FROM [PERIODO]" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
+                </td>
+             </tr>
                 <tr >
                 <td >
                             DESCRIPCIÓN LARGA
                 </td>
                 <td colspan=2>
                     <asp:TextBox  TextMode="Multiline" ID="txDes_Larga" runat="server" class="form-control input-lg" placeholder="DESCRIPCION LARGA" tabindex="1"> </asp:TextBox>
-            </tr>
+                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txDes_Larga" ErrorMessage="Un Campo necesita una descripción" ForeColor="Red"></asp:RequiredFieldValidator>
+                
+                    </tr>
                    
             <tr>
                  <td >
@@ -49,6 +60,7 @@
                           AllowPaging="True"  
                           CellPadding="4"
                           GridLines="None" 
+                           OnPageIndexChanging="grvCampos_PageIndexChanging" 
                           ForeColor="#333333" 
                            Width="607px" 
                            >

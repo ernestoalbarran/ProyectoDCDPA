@@ -44,6 +44,7 @@
     <Compile Include="Firmante1.cs" />
     <Compile Include="LemasPCEPI.cs" />
     <Compile Include="MateriaProyecto.cs" />
+    <Compile Include="PeriodoCampo.cs" />
     <Compile Include="PeriodoLema.cs" />
     <Compile Include="PeriodosPECEPI.cs" />
     <Compile Include="ProfesorProyecto.cs" />
