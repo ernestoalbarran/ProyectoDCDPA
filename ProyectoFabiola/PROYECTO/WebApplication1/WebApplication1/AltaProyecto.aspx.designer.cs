@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1 {
+namespace PCEPI {
     
     
     public partial class AltaProyecto {
@@ -274,22 +274,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button ButtonAddProf;
         
         /// <summary>
-        /// Control ListBoxProfProy.
+        /// Control gvProfesor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBoxProfProy;
-        
-        /// <summary>
-        /// Control Buttondelprof.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Buttondelprof;
+        protected global::System.Web.UI.WebControls.GridView gvProfesor;
         
         /// <summary>
         /// Control btGuardarProy.

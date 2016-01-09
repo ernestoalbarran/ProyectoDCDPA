@@ -17,7 +17,7 @@ namespace PCEPI.Presentacion
         {
             if (!IsPostBack)
             {
-          
+
                 Calendar1.Visible = false;
                 Calendar2.Visible = false;
                 LoadGrid();
@@ -34,34 +34,36 @@ namespace PCEPI.Presentacion
             String fechaIni = Calendar1.SelectedDate.ToShortDateString();
             String fechaFin = Calendar2.SelectedDate.ToShortDateString();
             String F = "0001";
-            
 
-            nombre = fechaIni.Substring(6, 4) + " - " + fechaFin.Substring(6, 4);
+
+            nombre = fechaIni.Substring(6, 4) + "-" + fechaFin.Substring(6, 4);
             bool b = nombre.Contains(F);
-            if (b!=true)
-               {
-                    if (NegPer.AltaPeriodo(nombre, DateTime.Parse(fechaIni), DateTime.Parse(fechaFin)) > 0)
-                    {
-                        //se manda a llamar al load grid para que cada vez que 
-                        //se inserte un auto se refleje a la hora de cargar el grid 
-                        LoadGrid();
-                        MessageBox.Show("Lema Insertado");
-                    }
+            if (b != true)
+            {
+                if (NegPer.AltaPeriodo(nombre, DateTime.Parse(fechaIni), DateTime.Parse(fechaFin)) > 0)
+                {
+                    //se manda a llamar al load grid para que cada vez que 
+                    //se inserte un periodo se refleje a la hora de cargar el grid 
+                    txFechaF.Text = "";
+                    txFechaI.Text = "";
+                    LoadGrid();
+                    MessageBox.Show("Periodo Insertado");
+                }
             }
             else
             {
                 MessageBox.Show("Necesitas ingresar una fecha para periodo que sea valida");
             }
-                
-         }
 
-
-        protected void Reset_Lemas_Click(object sender, EventArgs e)
-        {
-            // txNombre.Text = "";
-            txFechaI.Text = "";
-            txFechaF.Text = "";
         }
+
+
+        /*  protected void Reset_Lemas_Click(object sender, EventArgs e)
+          {
+              // txNombre.Text = "";
+              txFechaI.Text = "";
+              txFechaF.Text = "";
+          }*/
 
         private void LoadGrid()
         {
@@ -108,8 +110,22 @@ namespace PCEPI.Presentacion
             }
         }
 
+        protected void grvPeriodos_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
 
+        protected void grvPeriodos_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+
+        }
+
+        protected void grvPeriodos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView gv = (GridView)sender;
+            gv.PageIndex = e.NewPageIndex;
+            LoadGrid();
+        }
 
     }
 }

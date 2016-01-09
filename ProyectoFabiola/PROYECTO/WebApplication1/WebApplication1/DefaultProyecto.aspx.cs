@@ -4,14 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PCEPI.Comun;
 
-namespace WebApplication1
+using PCEPI.Negocio;
+using System.Windows.Forms;
+
+namespace PCEPI
 {
     public partial class DefaultProyecto : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             //esto se hizo solo para observar que se mantienen los valores seteados
+
+
             Label1.Text = Session["Proyecto"].ToString();
             Label2.Text = Session["Id_Area"].ToString(); // se debe hacer el cambio de materia por area en la pagina donde se despliega
             Label3.Text = Session["Id_Plantel"].ToString();
@@ -21,49 +27,52 @@ namespace WebApplication1
         {
             int sumaOpciones = 0;
 
-            foreach(ListItem item in ChBtnProy.Items){
+            foreach (ListItem item in ChBtnProy.Items)
+            {
 
-                if(item.Selected){
+                if (item.Selected)
+                {
 
                     sumaOpciones += Int32.Parse(item.Value);
                 }
 
             }
 
-            switch(sumaOpciones){
+            switch (sumaOpciones)
+            {
                 case 0:
                     Label4.Text = "No se ha seleccionado Opcion ";
-                break;
+                    break;
 
                 case 1:
                     Label4.Text = "InterArea";
-                break;
+                    break;
                 case 2:
                     Label4.Text = "InterPlantel";
-                break;
+                    break;
                 case 3:
                     Label4.Text = "InterArea - InterPlantel";
-                break;
+                    break;
                 case 4:
                     Label4.Text = "Profesor";
-                break;
+                    break;
                 case 5:
                     Label4.Text = "Profesor - InterArea";
-                break;
+                    break;
                 case 6:
                     Label4.Text = "Profesor - InterPlantel";
-                break;
+                    break;
                 case 7:
                     Label4.Text = "todos";
-                break;
+                    break;
                 default:
                     Label4.Text = " ";
 
-                break;
-              
+                    break;
+
             }
 
-            Response.Redirect("AltaProyecto.aspx?opcion="+sumaOpciones, false);
+            Response.Redirect("AltaProyecto.aspx?opcion=" + sumaOpciones, false);
         }
     }
 }

@@ -1,53 +1,54 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DefaultProyecto.aspx.cs" Inherits="WebApplication1.DefaultProyecto" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DefaultProyecto.aspx.cs" Inherits="PCEPI.DefaultProyecto" %>
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <style type="text/css">
         .auto-style1 {
-            height: 23px;
+            height: 84px;
         }
         .auto-style2 {
-            height: 23px;
+            height: 91px;
         }
         .auto-style3 {
-            width: 336px;
+            height: 93px;
         }
         .auto-style4 {
-            width: 26px;
+            height: 94px;
+        }
+        .auto-style5 {
+            height: 95px;
         }
     </style>
-</head>
-<body>
-    <hr />
-    <form id="form1" runat="server">
-        <h2 align="center" style="font-family: Aparajita; font-size: xx-large; font-weight: normal; font-style: normal; font-variant: normal; text-transform: capitalize; color: #FF0000">Recuerde que el Coordinador del grupo debe de ser de esta<br>Área y Plantel, para crear un grupo nuevo.</h2>
-        <p style="margin-left: 120px">
-             &nbsp;</p>
-        <p style="margin-left: 120px">
-             
-            <table border="1" style="width:100%;">
+</asp:Content>
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+  
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 toppad">
+       <div class="panel panel-info">
+           <div class="panel-heading">
+              <h2>Proyecto</h2>    
+          </div>
+            
+           <div class="panel-body">
+                <div class=" col-md-10 col-lg-10 "> 
+        
+            <table class="table table-user-information">
+            <tbody>
                 <tr>
                     <td class="auto-style1"></td>
                     <td align="center" class="auto-style2" colspan="2">Grupo Nuevo</td>
                     <td class="auto-style1"></td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style3">
+                    <td class="auto-style5"></td>
+                    <td class="auto-style5">
                         <asp:CheckBoxList ID="ChBtnProy" runat="server" Height="77px">
                             <asp:ListItem Value="1" > Interárea</asp:ListItem>
                             <asp:ListItem Value="2">Interplantel</asp:ListItem>
                             <asp:ListItem Value="4">c/Profr. Asignatura</asp:ListItem>
                         </asp:CheckBoxList>
                     </td>
-                    <td class="auto-style4">
+                    <td class="auto-style5">
                         <asp:Button ID="btCrearGrupo" runat="server" Text="Crear Grupo Nuevo" OnClick="btCrearGrupo_Click" />
                     </td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style5"></td>
                 </tr>
                 <tr>
                     <td>
@@ -65,10 +66,12 @@
                 </tr>
             </table>
              
-        </p>
-            
+    </div>
+    </div>
+    </div>           
+</div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+      <script src= "/newdcdpa/Scripts/Templates/Formularioggroups.js" type="text/javascript"></script>
+      <script src= "/newdcdpa/Scripts/habilitar_inhabilitar_controles.js" type="text/javascript" > </script>
+</asp:Content>
 
-
-    </form>
-</body>
-</html>

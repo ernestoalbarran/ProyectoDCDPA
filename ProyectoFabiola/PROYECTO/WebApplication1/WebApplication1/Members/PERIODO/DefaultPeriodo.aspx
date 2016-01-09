@@ -24,9 +24,9 @@
              </tr>-->
             <tr >
                 <td >
-                    FECHA DE INICIO DEL PERIODO:los illuminati
+                    FECHA DE INICIO DEL PERIODO:
                 </td>
-                <td colspan=2>
+                <td>
                     <asp:TextBox ID="txFechaI" runat="server" class="form-control input-lg"  Enabled="False"  />
                     <asp:ImageButton ID="ImageButton1" runat="server" Height="20px" ImageUrl="~/Images/calendario1.jpg" OnClick="ImageButton1_Click" Width="27px" />
                     &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Es necesario ingresar fecha de inicio y fin del periodo" ControlToValidate="txFechaI"></asp:RequiredFieldValidator>
@@ -47,7 +47,7 @@
                 <td >
                     FECHA DE FIN DE PERIODO
                 </td>
-                <td colspan=2>
+                <td>
                     <asp:TextBox ID="txFechaF" runat="server"  class="form-control input-lg" Enabled="False"  />
                 <asp:ImageButton ID="ImageButton2" runat="server" Height="20px" ImageUrl="~/Images/calendario2.jpg" Width="26px" OnClick="ImageButton2_Click1" />
                     <asp:comparevalidator id="cvFecha" runat="server" Display="Dynamic" ControlToValidate="txFechaF" ErrorMessage="Debes ingresar Fecha de inicio del periodo" Type="String" Operator="LessThan">*</asp:comparevalidator>
@@ -68,26 +68,27 @@
                 <td class="auto-style3" colspan="0">
                     
                 </td>
+                <td>
+                        <asp:Button ID="btnInsert" runat="server" Text="Almacenar Periodo" OnClick="btnInsert_Click" class="btn btn-primary" />
+                 </td>
             </tr>
             <tr>
                  <td colspan="0">
-                        <asp:Button ID="btnInsert" runat="server" Text="Almacenar Periodo" OnClick="btnInsert_Click" class="btn btn-primary" />
-                 </td>      
-                <td class="auto-style4">
-                    <input id="Reset_Periodos" type="reset" value="limpiar campos" class="btn btn-primary"/>
-                </td>
+                        &nbsp;</td>      
+                
             </tr>
 
             <tr>
-                <td colspan="3">
+                <td colspan="2">
                       <asp:GridView AutoGenerateColumns="true" runat="server" ID="grvPeriodos" 
                         EmptyDataText="No hay registros de Periodos ."
                           AllowSorting="True"
                           AllowPaging="True"  
                           CellPadding="4"
-                          GridLines="None" 
+                          GridLines="None"
+                          OnPageIndexChanging="grvPeriodos_PageIndexChanging" 
                           ForeColor="#333333" 
-                           Width="607px" >
+                           Width="607px" OnSelectedIndexChanged="grvPeriodos_SelectedIndexChanged" OnSelectedIndexChanging="grvPeriodos_SelectedIndexChanging" >
                            <EditRowStyle BackColor="#999999" />
                              <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
                              <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -99,9 +100,8 @@
                             <SortedDescendingCellStyle BackColor="#FFFDF8" />
                              <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                              <AlternatingRowStyle BackColor="White" ForeColor="#284775" />                         
-                          </asp:GridView>   
-                          
-                          
+                          </asp:GridView> 
+                                                            
                 </td>
            </tr>
          </tbody>

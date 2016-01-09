@@ -51,6 +51,7 @@
     <Compile Include="NegocioMateria.cs" />
     <Compile Include="NegocioPeriodo.cs" />
     <Compile Include="NegocioProyectoLabels.cs" />
+    <Compile Include="Profesor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

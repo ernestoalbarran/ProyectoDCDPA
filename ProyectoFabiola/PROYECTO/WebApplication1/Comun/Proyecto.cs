@@ -113,38 +113,42 @@ namespace PCEPI.Comun
             get { return _observaciones; }
             set { _observaciones = value; }
         }
-       /* private String _donde;
 
-        public String Donde
-        {
-            get { return _donde; }
-            set { _donde = value; }
-        }
-        private String _quien;
 
-        public String Quien
-        {
-            get { return _quien; }
-            set { _quien = value; }
-        }
-        private DateTime _cuando;
+        /* private String _donde;
 
-        public DateTime Cuando
-        {
-            get { return _cuando; }
-            set { _cuando = value; }
-        }
-        private String _firma;
+         public String Donde
+         {
+             get { return _donde; }
+             set { _donde = value; }
+         }
+         private String _quien;
 
-        public String Firma
-        {
-            get { return _firma; }
-            set { _firma = value; }
-        }*/
+         public String Quien
+         {
+             get { return _quien; }
+             set { _quien = value; }
+         }
+         private DateTime _cuando;
+
+         public DateTime Cuando
+         {
+             get { return _cuando; }
+             set { _cuando = value; }
+         }
+         private String _firma;
+
+         public String Firma
+         {
+             get { return _firma; }
+             set { _firma = value; }
+         }*/
+
+        public string ValuesInsert { get; set; }
 
         public Proyecto() { }
 
-        public Proyecto(String Grupo, String Periodo, String Interarea, String Interplantel, String P_asignatura, String Oficio, DateTime Fecha_ev1, DateTime Fecha_ev2, String Titulo, String Producto, String Campo, String Asignaturas, String Descripcion, String Opinion_dir, String Observaciones)
+        public Proyecto(String Grupo, String Periodo, String Interarea, String Interplantel, String P_asignatura, String Oficio, DateTime Fecha_ev1, String Titulo, String Producto, String Campo, String Asignaturas, String Descripcion, String Opinion_dir, String Observaciones, string ValuesInsert)
         {
             this.Grupo = Grupo;
             this.Periodo = Periodo;
@@ -153,7 +157,7 @@ namespace PCEPI.Comun
             this.P_asignatura = P_asignatura;
             this.Oficio = Oficio;
             this.Fecha_ev1 = Fecha_ev1;
-            this.Fecha_ev2 = Fecha_ev2;
+            //this.Fecha_ev2 = Fecha_ev2;
             this.Titulo = Titulo;
             this.Producto = Producto;
             this.Campo = Campo;
@@ -161,7 +165,7 @@ namespace PCEPI.Comun
             this.Descripcion = Descripcion;
             this.Opinion_dir = Opinion_dir;
             this.Observaciones = Observaciones;
-
+            this.ValuesInsert = ValuesInsert;
 
         }
     }

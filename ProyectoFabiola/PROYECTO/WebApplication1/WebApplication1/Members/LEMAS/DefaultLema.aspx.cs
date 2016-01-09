@@ -17,10 +17,10 @@ namespace PCEPI.Presentacion
         {
             if (!IsPostBack)
             {
-                
+
                 LoadGrid();
             }
-            
+
         }
 
         protected void Reset_Lemas_Click(object sender, EventArgs e)
@@ -31,11 +31,11 @@ namespace PCEPI.Presentacion
 
         protected void btnInsert_Click(object sender, EventArgs e)
         {
-           
+
 
             NegocioLemas NegLem = new NegocioLemas();
-            
-            String Validacion=txdescripcion.Text;
+
+            String Validacion = txdescripcion.Text;
             Int64 valida = Validacion.LongCount();
             if (valida != 0)
             {
@@ -56,7 +56,7 @@ namespace PCEPI.Presentacion
             }
             else
                 MessageBox.Show("Debes de ingresar una descripcion al lema");
-            
+
         }
 
         private void LoadGrid()

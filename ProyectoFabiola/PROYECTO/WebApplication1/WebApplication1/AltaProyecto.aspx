@@ -1,4 +1,4 @@
-﻿<%@ Page Title="DGCCH" Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AltaProyecto.aspx.cs" Inherits="WebApplication1.AltaProyecto" %>
+﻿<%@ Page Title="DGCCH" Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AltaProyecto.aspx.cs" Inherits="PCEPI.AltaProyecto" %>
 
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
@@ -19,10 +19,15 @@
         .auto-style3 {
         }
         .auto-style5 {
-            width: 66px;
         }
         .auto-style6 {
             width: 25px;
+        }
+        .auto-style7 {
+            width: 52px;
+        }
+        .auto-style8 {
+            width: 29px;
         }
     </style>
 </asp:Content>
@@ -64,7 +69,7 @@
                 <div class=" col-md-10 col-lg-10 "> 
           <asp:UpdatePanel ID="UpdatePanel1" runat="server">
              <Triggers><asp:AsyncPostBackTrigger ControlID="ButtonAddProf" EventName="Click"/>
-                       <asp:AsyncPostBackTrigger ControlID="Buttondelprof" EventName="Click"/>
+                       
              </Triggers>
           <ContentTemplate>
         
@@ -72,13 +77,13 @@
                      <tbody>
                <tr>
                
-                <td >
+                <td colspan="2" >
                    Plantel 
                     <asp:Label ID="lblPlantel" runat="server" Text="Label" ></asp:Label>
                 </td>
                 <td class="auto-style5">
                     Grupo</td>
-                   <td class="auto-style5">
+                   <td class="auto-style7">
                        <asp:Label ID="lblGrupo" runat="server" Text="Label"></asp:Label>
                    </td>
                 <td class="auto-style6" colspan="2">
@@ -86,7 +91,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1" colspan="5" align="center">
+                <td class="auto-style1" colspan="6" align="center">
                     Proyectos 
                     <asp:Label ID="lblPeriodo" runat="server" Text="Label"></asp:Label>
                     &nbsp;
@@ -95,7 +100,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">Número de oficio*</td>
+                <td class="auto-style2" colspan="2">Número de oficio*</td>
                 <td colspan=3>CCH/DIR/<asp:TextBox ID="txtNumOfice" runat="server" Width="39px" Height="22px"></asp:TextBox>/2016</td>
 
                 <td> <ASP:RequiredFieldValidator id="rqfValidatorNumOfice" runat="server" errormessage="El numero de oficio es obligatorio" width="243px" controltovalidate="txtNumOfice" display="Dynamic"></ASP:RequiredFieldValidator>
@@ -103,7 +108,7 @@
 
             </tr>
             <tr>
-                <td class="auto-style2">Fecha de evaluación</td>
+                <td class="auto-style2" colspan="2">Fecha de evaluación</td>
                 <td class="auto-style3" colspan="3">
                     <asp:TextBox ID="txtFechaEval" runat="server" Enabled="False"></asp:TextBox>
                     dd/mm/aaaa</td>
@@ -114,7 +119,7 @@
 
             </tr>
             <tr>
-                <td class="auto-style2">Titulo*</td>
+                <td class="auto-style2" colspan="2">Titulo*</td>
                 <td colspan="3">
                     <asp:TextBox ID="txtTitulo" runat="server" class="form-control input-lg" placeholder="Título"></asp:TextBox>
                 </td>
@@ -123,7 +128,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">Producto*</td>
+                <td class="auto-style2" colspan="2">Producto*</td>
                 <td colspan="3">
                     <asp:TextBox ID="txtProducto" runat="server" class="form-control input-lg" placeholder="PRODUCTO"></asp:TextBox>
                 </td>
@@ -132,29 +137,29 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">Campo</td>
+                <td class="auto-style2" colspan="2">Campo</td>
                 <td colspan="3">
                     <asp:DropDownList ID="ddlCampo" runat="server">
-                        <asp:ListItem>Elige una opcion </asp:ListItem>
-                        <asp:ListItem>Calidad de Aprendizaje</asp:ListItem>
-                        <asp:ListItem>Formación Integral</asp:ListItem>
-                        <asp:ListItem>Actualización de los programas</asp:ListItem>
-                        <asp:ListItem>Proyectos cordinados</asp:ListItem>
+                        <asp:ListItem Value="0">Elige una opcion </asp:ListItem>
+                        <asp:ListItem Value="1">Calidad de Aprendizaje</asp:ListItem>
+                        <asp:ListItem Value="2">Formación Integral</asp:ListItem>
+                        <asp:ListItem Value="3">Actualización de los programas</asp:ListItem>
+                        <asp:ListItem Value="4">Proyectos cordinados</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
             <tr>
-                <td colspan="4">Materias del grupo</td>
+                <td colspan="5">Materias del grupo</td>
             </tr>
             <tr>
-                <td class="auto-style2" rowspan="2">Materias&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <td class="auto-style2" rowspan="2" colspan="2">Materias&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     
                 </td>
                 
                 <td class="auto-style5" rowspan="2" colspan="2">
                     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                         <ContentTemplate>
-                    <asp:ListBox ID="ListBoxMaterias" runat="server" class="form-control input-lg" Height="217px" Width="222px" SelectionMode="Multiple" AutoPostBack="false" ></asp:ListBox>
+                    <asp:ListBox ID="ListBoxMaterias" runat="server" class="form-control input-lg" Height="217px" Width="271px" SelectionMode="Multiple" AutoPostBack="True" ></asp:ListBox>
                     <%--<asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [NOMBRE] FROM [PROFESOR]"></asp:SqlDataSource>
                     <asp:SqlDataSource ID="SqlDataSourceMAT" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_FILTRAR_MATERIA" SelectCommandType="StoredProcedure">
                         <SelectParameters>
@@ -169,7 +174,7 @@
                     <asp:Button ID="Button1" runat="server" Text="&gt;&gt;" OnClick="Button1_Click" />
                 </td>
                 <td rowspan="2">
-                    <asp:ListBox ID="ListBoxMateriasP" runat="server" class="form-control input-lg" Height="217px" Width="222px" OnSelectedIndexChanged="ListBoxMateriasP_SelectedIndexChanged" SelectionMode="Multiple"></asp:ListBox>
+                    <asp:ListBox ID="ListBoxMateriasP" runat="server" class="form-control input-lg" Height="217px" Width="259px" OnSelectedIndexChanged="ListBoxMateriasP_SelectedIndexChanged" SelectionMode="Multiple" AutoPostBack="True"></asp:ListBox>
                     <br />
                 </td>
             </tr>
@@ -179,37 +184,37 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">Descripción del proyecto</td>
+                <td class="auto-style2" colspan="2">Descripción del proyecto</td>
                 <td colspan="4">
                     <asp:TextBox runat="server" ID="txtADescProy" rows="5" Height="183px" Width="546px"></asp:TextBox></td>
             </tr>
             <tr>
-                <td class="auto-style2">Opinión del director</td>
+                <td class="auto-style2" colspan="2">Opinión del director</td>
                 <td colspan="4">
                     <asp:DropDownList ID="ddlOpinion" runat="server" Width="176px">
-                        <asp:ListItem Selected="True">selecciona una opcion</asp:ListItem>
-                        <asp:ListItem>No Evaluado</asp:ListItem>
-                        <asp:ListItem>No viable</asp:ListItem>
-                        <asp:ListItem>Viable</asp:ListItem>
+                        <asp:ListItem Selected="True" Value="0">selecciona una opcion</asp:ListItem>
+                        <asp:ListItem Value="1">No Evaluado</asp:ListItem>
+                        <asp:ListItem Value="2">No viable</asp:ListItem>
+                        <asp:ListItem Value="3">Viable</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">Observaciones</td>
+                <td class="auto-style2" colspan="2">Observaciones</td>
                 <td colspan="4">
                     <asp:TextBox ID="txtObservaciones" runat="server" rows="5" Height="118px" Width="495px" ></asp:TextBox></td>
             </tr>
             <tr>
-                <td colspan="4">Integrantes</td>
+                <td colspan="5">Integrantes</td>
             </tr>
         
             <tr>
-                <td class="auto-style2" rowspan="2">
+                <td class="auto-style2">
                     
 
                              
 
-                    <asp:ListBox ID="ListBoxProfesor" runat="server" class="form-control input-lg"  Height="240px" Width="297px" SelectionMode="Multiple" AutoPostBack="false"></asp:ListBox>
+                    <asp:ListBox ID="ListBoxProfesor" runat="server" class="form-control input-lg"  Height="240px" Width="297px" SelectionMode="Multiple" AutoPostBack="True"></asp:ListBox>
 <%--        </asp:SqlDataSource>      <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_OBTENER_INTEGRANTE" SelectCommandType="StoredProcedure">  DataSourceID="SqlDataSource4" 
                       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_OBTENER_INTEGRANTE" SelectCommandType="StoredProcedure" >
                      
@@ -219,22 +224,52 @@
                     </asp:SqlDataSource>--%>
                           
                 </td>
-                <td class="auto-style5" colspan="2">
-                    <asp:Button ID="ButtonAddProf" runat="server" Text="&gt;&gt;" Width="27px" OnClick="ButtonAddProf_Click" />
+                <td>
+                    <asp:Button ID="ButtonAddProf" runat="server" OnClick="ButtonAddProf_Click" Text="&gt;&gt;" Width="27px" />
                 </td>
-                <td colspan="2" rowspan="2">
-                    
-                    <asp:ListBox ID="ListBoxProfProy" runat="server" class="form-control input-lg" Height="231px" Width="240px" SelectionMode="Multiple"></asp:ListBox>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style5" colspan="2">
-                    <asp:Button ID="Buttondelprof" runat="server" Text="&lt;&lt;" />
+                <td class="auto-style5" colspan="4">
+                    <asp:GridView ID="gvProfesor" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ProfesorCarrera,RFC" ForeColor="#333333" GridLines="None" OnRowDeleting="gvProfesor_RowDeleting" OnSelectedIndexChanged="gvProfesor_SelectedIndexChanged">
+                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                        <Columns>
+                            <asp:BoundField DataField="RFC" HeaderText="RFC" Visible="False">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            </asp:BoundField>
+                            <asp:TemplateField HeaderText="Coordinador">
+                                <ItemTemplate>
+                                    <asp:CheckBox ID="chbCoordinador" runat="server" AutoPostBack="True" />
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </asp:TemplateField>
+                            <asp:BoundField DataField="Nombre" HeaderText="Nombre">
+                            <HeaderStyle HorizontalAlign="Center" />
+                            </asp:BoundField>
+                            <asp:TemplateField HeaderText="Perfil">
+                                <ItemTemplate>
+                                    <asp:DropDownList ID="ddlPerfil" runat="server">
+                                    </asp:DropDownList>
+                                </ItemTemplate>
+                                <HeaderStyle HorizontalAlign="Center" />
+                            </asp:TemplateField>
+                            <asp:CommandField ButtonType="Button" ShowDeleteButton="True" />
+                            <asp:ButtonField ButtonType="Button" Text="Editar" />
+                            <asp:BoundField DataField="ProfesorCarrera" HeaderText="Profesor de Carrera" Visible="False" />
+                        </Columns>
+                        <EditRowStyle BackColor="#999999" />
+                        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                        <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                        <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                    </asp:GridView>
                 </td>
             </tr>
     
              <tr>
-                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style2" colspan="2">&nbsp;</td>
                 <td colspan="3">
                     <asp:Button ID="btGuardarProy" runat="server" Text="Guardar Proyecto" OnClick="btnGuardarProy" class="btn btn-primary"  />
                 </td>
