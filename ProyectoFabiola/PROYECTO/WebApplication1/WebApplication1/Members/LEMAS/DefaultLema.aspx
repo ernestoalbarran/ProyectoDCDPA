@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DefaultLema.aspx.cs" Inherits="PCEPI.Presentacion.DefaultLema" %>
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+    <style type="text/css">
+        .auto-style1 {
+            width: 174px;
+        }
+    </style>
 </asp:Content>
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
   
@@ -15,7 +20,7 @@
                      <table class="table table-user-information">
                      <tbody>
                      <tr>
-                     <td >
+                     <td class="auto-style1" >
                             TITULO
                      </td>
                 <td colspan=2>
@@ -31,7 +36,7 @@
                 </td>
              </tr>
             <tr >
-                <td>
+                <td class="auto-style1">
                     DESCRIPCION DE LEMA
                 </td>
                 <td colspan=5>
@@ -41,7 +46,7 @@
                 </td>
             </tr>
             <tr>
-                 <td >
+                 <td class="auto-style1" >
                         <asp:Button ID="btnInsert" runat="server" Text="Almacenar Lema" OnClick="btnInsert_Click" class="btn btn-primary" />
                  </td>      
                 <td>

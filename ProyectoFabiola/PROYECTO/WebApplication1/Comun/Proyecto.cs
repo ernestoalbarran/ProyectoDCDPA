@@ -50,20 +50,20 @@ namespace PCEPI.Comun
             get { return _oficio; }
             set { _oficio = value; }
         }
-        private DateTime _fecha_ev1;
+        private String _fecha_ev1;
 
-        public DateTime Fecha_ev1
+        public String Fecha_ev1
         {
             get { return _fecha_ev1; }
             set { _fecha_ev1 = value; }
         }
-        private DateTime _fecha_ev2;
+        //private DateTime _fecha_ev2;
 
-        public DateTime Fecha_ev2
+       /* public DateTime Fecha_ev2
         {
             get { return _fecha_ev2; }
             set { _fecha_ev2 = value; }
-        }
+        }*/
         private String _titulo;
 
         public String Titulo
@@ -148,7 +148,7 @@ namespace PCEPI.Comun
 
         public Proyecto() { }
 
-        public Proyecto(String Grupo, String Periodo, String Interarea, String Interplantel, String P_asignatura, String Oficio, DateTime Fecha_ev1, String Titulo, String Producto, String Campo, String Asignaturas, String Descripcion, String Opinion_dir, String Observaciones, string ValuesInsert)
+        public Proyecto(String Grupo, String Periodo, String Interarea, String Interplantel, String P_asignatura, String Oficio, String Fecha_ev1, String Titulo, String Producto, String Campo, String Asignaturas, String Descripcion, String Opinion_dir, String Observaciones, string ValuesInsert)
         {
             this.Grupo = Grupo;
             this.Periodo = Periodo;

@@ -211,7 +211,7 @@ namespace PCEPI.Datos
 
                 sqlcomandoMateria.Connection = connM;
                 sqlcomandoMateria.CommandType = CommandType.StoredProcedure;
-                sqlcomandoMateria.CommandText = "SP_FILTRAR_MATERIA";
+                sqlcomandoMateria.CommandText = "SP_Obtener_Materia40_LowerCase";
 
 
 

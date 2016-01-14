@@ -25,6 +25,19 @@ namespace PCEPI.Negocio
                 return false;
         }
 
+        public bool validaProfesor(string rfc)
+        {
+            DBHelper dbHelper= new DBHelper();
+            SqlParameter[] parametros = new SqlParameter[1];
+            SqlParameter yaEnProy = new SqlParameter("@rfc", rfc);
+            parametros[0] = yaEnProy;
+            if (DBHelper.ExecuteScalar("usp_verificar_profesor", parametros).ToString() == "1")
+                return true;
+            else
+                return false;
+
+        }
+
         public DataSet consultarPerfiles()
         {
             DBHelper dbHelper = new DBHelper();

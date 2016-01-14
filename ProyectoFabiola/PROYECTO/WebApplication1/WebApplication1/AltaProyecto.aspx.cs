@@ -129,6 +129,13 @@ namespace PCEPI
             }
         }
 
+        protected bool Valida_Profesor(String RFC)
+        {
+            Profesor profesor_RFC = new Profesor();
+            return profesor_RFC.validaProfesor(RFC);
+           
+        }
+
         protected void ButtonAddProf_Click(object sender, EventArgs e)
         {
             if (ListBoxProfesor.SelectedIndex == -1)
@@ -137,64 +144,72 @@ namespace PCEPI
             }
             else
             {
-                //ListBoxProfProy.Items.Add(ListBoxProfesor.SelectedItem);
-                //ListBoxProfesor.Items.Remove(ListBoxProfProy.SelectedItem);
-
-                DataTable dtProfesores = new DataTable();
-                dtProfesores.Columns.Add("RFC", typeof(string));
-                dtProfesores.Columns.Add("Coordinador", typeof(bool));
-                dtProfesores.Columns.Add("Nombre", typeof(string));
-                dtProfesores.Columns.Add("Perfil", typeof(int));
-                dtProfesores.Columns.Add("ProfesorCarrera", typeof(bool));
-
-                object[] valores = new object[5];
-
-                //Esto para llenar la tabla temporal de los registros que ya estan en el grid
-                foreach (GridViewRow registro in gvProfesor.Rows)
+                //este if verifica si el profesor ya se encuentra en un proyecto
+                if (Valida_Profesor(ListBoxProfesor.SelectedValue.ToString())!=true)
                 {
-                    valores[0] = gvProfesor.DataKeys[registro.RowIndex][1].ToString();//RFC
-                    System.Web.UI.WebControls.CheckBox chbCoordinador = (System.Web.UI.WebControls.CheckBox)registro.FindControl("chbCoordinador");
-                    valores[1] = (bool)chbCoordinador.Checked;
-                    valores[2] = registro.Cells[2].Text;
-                    valores[3] = 1;//Profesor de carrera o no
-                    valores[4] = gvProfesor.DataKeys[registro.RowIndex].Value; //Convert.ToBoolean(registro.Cells[6].Text);
+                    //ListBoxProfProy.Items.Add(ListBoxProfesor.SelectedItem);
+                    //ListBoxProfesor.Items.Remove(ListBoxProfProy.SelectedItem);
+
+                    DataTable dtProfesores = new DataTable();
+                    dtProfesores.Columns.Add("RFC", typeof(string));
+                    dtProfesores.Columns.Add("Coordinador", typeof(bool));
+                    dtProfesores.Columns.Add("Nombre", typeof(string));
+                    dtProfesores.Columns.Add("Perfil", typeof(int));
+                    dtProfesores.Columns.Add("ProfesorCarrera", typeof(bool));
+
+                    object[] valores = new object[5];
+
+                    //Esto para llenar la tabla temporal de los registros que ya estan en el grid
+                    foreach (GridViewRow registro in gvProfesor.Rows)
+                    {
+                        valores[0] = gvProfesor.DataKeys[registro.RowIndex][1].ToString();//RFC
+                        System.Web.UI.WebControls.CheckBox chbCoordinador = (System.Web.UI.WebControls.CheckBox)registro.FindControl("chbCoordinador");
+                        valores[1] = (bool)chbCoordinador.Checked;
+                        valores[2] = registro.Cells[2].Text;
+                        valores[3] = 1;//Profesor de carrera o no
+                        valores[4] = gvProfesor.DataKeys[registro.RowIndex].Value; //Convert.ToBoolean(registro.Cells[6].Text);
 
 
-                    dtProfesores.Rows.Add(valores);
+                        dtProfesores.Rows.Add(valores);
+                    }
+
+
+                    object[] valoresNuevos = new object[5];
+                    valoresNuevos[0] = ListBoxProfesor.SelectedItem.Value;//RFC
+                    valoresNuevos[1] = false;
+                    valoresNuevos[2] = ListBoxProfesor.SelectedItem.Text;
+                    valoresNuevos[3] = 1;
+                    valoresNuevos[4] = profesorCarrera(ListBoxProfesor.SelectedItem.Value);//Aqui se lee si es profesor de carrera
+                    dtProfesores.Rows.Add(valoresNuevos);
+                    ListBoxProfesor.Items.Remove(ListBoxProfesor.SelectedItem);
+                    gvProfesor.DataSource = dtProfesores;
+                    gvProfesor.DataBind();
+
+                    rellenarEstadoGridView(dtProfesores);
                 }
-
-
-                object[] valoresNuevos = new object[5];
-                valoresNuevos[0] = ListBoxProfesor.SelectedItem.Value;//RFC
-                valoresNuevos[1] = false;
-                valoresNuevos[2] = ListBoxProfesor.SelectedItem.Text;
-                valoresNuevos[3] = 1;
-                valoresNuevos[4] = profesorCarrera(ListBoxProfesor.SelectedItem.Value);//Aqui se lee si es profesor de carrera
-
-
-
-
-                dtProfesores.Rows.Add(valoresNuevos);
-
-                ListBoxProfesor.Items.Remove(ListBoxProfesor.SelectedItem);
-
-                gvProfesor.DataSource = dtProfesores;
-                gvProfesor.DataBind();
-
-                rellenarEstadoGridView(dtProfesores);
+                else
+                {
+                    MessageBox.Show("El profesor ya se encuentra en otro proyecto");
+                }
             }
         }
 
+
         private void rellenarEstadoGridView(DataTable dtProfesores)
         {
+            /*Este metodo recorre el grid y rellena el estado de cada columna en los check box y muestra el ddlist de perfil*/
             foreach (GridViewRow registro in gvProfesor.Rows)
             {
                 foreach (DataRow drProfesor in dtProfesores.Rows)
                 {
+                    /*se verifica si el nombre del profesor es el mismo de grid*/
                     if (registro.Cells[2].Text == drProfesor[2].ToString())
                     {
                         System.Web.UI.WebControls.CheckBox chb = (System.Web.UI.WebControls.CheckBox)registro.FindControl("chbCoordinador");
                         chb.Checked = (bool)drProfesor[1];
+                        /** DropDownList perfil = (DropDownList)registro.FindControl("ddlPerfil");
+                         perfil.SelectedItem = gvProfesor.SelectedIndex.ToString();**/
+
                         if ((bool)drProfesor[4] == true)
                         {
                             ((System.Web.UI.WebControls.DropDownList)registro.FindControl("ddlPerfil")).DataValueField = "ID_PERFIL";
@@ -331,8 +346,9 @@ namespace PCEPI
                         break;
 
                 }
+               
                 proyecto.Oficio = txtNumOfice.Text;
-                proyecto.Fecha_ev1 = Convert.ToDateTime(output);
+                proyecto.Fecha_ev1 = output; //Convert.ToDateTime(output);
                 proyecto.Titulo = txtTitulo.Text;
                 proyecto.Producto = txtProducto.Text;
                 proyecto.Campo = ddlCampo.SelectedValue.ToString();
@@ -479,7 +495,7 @@ namespace PCEPI
             {
                 if (registro.RowIndex != e.RowIndex)
                 {
-                    valores[0] = registro.Cells[0].Text;//RFC
+                    valores[0] = gvProfesor.DataKeys[registro.RowIndex][1].ToString();//RFC
                     System.Web.UI.WebControls.CheckBox chbCoordinador = (System.Web.UI.WebControls.CheckBox)registro.FindControl("chbCoordinador");
                     valores[1] = (bool)chbCoordinador.Checked;
                     valores[2] = registro.Cells[2].Text;
@@ -490,7 +506,11 @@ namespace PCEPI
                 }
                 else
                 {
-                    ListItem liProfesor = new ListItem(registro.Cells[2].Text, registro.Cells[0].Text);
+                    ListItem liProfesor = new ListItem(registro.Cells[2].Text, gvProfesor.DataKeys[registro.RowIndex][1].ToString());
+                    ListBoxProfesor.DataTextField = liProfesor.Text;
+                    liProfesor.Value = gvProfesor.DataKeys[registro.RowIndex][1].ToString();
+                    ListBoxProfesor.DataValueField = liProfesor.Value;
+                    ListBoxProfesor.DataBind();
                     ListBoxProfesor.Items.Add(liProfesor);
 
 
