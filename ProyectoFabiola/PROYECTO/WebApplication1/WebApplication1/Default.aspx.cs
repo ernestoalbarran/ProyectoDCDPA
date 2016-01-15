@@ -42,16 +42,16 @@ namespace WebApplication1
                
                string usuarioActual = HttpContext.Current.User.Identity.Name;
                Session["nombreUsuario"] = usuarioActual;
-               Console.WriteLine((string)Session["nombreUsuario"]);
+//               Console.WriteLine((string)Session["nombreUsuario"]);
 
                int plantel = Int32.Parse(usuarioActual.Substring(5, 1));
                Session["plantelUsuario"] = plantel;
-               Console.WriteLine((int)Session["plantelUsuario"]);
+//               Console.WriteLine((int)Session["plantelUsuario"]);
 
 
                int area = Int32.Parse(usuarioActual.Substring(7, 1));
                Session["areaUsuario"] = area;
-               Console.WriteLine((int)Session["areaUsuario"]);
+//               Console.WriteLine((int)Session["areaUsuario"]);
 
                Response.Redirect("~/Principal.aspx"); 
            }
@@ -62,5 +62,5 @@ namespace WebApplication1
         {
         
         }
-    }
+            }
 }

@@ -59,7 +59,7 @@
                           GridLines="None"
                           OnPageIndexChanging="grvLemas_PageIndexChanging" 
                           ForeColor="#333333" 
-                           Width="607px" >
+                           Width="607px" OnSelectedIndexChanged="grvLemas_SelectedIndexChanged" >
                            <EditRowStyle BackColor="#999999" />
                              <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
                              <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
