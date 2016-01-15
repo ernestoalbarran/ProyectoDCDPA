@@ -47,6 +47,8 @@ namespace PCEPI
 
                 ProfesorProyecto profesor = new ProfesorProyecto();
                 profesor.ID_PLANTEL = Session["Id_Plantel"].ToString();
+                profesor.Area = Int32.Parse(Session["Id_Area"].ToString());
+                profesor.Opcion = Int32.Parse(Request.QueryString["opcion"].ToString());
 
                 MateriaProyecto materia = new MateriaProyecto();
                 materia.AREA = Convert.ToInt32(Session["Id_Area"].ToString()); ;
@@ -129,6 +131,13 @@ namespace PCEPI
             }
         }
 
+        protected bool Valida_Profesor(String RFC)
+        {
+            Profesor profesor_RFC = new Profesor();
+            return profesor_RFC.validaProfesor(RFC);
+           
+        }
+
         protected void ButtonAddProf_Click(object sender, EventArgs e)
         {
             if (ListBoxProfesor.SelectedIndex == -1)
@@ -137,64 +146,72 @@ namespace PCEPI
             }
             else
             {
-                //ListBoxProfProy.Items.Add(ListBoxProfesor.SelectedItem);
-                //ListBoxProfesor.Items.Remove(ListBoxProfProy.SelectedItem);
-
-                DataTable dtProfesores = new DataTable();
-                dtProfesores.Columns.Add("RFC", typeof(string));
-                dtProfesores.Columns.Add("Coordinador", typeof(bool));
-                dtProfesores.Columns.Add("Nombre", typeof(string));
-                dtProfesores.Columns.Add("Perfil", typeof(int));
-                dtProfesores.Columns.Add("ProfesorCarrera", typeof(bool));
-
-                object[] valores = new object[5];
-
-                //Esto para llenar la tabla temporal de los registros que ya estan en el grid
-                foreach (GridViewRow registro in gvProfesor.Rows)
+                //este if verifica si el profesor ya se encuentra en un proyecto
+                if (Valida_Profesor(ListBoxProfesor.SelectedValue.ToString())!=true)
                 {
-                    valores[0] = gvProfesor.DataKeys[registro.RowIndex][1].ToString();//RFC
-                    System.Web.UI.WebControls.CheckBox chbCoordinador = (System.Web.UI.WebControls.CheckBox)registro.FindControl("chbCoordinador");
-                    valores[1] = (bool)chbCoordinador.Checked;
-                    valores[2] = registro.Cells[2].Text;
-                    valores[3] = 1;//Profesor de carrera o no
-                    valores[4] = gvProfesor.DataKeys[registro.RowIndex].Value; //Convert.ToBoolean(registro.Cells[6].Text);
+                    //ListBoxProfProy.Items.Add(ListBoxProfesor.SelectedItem);
+                    //ListBoxProfesor.Items.Remove(ListBoxProfProy.SelectedItem);
+
+                    DataTable dtProfesores = new DataTable();
+                    dtProfesores.Columns.Add("RFC", typeof(string));
+                    dtProfesores.Columns.Add("Coordinador", typeof(bool));
+                    dtProfesores.Columns.Add("Nombre", typeof(string));
+                    dtProfesores.Columns.Add("Perfil", typeof(int));
+                    dtProfesores.Columns.Add("ProfesorCarrera", typeof(bool));
+
+                    object[] valores = new object[5];
+
+                    //Esto para llenar la tabla temporal de los registros que ya estan en el grid
+                    foreach (GridViewRow registro in gvProfesor.Rows)
+                    {
+                        valores[0] = gvProfesor.DataKeys[registro.RowIndex][1].ToString();//RFC
+                        System.Web.UI.WebControls.CheckBox chbCoordinador = (System.Web.UI.WebControls.CheckBox)registro.FindControl("chbCoordinador");
+                        valores[1] = (bool)chbCoordinador.Checked;
+                        valores[2] = registro.Cells[2].Text;
+                        valores[3] = 1;//Profesor de carrera o no
+                        valores[4] = gvProfesor.DataKeys[registro.RowIndex].Value; //Convert.ToBoolean(registro.Cells[6].Text);
 
 
-                    dtProfesores.Rows.Add(valores);
+                        dtProfesores.Rows.Add(valores);
+                    }
+
+
+                    object[] valoresNuevos = new object[5];
+                    valoresNuevos[0] = ListBoxProfesor.SelectedItem.Value;//RFC
+                    valoresNuevos[1] = false;
+                    valoresNuevos[2] = ListBoxProfesor.SelectedItem.Text;
+                    valoresNuevos[3] = 1;
+                    valoresNuevos[4] = profesorCarrera(ListBoxProfesor.SelectedItem.Value);//Aqui se lee si es profesor de carrera
+                    dtProfesores.Rows.Add(valoresNuevos);
+                    ListBoxProfesor.Items.Remove(ListBoxProfesor.SelectedItem);
+                    gvProfesor.DataSource = dtProfesores;
+                    gvProfesor.DataBind();
+
+                    rellenarEstadoGridView(dtProfesores);
                 }
-
-
-                object[] valoresNuevos = new object[5];
-                valoresNuevos[0] = ListBoxProfesor.SelectedItem.Value;//RFC
-                valoresNuevos[1] = false;
-                valoresNuevos[2] = ListBoxProfesor.SelectedItem.Text;
-                valoresNuevos[3] = 1;
-                valoresNuevos[4] = profesorCarrera(ListBoxProfesor.SelectedItem.Value);//Aqui se lee si es profesor de carrera
-
-
-
-
-                dtProfesores.Rows.Add(valoresNuevos);
-
-                ListBoxProfesor.Items.Remove(ListBoxProfesor.SelectedItem);
-
-                gvProfesor.DataSource = dtProfesores;
-                gvProfesor.DataBind();
-
-                rellenarEstadoGridView(dtProfesores);
+                else
+                {
+                    MessageBox.Show("El profesor ya se encuentra en otro proyecto");
+                }
             }
         }
 
+
         private void rellenarEstadoGridView(DataTable dtProfesores)
         {
+            /*Este metodo recorre el grid y rellena el estado de cada columna en los check box y muestra el ddlist de perfil*/
             foreach (GridViewRow registro in gvProfesor.Rows)
             {
                 foreach (DataRow drProfesor in dtProfesores.Rows)
                 {
+                    /*se verifica si el nombre del profesor es el mismo de grid*/
                     if (registro.Cells[2].Text == drProfesor[2].ToString())
                     {
                         System.Web.UI.WebControls.CheckBox chb = (System.Web.UI.WebControls.CheckBox)registro.FindControl("chbCoordinador");
                         chb.Checked = (bool)drProfesor[1];
+                        /** DropDownList perfil = (DropDownList)registro.FindControl("ddlPerfil");
+                         perfil.SelectedItem = gvProfesor.SelectedIndex.ToString();**/
+
                         if ((bool)drProfesor[4] == true)
                         {
                             ((System.Web.UI.WebControls.DropDownList)registro.FindControl("ddlPerfil")).DataValueField = "ID_PERFIL";
@@ -266,104 +283,125 @@ namespace PCEPI
             Response.Redirect("ListarProyectos.aspx", false);
         }
 
-
+        
         protected void btnGuardarProy(object sender, EventArgs e)
         {
             try
             {
-                int opcion = Convert.ToInt32(Request.QueryString["opcion"]);
-                StringBuilder MateriasProy = new StringBuilder();
-                String Fecha = txtFechaEval.Text;
-                Fecha = Regex.Replace(Fecha, @"[^\u0000-\u007F]", string.Empty);
-                string inputFormat = "dd/MM/yyyy";
-                string outputFormat = "yyyy/MM/dd";
-                var dateTime = DateTime.ParseExact(Fecha, inputFormat, CultureInfo.InvariantCulture);
-                string output = dateTime.ToString(outputFormat);
 
-                Proyecto proyecto = new Proyecto();
-                proyecto.Grupo = Session["ID_Plantel"].ToString() + Session["ID_AREA"].ToString() + lblGrupo.Text;
-                proyecto.Periodo = lblPeriodo.Text;
-
-                switch (opcion)
+                int filas= gvProfesor.Rows.Count;
+                int cantChk=0;
+                int numCheckboxSelect = filas / 4;
+                //contar el numero de checkbox seleccionados
+                foreach (GridViewRow registro in gvProfesor.Rows)
                 {
-                    case 0:
-                        proyecto.Interarea = "0";
-                        proyecto.Interplantel = "0";
-                        proyecto.P_asignatura = "0";
-                        break;
-
-                    case 1:
-                        proyecto.Interarea = "1";
-                        proyecto.Interplantel = "0";
-                        proyecto.P_asignatura = "0";
-                        break;
-                    case 2:
-                        proyecto.Interarea = "0";
-                        proyecto.Interplantel = "1";
-                        proyecto.P_asignatura = "0";
-                        break;
-                    case 3:
-                        proyecto.Interarea = "1";
-                        proyecto.Interplantel = "1";
-                        proyecto.P_asignatura = "0";
-                        break;
-                    case 4:
-                        proyecto.Interarea = "0";
-                        proyecto.Interplantel = "0";
-                        proyecto.P_asignatura = "1";
-                        break;
-                    case 5:
-                        proyecto.Interarea = "1";
-                        proyecto.Interplantel = "0";
-                        proyecto.P_asignatura = "1";
-                        break;
-                    case 6:
-                        proyecto.Interarea = "0";
-                        proyecto.Interplantel = "1";
-                        proyecto.P_asignatura = "1";
-                        break;
-                    case 7:
-                        proyecto.Interarea = "1";
-                        proyecto.Interplantel = "1";
-                        proyecto.P_asignatura = "1"; ;
-                        break;
-                    default:
-                        break;
-
+                    System.Web.UI.WebControls.CheckBox chk = (System.Web.UI.WebControls.CheckBox)registro.FindControl("chbCoordinador");
+                    if (chk.Checked)
+                        cantChk++;
                 }
-                proyecto.Oficio = txtNumOfice.Text;
-                proyecto.Fecha_ev1 = Convert.ToDateTime(output);
-                proyecto.Titulo = txtTitulo.Text;
-                proyecto.Producto = txtProducto.Text;
-                proyecto.Campo = ddlCampo.SelectedValue.ToString();
-                foreach (ListItem mat in ListBoxMateriasP.Items)
+
+
+                if (numCheckboxSelect == cantChk)
                 {
-                    String valores = mat.Value;
-                    MateriasProy.Append(valores.ToString());
+
+
+                    int opcion = Convert.ToInt32(Request.QueryString["opcion"]);
+                    StringBuilder MateriasProy = new StringBuilder();
+                    String Fecha = txtFechaEval.Text;
+                    Fecha = Regex.Replace(Fecha, @"[^\u0000-\u007F]", string.Empty);
+                    string inputFormat = "dd/MM/yyyy";
+                    string outputFormat = "yyyy/MM/dd";
+                    var dateTime = DateTime.ParseExact(Fecha, inputFormat, CultureInfo.InvariantCulture);
+                    string output = dateTime.ToString(outputFormat);
+
+                    Proyecto proyecto = new Proyecto();
+                    proyecto.Grupo = Session["ID_Plantel"].ToString() + Session["ID_AREA"].ToString() + lblGrupo.Text;
+                    proyecto.Periodo = lblPeriodo.Text;
+
+                    switch (opcion)
+                    {
+                        case 0:
+                            proyecto.Interarea = "0";
+                            proyecto.Interplantel = "0";
+                            proyecto.P_asignatura = "0";
+                            break;
+
+                        case 1:
+                            proyecto.Interarea = "1";
+                            proyecto.Interplantel = "0";
+                            proyecto.P_asignatura = "0";
+                            break;
+                        case 2:
+                            proyecto.Interarea = "0";
+                            proyecto.Interplantel = "1";
+                            proyecto.P_asignatura = "0";
+                            break;
+                        case 3:
+                            proyecto.Interarea = "1";
+                            proyecto.Interplantel = "1";
+                            proyecto.P_asignatura = "0";
+                            break;
+                        case 4:
+                            proyecto.Interarea = "0";
+                            proyecto.Interplantel = "0";
+                            proyecto.P_asignatura = "1";
+                            break;
+                        case 5:
+                            proyecto.Interarea = "1";
+                            proyecto.Interplantel = "0";
+                            proyecto.P_asignatura = "1";
+                            break;
+                        case 6:
+                            proyecto.Interarea = "0";
+                            proyecto.Interplantel = "1";
+                            proyecto.P_asignatura = "1";
+                            break;
+                        case 7:
+                            proyecto.Interarea = "1";
+                            proyecto.Interplantel = "1";
+                            proyecto.P_asignatura = "1"; ;
+                            break;
+                        default:
+                            break;
+
+                    }
+
+                    proyecto.Oficio = txtNumOfice.Text;
+                    proyecto.Fecha_ev1 = output; //Convert.ToDateTime(output);
+                    proyecto.Titulo = txtTitulo.Text;
+                    proyecto.Producto = txtProducto.Text;
+                    proyecto.Campo = ddlCampo.SelectedValue.ToString();
+                    foreach (ListItem mat in ListBoxMateriasP.Items)
+                    {
+                        String valores = mat.Value;
+                        MateriasProy.Append(valores.ToString());
+                    }
+                    String Concatenadas = MateriasProy.ToString();
+                    proyecto.Asignaturas = Concatenadas; //esta es la concatenacion de las materias del listbox
+                    proyecto.Descripcion = txtADescProy.Text;
+                    proyecto.Opinion_dir = ddlOpinion.SelectedValue.ToString();
+                    proyecto.Observaciones = txtObservaciones.Text;
+                    //proyecto.PROFESOR = ListBoxProfProy.SelectedItem.Text;     
+                    string valoresProfesores = crearValoresInsertarProfesores();
+                    proyecto.ValuesInsert = valoresProfesores;
+
+                    if (NegocioProyecto.Insertar(proyecto) > 0)
+                    {
+                        MessageBox.Show("Se inserto el proyecto correctamente");
+                        Response.Redirect("DefaultProyecto.aspx", false);
+
+                    }
                 }
-                String Concatenadas = MateriasProy.ToString();
-                proyecto.Asignaturas = Concatenadas; //esta es la concatenacion de las materias del listbox
-                proyecto.Descripcion = txtADescProy.Text;
-                proyecto.Opinion_dir = ddlOpinion.SelectedValue.ToString();
-                proyecto.Observaciones = txtObservaciones.Text;
-                //proyecto.PROFESOR = ListBoxProfProy.SelectedItem.Text;     
-                string valoresProfesores = crearValoresInsertarProfesores();
-                proyecto.ValuesInsert = valoresProfesores;
-
-                if (NegocioProyecto.Insertar(proyecto) > 0)
+                else
                 {
-                    MessageBox.Show("Se inserto el proyecto correctamente");
-                    Response.Redirect("DefaultProyecto.aspx", false);
-
+                    MessageBox.Show("El numero de Cordinadores \n permitidos para el proyecto \n es de: " + numCheckboxSelect);
                 }
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show("Algo esta mal" + ex.Message + ex.StackTrace);
+                MessageBox.Show(" faltan elementos por rellenar\n en el formulario o algo esta mal\n en el codigo de btnGuardarProy" + ex.Message + ex.StackTrace);
             }
-
-
             //AltaProyecto.Insertar(proyecto);
 
 
@@ -371,10 +409,11 @@ namespace PCEPI
 
         private string crearValoresInsertarProfesores()
         {
+            
             StringBuilder valores = new StringBuilder();
 
             valores.Append("VALUES");
-
+            
             foreach (GridViewRow registro in gvProfesor.Rows)
             {
                 valores.Append("(");
@@ -388,13 +427,14 @@ namespace PCEPI
                 valores.Append("'" + lblPeriodo.Text + "', ");
                 if (((System.Web.UI.WebControls.CheckBox)registro.FindControl("chbCoordinador")).Checked == true)
                     valores.Append("'1', ");
+                  
                 else
                     valores.Append("'0', ");
                 valores.Append("'" + ((DropDownList)registro.FindControl("ddlPerfil")).SelectedValue + "'),");
                 //Aqui concatenar todos los valores de un prof
 
             }
-            string cadena = (valores.ToString()).Substring(0, valores.Length - 1);
+            string cadena = (valores.ToString()).Substring(0, valores.Length - 1),seleccion;
             return cadena;
         }
 
@@ -414,55 +454,16 @@ namespace PCEPI
 
         }
 
-        //protected void ButtondelProf_Click(object sender, EventArgs e)
-        //{
 
-        //    if (ListBoxProfProy.SelectedIndex == -1)
-        //    {
-        //        MessageBox.Show("No se eligieron profesores para eliminar de la lista");
-        //    }
-        //    else
-        //    {
-        //        ListBoxProfesor.Items.Add(ListBoxProfProy.SelectedItem);
-        //        ListBoxProfProy.Items.Remove(ListBoxProfesor.SelectedItem);
-        //    }
-        //}
-
+        protected void num_chboxselect(object sender, GridView e)
+        {
+        }
         protected void ListBoxProfProy_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        //protected void gvProfesor_RowCommand(object sender, GridViewCommandEventArgs e)
-        //{
-        //    if (e.CommandName == "Borrar")
-        //    {
-        //        object[] valores = new object[5];
-        //        DataTable dtProfesores = new DataTable();
-
-        //        foreach (GridViewRow registro in gvProfesor.Rows)
-        //        {
-        //            if (registro.RowIndex != gvProfesor.row)
-        //            {
-        //                valores[0] = registro.Cells[0].Text;//RFC
-        //                System.Web.UI.WebControls.CheckBox chbCoordinador = (System.Web.UI.WebControls.CheckBox)registro.FindControl("chbCoordinador");
-        //                valores[1] = (bool)chbCoordinador.Checked;
-        //                valores[2] = registro.Cells[2].Text;
-        //                valores[3] = 1;//Profesor de carrera o no
-        //                valores[4] = gvProfesor.DataKeys[registro.RowIndex].Value; //Convert.ToBoolean(registro.Cells[6].Text);
-
-        //                dtProfesores.Rows.Add(valores);
-        //            }
-        //            else
-        //            {
-        //                ListItem liProfesor = new ListItem(registro.Cells[2].Text, registro.Cells[0].Text);
-        //                ListBoxProfesor.Items.Add(liProfesor);
-        //            }
-        //        }
-        //        gvProfesor.DataSource = dtProfesores;
-        //        gvProfesor.DataBind();
-        //    }
-        //}
+       
 
         protected void gvProfesor_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
@@ -479,7 +480,7 @@ namespace PCEPI
             {
                 if (registro.RowIndex != e.RowIndex)
                 {
-                    valores[0] = registro.Cells[0].Text;//RFC
+                    valores[0] = gvProfesor.DataKeys[registro.RowIndex][1].ToString();//RFC
                     System.Web.UI.WebControls.CheckBox chbCoordinador = (System.Web.UI.WebControls.CheckBox)registro.FindControl("chbCoordinador");
                     valores[1] = (bool)chbCoordinador.Checked;
                     valores[2] = registro.Cells[2].Text;
@@ -490,7 +491,11 @@ namespace PCEPI
                 }
                 else
                 {
-                    ListItem liProfesor = new ListItem(registro.Cells[2].Text, registro.Cells[0].Text);
+                    ListItem liProfesor = new ListItem(registro.Cells[2].Text, gvProfesor.DataKeys[registro.RowIndex][1].ToString());
+                    ListBoxProfesor.DataTextField = liProfesor.Text;
+                    liProfesor.Value = gvProfesor.DataKeys[registro.RowIndex][1].ToString();
+                    ListBoxProfesor.DataValueField = liProfesor.Value;
+                    ListBoxProfesor.DataBind();
                     ListBoxProfesor.Items.Add(liProfesor);
 
 

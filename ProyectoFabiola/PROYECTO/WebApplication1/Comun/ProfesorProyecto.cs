@@ -50,6 +50,22 @@ namespace PCEPI.Comun
             set { _ID_CATEGORIA = value; }
         }
 
+        private int _Opcion;
+
+        public int Opcion
+        {
+            get { return _Opcion; }
+            set { _Opcion = value; }
+        }
+
+        private int _Area;
+
+        public int Area
+        {
+            get { return _Area; }
+            set { _Area = value; }
+        }
+
         public ProfesorProyecto() { }
 
 
