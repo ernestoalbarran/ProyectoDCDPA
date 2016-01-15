@@ -103,7 +103,9 @@ namespace PCEPI.Negocio
         {
             SqlParameter[] dbParams = new SqlParameter[]
             {   
-                DBHelper.MakeParam("@ID_PLANTEL",SqlDbType.VarChar,0,profesor.ID_PLANTEL)
+                DBHelper.MakeParam("@ID_PLANTEL",SqlDbType.VarChar,0,profesor.ID_PLANTEL),
+                DBHelper.MakeParam("@ID_Area",SqlDbType.Int,0,profesor.Area),
+                DBHelper.MakeParam("@Opcion",SqlDbType.Int,0,profesor.Opcion)
 
             };
             

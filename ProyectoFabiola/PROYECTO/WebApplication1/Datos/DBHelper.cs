@@ -216,7 +216,12 @@ namespace PCEPI.Datos
 
 
                 SqlParameter parID_PLANTEL = new SqlParameter("@ID_PLANTEL", profesor.ID_PLANTEL);
+                SqlParameter parID_Area = new SqlParameter("@ID_AREA", profesor.Area);
+                SqlParameter parOpcion = new SqlParameter("@Opcion", profesor.Opcion);
                 sqlcomando.Parameters.Add(parID_PLANTEL);
+                sqlcomando.Parameters.Add(parID_Area);
+                sqlcomando.Parameters.Add(parOpcion);
+
 
 
                 SqlParameter parID_AREA = new SqlParameter("@ID_AREA", materia.AREA);
