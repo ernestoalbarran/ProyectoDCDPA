@@ -112,6 +112,22 @@ namespace WebApplication1
                 //Session.Add("id_Materia", ddlMateria.SelectedItem.Value);
                 Response.Redirect("~/DefaultProyecto.aspx");
             }
+
+            if ((string)Session["usuario"] == "Jefe Sección")
+            {
+                //Session.Add("Plantel", ddlPlantel.SelectedItem.Text);
+                //Session.Add("Id_Plantel", ddlPlantel.SelectedItem.Value);
+                //Session.Add("Proyecto", ddlProyecto.SelectedItem.Text);
+                //Session.Add("Id_Proyecto", ddlProyecto.SelectedItem.Value);
+                //Session.Add("Area", ddlArea.SelectedItem.Text);
+                //Session.Add("Id_Area", ddlArea.SelectedItem.Value);
+                //Session.Add("Materia", ddlMateria.SelectedItem.Text);
+                //Session.Add("id_Materia", ddlMateria.SelectedItem.Value);
+                Session.Add("Proyecto", ddlProyecto.SelectedItem.Text);
+                Session.Add("Id_Proyecto", ddlProyecto.SelectedItem.Value);
+
+                Response.Redirect("~/DefaultProyecto.aspx");
+            }
         }
 
         protected void ddlPlantel_SelectedIndexChanged(object sender, EventArgs e)

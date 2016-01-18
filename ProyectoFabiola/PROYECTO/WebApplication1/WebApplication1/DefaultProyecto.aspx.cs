@@ -7,7 +7,8 @@ using System.Web.UI.WebControls;
 using PCEPI.Comun;
 
 using PCEPI.Negocio;
-using System.Windows.Forms;
+using System.Web.Security;
+using System.Data;
 
 namespace PCEPI
 {
@@ -17,10 +18,47 @@ namespace PCEPI
         {
             //esto se hizo solo para observar que se mantienen los valores seteados
 
+            //string usuario = Session["usuario"].ToString();
 
-            Label1.Text = Session["Proyecto"].ToString();
-            Label2.Text = Session["Id_Area"].ToString(); // se debe hacer el cambio de materia por area en la pagina donde se despliega
-            Label3.Text = Session["Id_Plantel"].ToString();
+            if (Roles.IsUserInRole("Administrador"))
+            {
+                Label1.Text = Session["Proyecto"].ToString();
+                Label2.Text = Session["Id_Area"].ToString(); // se debe hacer el cambio de materia por area en la pagina donde se despliega
+                Label3.Text = Session["Id_Plantel"].ToString();
+                Label4.Text = Session["usuario"].ToString();
+            }
+            else
+            {
+                if (Roles.IsUserInRole("Jefe Sección"))
+                {
+                    Label1.Text = Session["Proyecto"].ToString();
+                    //Label2.Text = Session["Id_Area"].ToString(); // se debe hacer el cambio de materia por area en la pagina donde se despliega
+                    //Label3.Text = Session["Id_Plantel"].ToString();
+                    Label2.Text = Session["areaUsuario"].ToString();
+                    Label3.Text = Session["plantelUsuario"].ToString();
+                    Label4.Text = Session["usuario"].ToString();
+                    Label5.Text = Session["Id_Proyecto"].ToString();
+
+
+
+                    //Label grupo = (Label)FormView1.FindControl("grupoLabel");
+                    //string temporal = grupo.Text;
+
+                    //DataRowView rowView = (DataRowView)FormView1.DataItem;
+                    //string temporal2;
+                    //temporal2 = rowView.ToString();
+
+                    //DataRowView rowView2 =  ((DataRowView)Container.DataItem)["IntegerValue"]) ;
+
+                    
+
+                }
+                else {
+                    Response.Write("Sin rol definido");
+                }
+            }
+
+
         }
 
         protected void btCrearGrupo_Click(object sender, EventArgs e)

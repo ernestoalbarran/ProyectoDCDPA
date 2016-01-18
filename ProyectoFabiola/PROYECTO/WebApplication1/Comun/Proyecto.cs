@@ -59,11 +59,11 @@ namespace PCEPI.Comun
         }
         //private DateTime _fecha_ev2;
 
-       /* public DateTime Fecha_ev2
-        {
-            get { return _fecha_ev2; }
-            set { _fecha_ev2 = value; }
-        }*/
+        //public DateTime Fecha_ev2
+        //{
+        //    get { return _fecha_ev2; }
+        //    set { _fecha_ev2 = value; }
+        //}
         private String _titulo;
 
         public String Titulo

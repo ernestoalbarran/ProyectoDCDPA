@@ -117,7 +117,7 @@
         
       </div>
           <br />
-          <asp:FormView ID="FormView1" runat="server" CellPadding="4" DataSourceID="SqlDataSource5" ForeColor="#333333" Height="311px" AllowPaging="True">
+          <asp:FormView ID="FormView1" runat="server" CellPadding="4" DataSourceID="SqlDataSource5" ForeColor="#333333" Height="311px" AllowPaging="True" OnPageIndexChanging="FormView1_PageIndexChanging">
               <EditItemTemplate>
                   PERIODO:
                   <asp:TextBox ID="PERIODOTextBox" runat="server" Text='<%# Bind("PERIODO") %>' />
@@ -204,11 +204,11 @@
                 <div class="panel panel-info">
 
                 <div class="panel-heading">
-                <hgroup class="title">
-                <h1><%: Title %>.</h1>
-                <h2>Proyectos   <asp:Label ID="PERIODOLabel" runat="server" Text='<%# Bind("PERIODO") %>' />   Entidad1</h2>
-                 <br />
-                </hgroup>
+                    <hgroup class="title">
+                    <h1><%: Title %>.</h1>
+                    <h2>Proyectos   <asp:Label ID="PERIODOLabel" runat="server" Text='<%# Bind("PERIODO") %>' />   Entidad1</h2>
+                     <br />
+                    </hgroup>
                 </div>
                 <asp:Table ID="Table1" runat="server" class="table table-user-information" HorizontalAlign="Center" Height="100%">
                     <asp:TableHeaderRow>
@@ -223,8 +223,7 @@
                 <asp:Table ID="Table2" runat="server" class="table table-user-information">
                     <asp:TableRow>
                         <asp:TableCell class="auto-style1">Grupo</asp:TableCell>
-                        <asp:tableCell class="auto-style1" ColumnSpan="4"><asp:Label ID="TITULOLabel" runat="server" Text='<%# Bind("TITULO") %>' /></asp:tableCell>
-                        <asp:TableCell class="auto-style1"><asp:Button ID="Button4" runat="server" Text="Borrar" /></asp:TableCell>
+                        <asp:tableCell class="auto-style1" ColumnSpan="4"><asp:Label ID="TITULOLabel" runat="server" Text='<%# Bind("TITULO") %>' /></asp:tableCell><asp:TableCell class="auto-style1"><asp:Button ID="Button4" runat="server" Text="Borrar" /></asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell class="auto-style1" HorizontalAlign="Center" VerticalAlign="Middle" Font-Bold Font-Size="XX-Large" RowSpan="2">01</asp:TableCell>
@@ -240,62 +239,28 @@
                     <asp:TableRow>
                         <asp:TableCell class="auto-style1"> <asp:Button ID="Button3" runat="server" Text="Editar" /></asp:TableCell>
                         <asp:TableCell class="auto-style1" Font-Bold Font-Size="Medium">Tipo</asp:TableCell>
-                        <asp:TableCell class="auto-style1"><asp:CheckBox ID="CheckBox1" runat="server" /> Interárea</asp:TableCell><asp:TableCell class="auto-style1"><asp:CheckBox ID="CheckBox2" runat="server"></asp:CheckBox>Interplantel</asp:TableCell>
+                        <asp:TableCell class="auto-style1"><asp:CheckBox ID="CheckBox1" runat="server" /> Interárea</asp:TableCell>
+                        <asp:TableCell class="auto-style1"><asp:CheckBox ID="CheckBox2" runat="server"></asp:CheckBox>Interplantel</asp:TableCell>
                         <asp:TableCell class="auto-style1" ColumnSpan="2"><asp:CheckBox ID="CheckBox3" runat="server" />c/ Profr. Asignatura</asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
-               <asp:Table ID="Table3" runat="server" class="table table-user-information">
-                    
-                    <asp:TableRow>
-                        <asp:TableCell></asp:TableCell>
-                        <asp:TableCell ColumnSpan="5" HorizontalAlign="Center" Font-Bold Font-Size="Large">Integrantes</asp:TableCell>
-                    </asp:TableRow>
 
+                <asp:Table ID="Table3" runat="server" class="table table-user-information">
                     <asp:TableRow>
-                        <asp:TableCell class="auto-style1"></asp:TableCell>
-                        <asp:TableCell class="auto-style1"></asp:TableCell>
-                        <asp:TableCell class="auto-style1">Gómez González Guillermo</asp:TableCell>
-                        <asp:TableCell class="auto-style1">Titular "C" T.C. Definitivo</asp:TableCell>
-                        <asp:TableCell class="auto-style1"></asp:TableCell>
-                        <asp:TableCell class="auto-style1"></asp:TableCell>
-                    </asp:TableRow>
-
-                    <asp:TableRow>
-                        <asp:TableCell class="auto-style1"></asp:TableCell>
-                        <asp:TableCell class="auto-style1"></asp:TableCell>
-                        <asp:TableCell class="auto-style1">Molina Tapia Alberto Héctor Manuel</asp:TableCell>
-                        <asp:TableCell class="auto-style1">Titular "C" T.C. Definitivo</asp:TableCell>
-                        <asp:TableCell class="auto-style1"></asp:TableCell>
-                        <asp:TableCell class="auto-style1"></asp:TableCell>
-                    </asp:TableRow>
-
-                    <asp:TableRow>
-                        <asp:TableCell></asp:TableCell>
-                        <asp:TableCell></asp:TableCell>
-                        <asp:TableCell>Ramírez del Castillo Carlos</asp:TableCell>
-                        <asp:TableCell>Titular "C" T.C. Definitivo</asp:TableCell>
-                        <asp:TableCell>Sabático</asp:TableCell>
-                        <asp:TableCell></asp:TableCell>
-                    </asp:TableRow>
-                </asp:Table>
+                        <asp:TableCell></asp:TableCell><asp:TableCell ColumnSpan="5" HorizontalAlign="Center" Font-Bold Font-Size="Large">Integrantes</asp:TableCell></asp:TableRow><asp:TableRow>
+                        <asp:TableCell class="auto-style1"></asp:TableCell><asp:TableCell class="auto-style1"></asp:TableCell><asp:TableCell class="auto-style1">Gómez González Guillermo</asp:TableCell><asp:TableCell class="auto-style1">Titular "C" T.C. Definitivo</asp:TableCell><asp:TableCell class="auto-style1"></asp:TableCell><asp:TableCell class="auto-style1"></asp:TableCell></asp:TableRow><asp:TableRow>
+                        <asp:TableCell class="auto-style1"></asp:TableCell><asp:TableCell class="auto-style1"></asp:TableCell><asp:TableCell class="auto-style1">Molina Tapia Alberto Héctor Manuel</asp:TableCell><asp:TableCell class="auto-style1">Titular "C" T.C. Definitivo</asp:TableCell><asp:TableCell class="auto-style1"></asp:TableCell><asp:TableCell class="auto-style1"></asp:TableCell></asp:TableRow><asp:TableRow>
+                        <asp:TableCell></asp:TableCell><asp:TableCell></asp:TableCell><asp:TableCell>Ramírez del Castillo Carlos</asp:TableCell><asp:TableCell>Titular "C" T.C. Definitivo</asp:TableCell><asp:TableCell>Sabático</asp:TableCell><asp:TableCell></asp:TableCell></asp:TableRow></asp:Table><br />PLANTEL: <asp:Label ID="PLANTELLabel" runat="server" Text='<%# Bind("PLANTEL") %>' />
                   <br />
-                  PLANTEL:
-                  <asp:Label ID="PLANTELLabel" runat="server" Text='<%# Bind("PLANTEL") %>' />
+                  NUM_OFICIO: <asp:Label ID="NUM_OFICIOLabel" runat="server" Text='<%# Bind("NUM_OFICIO") %>' />
                   <br />
-                  NUM_OFICIO:
-                  <asp:Label ID="NUM_OFICIOLabel" runat="server" Text='<%# Bind("NUM_OFICIO") %>' />
+                  FECHA_EVAL: <asp:Label ID="FECHA_EVALLabel" runat="server" Text='<%# Bind("FECHA_EVAL") %>' />
                   <br />
-                  FECHA_EVAL:
-                  <asp:Label ID="FECHA_EVALLabel" runat="server" Text='<%# Bind("FECHA_EVAL") %>' />
+                  DESCRIPCION_PROY: <asp:Label ID="DESCRIPCION_PROYLabel" runat="server" Text='<%# Bind("DESCRIPCION_PROY") %>' />
                   <br />
-                  DESCRIPCION_PROY:
-                  <asp:Label ID="DESCRIPCION_PROYLabel" runat="server" Text='<%# Bind("DESCRIPCION_PROY") %>' />
+                  OBSERVACIONES: <asp:Label ID="OBSERVACIONESLabel" runat="server" Text='<%# Bind("OBSERVACIONES") %>' />
                   <br />
-                  OBSERVACIONES:
-                  <asp:Label ID="OBSERVACIONESLabel" runat="server" Text='<%# Bind("OBSERVACIONES") %>' />
-                  <br />
-                  ID_AREA:
-                  <asp:Label ID="ID_AREALabel" runat="server" Text='<%# Bind("ID_AREA") %>' />
+                  ID_AREA: <asp:Label ID="ID_AREALabel" runat="server" Text='<%# Bind("ID_AREA") %>' />
                   <br />
                   <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
                   &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
