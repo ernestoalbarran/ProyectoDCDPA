@@ -14,6 +14,7 @@ using System.Text.RegularExpressions;
 using PCEPI.Comun;
 using PCEPI.Negocio;
 using Comun;
+using DGCCH.Comun;
 
 
 namespace PCEPI
@@ -25,26 +26,39 @@ namespace PCEPI
             if (!Page.IsPostBack)
             {
                 lblPeriodo.Text = Session["Proyecto"].ToString();
+                //nombre del área
                 lblMateria.Text = Session["Area"].ToString(); // se debe hacer el cambio de materia por area en la pagina donde se despliega
+                //nombre del plantel
                 lblPlantel.Text = Session["Plantel"].ToString();
-                Label6.Text = Request.QueryString["opcion"]; // esto es para saber que se tienen guardadas las opciones del check box
+               // Label6.Text = Request.QueryString["opcion"]; // esto es para saber que se tienen guardadas las opciones del check box
+                
 
+                //llena el llbCampos directamente de la base de datos
+                ProyectoCampo ddlC = new ProyectoCampo();
+                ddlC.Id_Proyecto = Convert.ToInt32(Session["Id_Proyecto"].ToString());
+                DataSet Campos = NegocioProyecto.GetCampos(ddlC);
+                ddlCampo.DataSource = Campos;
+                ddlCampo.DataTextField = "Des_Corta";
+                ddlCampo.DataValueField = "IDCampo";
+                ddlCampo.DataBind();
+
+                //Estos debe recibirlos tambien del PEC
                 ProyectoLabels labels = new ProyectoLabels();
-                labels.PERIODO = Session["Proyecto"].ToString();
-                labels.PLANTEL = Session["Id_Plantel"].ToString();
-                labels.ID_AREA = Session["Id_Area"].ToString();
+                labels.PERIODO = Session["Proyecto"].ToString();   //en este formato 2006-2007
+                labels.PLANTEL = Session["Id_Plantel"].ToString();  //id del plantel
+                labels.ID_AREA = Session["Id_Area"].ToString();     // id del área
                 labels.Fecha = "@Fecha";
                 labels.Grupo = "@Grupo";
 
 
-
+                //Trae las etiquetas (label) del número de grupo y la fecha de evaluación
                 DataSet texto = NegocioProyectoLabels.LabelsProyecto(labels);
                 DataRow dr = texto.Tables[0].Rows[0];
                 txtFechaEval.Text = dr["Fecha"].ToString();
                 lblGrupo.Text = dr["Grupo"].ToString();
 
 
-
+                //Trae profesores y materias
                 ProfesorProyecto profesor = new ProfesorProyecto();
                 profesor.ID_PLANTEL = Session["Id_Plantel"].ToString();
                 profesor.Area = Int32.Parse(Session["Id_Area"].ToString());
@@ -131,10 +145,10 @@ namespace PCEPI
             }
         }
 
-        protected bool Valida_Profesor(String RFC)
+        protected bool Valida_Profesor(String RFC, int Id_Proyecto)
         {
             Profesor profesor_RFC = new Profesor();
-            return profesor_RFC.validaProfesor(RFC);
+            return profesor_RFC.validaProfesor(RFC,Id_Proyecto);
            
         }
 
@@ -147,7 +161,7 @@ namespace PCEPI
             else
             {
                 //este if verifica si el profesor ya se encuentra en un proyecto
-                if (Valida_Profesor(ListBoxProfesor.SelectedValue.ToString())!=true)
+                if (Valida_Profesor(ListBoxProfesor.SelectedValue.ToString(), Convert.ToInt32(Session["Id_Proyecto"].ToString())) != true)
                 {
                     //ListBoxProfProy.Items.Add(ListBoxProfesor.SelectedItem);
                     //ListBoxProfesor.Items.Remove(ListBoxProfProy.SelectedItem);
@@ -316,6 +330,7 @@ namespace PCEPI
 
                     Proyecto proyecto = new Proyecto();
                     proyecto.Grupo = Session["ID_Plantel"].ToString() + Session["ID_AREA"].ToString() + lblGrupo.Text;
+                    //proyecto.Periodo = Int32.Parse(Session["Id_Proyecto"].ToString());
                     proyecto.Periodo = lblPeriodo.Text;
 
                     switch (opcion)
@@ -367,7 +382,7 @@ namespace PCEPI
                     }
 
                     proyecto.Oficio = txtNumOfice.Text;
-                    proyecto.Fecha_ev1 = output; //Convert.ToDateTime(output);
+                    proyecto.Fecha_ev1 = output; //Convert.ToDateTime(output);  el output está como string y se debe guardar como datetime
                     proyecto.Titulo = txtTitulo.Text;
                     proyecto.Producto = txtProducto.Text;
                     proyecto.Campo = ddlCampo.SelectedValue.ToString();
@@ -424,7 +439,7 @@ namespace PCEPI
                 //DataKeyArray arreglo = gvProfesor.DataKeyNames();
                 valores.Append("'" + gvProfesor.DataKeys[registro.RowIndex][1].ToString() + "', ");
                 valores.Append("'" + Session["ID_Plantel"].ToString() + Session["ID_AREA"].ToString() + lblGrupo.Text + "', ");
-                valores.Append("'" + lblPeriodo.Text + "', ");
+                valores.Append("'" + Convert.ToInt32(Session["Id_Proyecto"].ToString()) + "', "); //lblPeriodo.Text
                 if (((System.Web.UI.WebControls.CheckBox)registro.FindControl("chbCoordinador")).Checked == true)
                     valores.Append("'1', ");
                   
@@ -434,7 +449,7 @@ namespace PCEPI
                 //Aqui concatenar todos los valores de un prof
 
             }
-            string cadena = (valores.ToString()).Substring(0, valores.Length - 1),seleccion;
+            string cadena = (valores.ToString()).Substring(0, valores.Length - 1);//,seleccion
             return cadena;
         }
 
@@ -530,6 +545,11 @@ namespace PCEPI
         }
 
         protected void ListBoxMaterias_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ListBoxProfesor_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

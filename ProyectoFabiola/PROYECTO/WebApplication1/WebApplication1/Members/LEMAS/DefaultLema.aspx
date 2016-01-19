@@ -24,13 +24,13 @@
                             TITULO
                      </td>
                 <td colspan=2>
-                    <asp:TextBox ID="txtitulo" runat="server" class="form-control input-lg" placeholder="TITULO" tabindex="1"/> </asp:TextBox>
+                    <asp:TextBox ID="txtitulo" runat="server" class="form-control input-lg" placeholder="TITULO" tabindex="1" Height="40px"> </asp:TextBox>
                 </td>
                 <td >
                     PERIODO
                 </td>
                 <td >
-                    <asp:DropDownList ID="periodo" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_periodo" DataValueField="ID_PERIODO" class="form-control input-lg">
+                    <asp:DropDownList ID="periodo" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_periodo" DataValueField="ID_PERIODO" class="form-control input-lg" Height="40px" Width="160px">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_PERIODO], [NOMBRE_PERIODO] FROM [PERIODO]" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
                 </td>
@@ -49,16 +49,15 @@
                  <td class="auto-style1" >
                         <asp:Button ID="btnInsert" runat="server" Text="Almacenar Lema" OnClick="btnInsert_Click" class="btn btn-primary" />
                  </td>      
-                <td>
+               <%-- <td>
                     <input id="Reset_Lemas" type="reset" value="limpiar campos" class="btn btn-primary" />
-                </td>
+                </td>--%>
             </tr>
         
                 <td colspan="2">
                     <!--Width="519px-->
                       <asp:GridView AutoGenerateColumns="true" runat="server" ID="grvLemas" 
                           EmptyDataText="No hay registros de Lemas ."
-                          AllowSorting="True"
                           AllowPaging="True"  
                           CellPadding="4"
                           GridLines="None"

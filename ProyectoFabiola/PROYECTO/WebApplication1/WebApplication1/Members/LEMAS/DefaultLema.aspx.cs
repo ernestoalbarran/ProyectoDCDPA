@@ -83,5 +83,10 @@ namespace PCEPI.Presentacion
             LoadGrid();
         }
 
+        protected void grvLemas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

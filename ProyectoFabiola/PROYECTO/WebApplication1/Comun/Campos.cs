@@ -19,6 +19,15 @@ namespace DGCCH.Comun
             get { return _IDCampo; }
             set { _IDCampo = value; }
         }
+
+        //private int _Id_Proyecto;
+
+        //public int Id_Proyecto
+        //{
+        //    get { return _Id_Proyecto; }
+        //    set { _Id_Proyecto = value; }
+        //}
+
         private string _Des_Larga;
 
         public string Des_Larga
@@ -34,9 +43,14 @@ namespace DGCCH.Comun
             set { _Des_Corta = value; }
         }
 
-
-        public Campos(int IDCampo, string Des_Corta, string Des_Larga)
+        //public Campos(int Id_Proyecto)
+        //{
+        //    this.Id_Proyecto = Id_Proyecto;
+        //}
+ 
+        public Campos( int IDCampo, string Des_Corta, string Des_Larga)
         {
+            //this.Id_Proyecto = Id_Proyecto;
             this.IDCampo = IDCampo;
             this.Des_Corta = Des_Corta;
             this.Des_Larga = Des_Larga;

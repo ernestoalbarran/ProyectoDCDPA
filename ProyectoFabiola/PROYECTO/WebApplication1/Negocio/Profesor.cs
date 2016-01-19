@@ -25,12 +25,15 @@ namespace PCEPI.Negocio
                 return false;
         }
 
-        public bool validaProfesor(string rfc)
+        public bool validaProfesor(string rfc, int Id_Proyecto)
         {
             DBHelper dbHelper= new DBHelper();
-            SqlParameter[] parametros = new SqlParameter[1];
+            SqlParameter[] parametros = new SqlParameter[2];
             SqlParameter yaEnProy = new SqlParameter("@rfc", rfc);
+            SqlParameter Id_proy = new SqlParameter("@Id_Proyecto", Id_Proyecto);
             parametros[0] = yaEnProy;
+            parametros[1] = Id_proy;
+
             if (DBHelper.ExecuteScalar("usp_verificar_profesor", parametros).ToString() == "1")
                 return true;
             else

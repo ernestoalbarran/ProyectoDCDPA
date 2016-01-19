@@ -130,7 +130,7 @@ namespace DGCCH.Datos
                     {
                         while (dr.Read())
                         {
-                            LstCampos.Add(new Campos((int)dr["IDCampo"], (string)dr["Des_Corta"], (string)dr["Des_Larga"]));
+                            LstCampos.Add(new Campos((int)dr["No."], (string)dr["Título"], (string)dr["Descripción"]));
                         }
 
                     }

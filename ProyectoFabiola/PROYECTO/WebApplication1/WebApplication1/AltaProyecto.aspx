@@ -43,7 +43,7 @@
                   <asp:Label ID="lblTitulo" runat="server" ></asp:Label>
         
    
-               <span class="pull-right">
+              <!-- <span class="pull-right">
                             <asp:LinkButton ID="LnkAlta" runat="server" text="Alta Firmantes"
                             data-original-title="Alta Firmantes" data-toggle="tooltip" type="button" 
                             class="btn btn-primary" onclick="LnkNuevo_Click"></asp:LinkButton>
@@ -53,7 +53,7 @@
                             <asp:LinkButton ID="LinkConsulta" runat="server" text="Consulta Proyecto"
                             data-original-title="Consulta Firmantes" data-toggle="tooltip" type="button" 
                             class="btn btn-primary" onclick="LnkNuevo_ClickConsulta"></asp:LinkButton>
-                              </span>
+                              </span> -->
 
 
                </h2>   
@@ -96,7 +96,7 @@
                     <asp:Label ID="lblPeriodo" runat="server" Text="Label"></asp:Label>
                     &nbsp;
                     <asp:Label ID="Label5" runat="server" Text="Entidad 1"></asp:Label>
-                    <asp:Label ID="Label6" runat="server"></asp:Label>
+                    
                 </td>
             </tr>
             <tr>
@@ -139,17 +139,22 @@
             <tr>
                 <td class="auto-style2" colspan="2">Campo</td>
                 <td colspan="3">
-                    <asp:DropDownList ID="ddlCampo" runat="server">
-                        <asp:ListItem Value="0">Elige una opcion </asp:ListItem>
+                    
+                        
+                        <asp:DropDownList ID="ddlCampo" runat="server">
+                        <%--Esto comentado es como se hacia antes, ahora se carga en capas directamente de la tabla campos de BD
+                            <asp:ListItem Value="0">Elige una opcion </asp:ListItem>
                         <asp:ListItem Value="1">Calidad de Aprendizaje</asp:ListItem>
                         <asp:ListItem Value="2">Formación Integral</asp:ListItem>
                         <asp:ListItem Value="3">Actualización de los programas</asp:ListItem>
-                        <asp:ListItem Value="4">Proyectos cordinados</asp:ListItem>
+                        <asp:ListItem Value="4">Proyectos cordinados</asp:ListItem>--%>
                     </asp:DropDownList>
                 </td>
+                <td></td>
             </tr>
             <tr>
                 <td colspan="5">Materias del grupo</td>
+                <td></td>
             </tr>
             <tr>
                 <td class="auto-style2" rowspan="2" colspan="2">Materias&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -159,7 +164,7 @@
                 <td class="auto-style5" rowspan="2" colspan="2">
                     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                         <ContentTemplate>
-                    <asp:ListBox ID="ListBoxMaterias" runat="server" class="form-control input-lg" Height="217px" Width="271px" SelectionMode="Multiple" AutoPostBack="True" ></asp:ListBox>
+                    <asp:ListBox ID="ListBoxMaterias" runat="server" class="form-control input-lg" Height="217px" Width="200px" SelectionMode="Multiple" AutoPostBack="True" ></asp:ListBox>
                     <%--<asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [NOMBRE] FROM [PROFESOR]"></asp:SqlDataSource>
                     <asp:SqlDataSource ID="SqlDataSourceMAT" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_FILTRAR_MATERIA" SelectCommandType="StoredProcedure">
                         <SelectParameters>
@@ -174,7 +179,7 @@
                     <asp:Button ID="Button1" runat="server" Text="&gt;&gt;" OnClick="Button1_Click" />
                 </td>
                 <td rowspan="2">
-                    <asp:ListBox ID="ListBoxMateriasP" runat="server" class="form-control input-lg" Height="217px" Width="259px" OnSelectedIndexChanged="ListBoxMateriasP_SelectedIndexChanged" SelectionMode="Multiple" AutoPostBack="True"></asp:ListBox>
+                    <asp:ListBox ID="ListBoxMateriasP" runat="server" class="form-control input-lg" Height="217px" Width="200px" OnSelectedIndexChanged="ListBoxMateriasP_SelectedIndexChanged" SelectionMode="Multiple" AutoPostBack="True"></asp:ListBox>
                     <br />
                 </td>
             </tr>
@@ -186,7 +191,7 @@
             <tr>
                 <td class="auto-style2" colspan="2">Descripción del proyecto</td>
                 <td colspan="4">
-                    <asp:TextBox runat="server" ID="txtADescProy" rows="5" Height="183px" Width="546px"></asp:TextBox></td>
+                    <asp:TextBox runat="server" ID="txtADescProy" rows="5" Height="183px" Width="500px"></asp:TextBox></td>
             </tr>
             <tr>
                 <td class="auto-style2" colspan="2">Opinión del director</td>
@@ -214,7 +219,7 @@
 
                              
 
-                    <asp:ListBox ID="ListBoxProfesor" runat="server" class="form-control input-lg"  Height="240px" Width="297px" SelectionMode="Multiple" AutoPostBack="True"></asp:ListBox>
+                    <asp:ListBox ID="ListBoxProfesor" runat="server" class="form-control input-lg"  Height="240px" Width="297px" SelectionMode="Multiple" AutoPostBack="True" OnSelectedIndexChanged="ListBoxProfesor_SelectedIndexChanged"></asp:ListBox>
 <%--        </asp:SqlDataSource>      <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_OBTENER_INTEGRANTE" SelectCommandType="StoredProcedure">  DataSourceID="SqlDataSource4" 
                       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_OBTENER_INTEGRANTE" SelectCommandType="StoredProcedure" >
                      

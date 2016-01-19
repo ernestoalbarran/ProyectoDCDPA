@@ -73,7 +73,7 @@
                             <asp:DropDownList ID="ddlPlantel" runat="server" class="form-control" tabindex="3" 
                                 DataSourceID="SqlDataSource1"
                                  DataTextField="NOMBRE" 
-                                DataValueField="ID_PLANTEL" OnSelectedIndexChanged="ddlPlantel_SelectedIndexChanged" Visible="false">
+                                DataValueField="ID_PLANTEL" OnSelectedIndexChanged="ddlPlantel_SelectedIndexChanged" Visible="false" AutoPostBack="true" OnDataBound="ddlPlantel_DataBound">
                             </asp:DropDownList> 
                             
                  </td> 
@@ -82,7 +82,12 @@
                         <td colspan=2><asp:DropDownList ID="ddlProyecto" runat="server" class="form-control" tabindex="4" 
                                 DataSourceID="SqlDataSource2"
                                  DataTextField="NOMBRE_PERIODO" 
-                                DataValueField="ID_PERIODO">
+                                DataValueField="ID_PERIODO"
+                            OnSelectedIndexChanged="ddlProyecto_SelectedIndexChanged"
+                                AutoPostBack="true" OnDataBound="ddlProyecto_DataBound"
+                            
+                            
+                            >
                             </asp:DropDownList>
                         </td>
                 </tr>
@@ -91,7 +96,11 @@
                         <td colspan=2><asp:DropDownList ID="ddlArea" runat="server" class="form-control" tabindex="5" 
                                  DataSourceID="SqlDataSource3" 
                                 DataTextField="NOMBRE_CORTO" 
-                                DataValueField="ID_AREA" Visible="false">
+                                DataValueField="ID_AREA" Visible="false"
+                             OnSelectedIndexChanged="ddlArea_SelectedIndexChanged"
+                                AutoPostBack="true" OnDataBound="ddlArea_DataBound"
+                            
+                            >
                             </asp:DropDownList>
                         </td>
                    </tr>

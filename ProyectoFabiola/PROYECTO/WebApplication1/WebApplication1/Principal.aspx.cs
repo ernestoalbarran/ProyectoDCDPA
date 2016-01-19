@@ -12,6 +12,18 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            //<!--  Parte Prueba variables de sesión-------------------------------->       
+
+            lblPlantel.Text = Session["Id_Plantel"].ToString();
+            lblNombrePlantel.Text = Session["Plantel"].ToString();
+            lblProyecto.Text = Session["Id_Proyecto"].ToString(); // se debe hacer el cambio de materia por area en la pagina donde se despliega
+            lblNombreProyecto.Text = Session["Proyecto"].ToString();
+            lblArea.Text = Session["Id_Area"].ToString();
+            lblNombreArea.Text = Session["Area"].ToString();
+
+            //<!--  Parte Prueba variables de sesión-------------------------------->
+        
+
         }
     }
 }

@@ -40,16 +40,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activos.cs" />
+    <Compile Include="Area.cs" />
     <Compile Include="Campos.cs" />
     <Compile Include="Firmante1.cs" />
     <Compile Include="LemasPCEPI.cs" />
     <Compile Include="MateriaProyecto.cs" />
     <Compile Include="PeriodoCampo.cs" />
+    <Compile Include="PeriodoFirmante1.cs" />
     <Compile Include="PeriodoLema.cs" />
     <Compile Include="PeriodosPECEPI.cs" />
+    <Compile Include="Plantel.cs" />
     <Compile Include="ProfesorProyecto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proyecto.cs" />
+    <Compile Include="ProyectoCampo.cs" />
     <Compile Include="ProyectoLabels.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

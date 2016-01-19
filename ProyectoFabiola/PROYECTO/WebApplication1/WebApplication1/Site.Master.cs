@@ -113,6 +113,7 @@ namespace WebApplication1
                 Response.Redirect("~/DefaultProyecto.aspx");
             }
 
+            /*
             if ((string)Session["usuario"] == "Jefe Sección")
             {
                 //Session.Add("Plantel", ddlPlantel.SelectedItem.Text);
@@ -128,11 +129,51 @@ namespace WebApplication1
 
                 Response.Redirect("~/DefaultProyecto.aspx");
             }
+             * */
         }
 
         protected void ddlPlantel_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            Session["Plantel"] = ddlPlantel.SelectedItem.Text;
+            Session["Id_Plantel"] = ddlPlantel.SelectedItem.Value;
+            Response.Redirect("~/DefaultProyecto.aspx");
         }
+
+        protected void ddlProyecto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            Session["Proyecto"] = ddlProyecto.SelectedItem.Text;
+            Session["Id_Proyecto"] = ddlProyecto.SelectedItem.Value;
+            Response.Redirect("~/DefaultProyecto.aspx");
+        }
+
+        protected void ddlArea_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+            Session["Area"] = ddlArea.SelectedItem.Text;
+            Session["Id_Area"] = ddlArea.SelectedItem.Value;
+            Response.Redirect("~/DefaultProyecto.aspx");
+        }
+        protected void ddlPlantel_DataBound(object sender, EventArgs e)
+        {
+            string prueba = Session["Id_Plantel"].ToString();
+            ddlPlantel.SelectedValue = prueba;
+
+        }
+
+        protected void ddlProyecto_DataBound(object sender, EventArgs e)
+        {
+            ddlProyecto.SelectedValue = Session["Id_Proyecto"].ToString();
+        }
+
+        protected void ddlArea_DataBound(object sender, EventArgs e)
+        {
+            ddlArea.SelectedValue = Session["Id_Area"].ToString(); ;
+        }
+
+
+       
     }
 }

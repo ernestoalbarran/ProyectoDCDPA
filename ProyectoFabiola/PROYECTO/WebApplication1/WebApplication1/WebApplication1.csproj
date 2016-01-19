@@ -144,7 +144,7 @@
     <Content Include="Account\Usuarios.aspx" />
     <Content Include="AltaProyecto.aspx" />
     <Content Include="Documentos.aspx" />
-    <Content Include="Firmantes.aspx" />
+    <Content Include="Members\FIRMANTES\Firmantes.aspx" />
     <Content Include="Members\PROYECTOS\ConsultaProyecto.aspx" />
     <Content Include="ActualizarProyecto.aspx" />
     <Content Include="Members\CAMPOS\DefaultCampos.aspx" />
@@ -246,6 +246,7 @@
     <Content Include="Documentos\Protocolo2008.pdf" />
     <Content Include="Documentos\Suplemento2015-2016.pdf" />
     <Content Include="Documentos\Suplemento_Especial_13.pdf" />
+    <Content Include="Members\FIRMANTES\web.config" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Periodos.aspx" />
     <Content Include="Principal.aspx" />
@@ -328,11 +329,12 @@
     <Compile Include="Documentos.aspx.designer.cs">
       <DependentUpon>Documentos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Firmantes.aspx.cs">
+    <Compile Include="HTMLWorker.cs" />
+    <Compile Include="Members\FIRMANTES\Firmantes.aspx.cs">
       <DependentUpon>Firmantes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Firmantes.aspx.designer.cs">
+    <Compile Include="Members\FIRMANTES\Firmantes.aspx.designer.cs">
       <DependentUpon>Firmantes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Members\PROYECTOS\ConsultaProyecto.aspx.cs">

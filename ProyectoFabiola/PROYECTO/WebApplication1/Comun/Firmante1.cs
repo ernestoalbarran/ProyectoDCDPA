@@ -16,22 +16,7 @@ namespace Comun
         {
             get { return _ID_FIRMANTE1; }
             set { _ID_FIRMANTE1 = value; }
-        }
-
-    
-        private int _ID_PLANTEL;
-        public int ID_PLANTEL
-        {
-            get { return _ID_PLANTEL;}
-            set { _ID_PLANTEL=value;}
-        }
-
-         private int _ID_AREA;
-        public int ID_AREA
-        {
-            get { return _ID_AREA;}
-            set { _ID_AREA=value;}
-        }
+        }  
 
         private string _RFC_PEC;
         public string RFC_PEC
@@ -96,19 +81,12 @@ namespace Comun
             set { _FECHA_OFICIO=value;}
         }
 
-        private int _ID_PERIODO;
-        public int ID_PERIODO
-        {
-            get { return _ID_PERIODO;}
-            set { _ID_PERIODO=value;}
-        }
+        
 
-        public Firmante1(int ID_FIRMANTE1, int ID_PLANTEL, int ID_AREA,string RFC_PEC,string RFC_CONSEJERO1,string RFC_CONSEJERO2,string RFC_CONSEJERO3,string RFC_CONSEJERO4,string RFC_CONSEJERO5,
-string RFC_CONSEJERO6,string SIGLAS,DateTime FECHA_OFICIO,int ID_PERIODO)
+        public Firmante1(int ID_FIRMANTE1, string RFC_PEC,string RFC_CONSEJERO1,string RFC_CONSEJERO2,string RFC_CONSEJERO3,string RFC_CONSEJERO4,string RFC_CONSEJERO5,
+string RFC_CONSEJERO6,string SIGLAS,DateTime FECHA_OFICIO)
         {
             this.ID_FIRMANTE1 = ID_FIRMANTE1;
-            this.ID_PLANTEL =ID_PLANTEL;
-            this.ID_AREA= ID_AREA;
             this.RFC_PEC=RFC_PEC;
             this.RFC_CONSEJERO1=RFC_CONSEJERO1;
             this.RFC_CONSEJERO2=RFC_CONSEJERO2;
@@ -118,7 +96,6 @@ string RFC_CONSEJERO6,string SIGLAS,DateTime FECHA_OFICIO,int ID_PERIODO)
             this.RFC_CONSEJERO6=RFC_CONSEJERO6;
             this.SIGLAS=SIGLAS;
             this.FECHA_OFICIO=FECHA_OFICIO;
-            this.ID_PERIODO=ID_PERIODO;
 
         }
 
