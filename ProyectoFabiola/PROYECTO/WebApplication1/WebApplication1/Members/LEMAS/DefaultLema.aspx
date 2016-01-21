@@ -24,13 +24,13 @@
                             TITULO
                      </td>
                 <td colspan=2>
-                    <asp:TextBox ID="txtitulo" runat="server" class="form-control input-lg" placeholder="TITULO" tabindex="1"/> </asp:TextBox>
+                    <asp:TextBox ID="txtitulo" runat="server" class="form-control input-lg" placeholder="TITULO" tabindex="1" Height="40px"></asp:TextBox>
                 </td>
                 <td >
                     PERIODO
                 </td>
                 <td >
-                    <asp:DropDownList ID="periodo" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_periodo" DataValueField="ID_PERIODO" class="form-control input-lg">
+                    <asp:DropDownList ID="periodo" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_periodo" DataValueField="ID_PERIODO" class="form-control input-lg" Height="40px" Width="160px">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [ID_PERIODO], [NOMBRE_PERIODO] FROM [PERIODO]" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
                 </td>
@@ -58,13 +58,12 @@
                     <!--Width="519px-->
                       <asp:GridView AutoGenerateColumns="true" runat="server" ID="grvLemas" 
                           EmptyDataText="No hay registros de Lemas ."
-                          AllowSorting="True"
                           AllowPaging="True"  
                           CellPadding="4"
                           GridLines="None"
                           OnPageIndexChanging="grvLemas_PageIndexChanging" 
                           ForeColor="#333333" 
-                           Width="607px" OnSelectedIndexChanged="grvLemas_SelectedIndexChanged" >
+                           Width="607px" OnSelectedIndexChanged="grvLemas_SelectedIndexChanged" EnableTheming="True" EnableViewState="False" >
                            <EditRowStyle BackColor="#999999" />
                              <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
                              <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

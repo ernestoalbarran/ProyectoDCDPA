@@ -8,6 +8,7 @@ using System.Web;
 using PCEPI.Comun;
 using PCEPI.Datos;
 using Comun;
+using DGCCH.Comun;
 
 namespace PCEPI.Negocio
 {
@@ -23,14 +24,8 @@ namespace PCEPI.Negocio
                 DBHelper.MakeParam("@Interplantel", SqlDbType.Char,0,proyecto.Interplantel),
                 DBHelper.MakeParam("@P_asignatura", SqlDbType.Char,0,proyecto.P_asignatura),
                 DBHelper.MakeParam("@Oficio", SqlDbType.Char,0,proyecto.Oficio),
-<<<<<<< HEAD
                 DBHelper.MakeParam("@Fecha_ev1", SqlDbType.DateTime,0,proyecto.Fecha_ev1),
                 //DBHelper.MakeParam("@Fecha_ev2", SqlDbType.DateTime,0,proyecto.Fecha_ev2),
-=======
-                DBHelper.MakeParam("@Fecha_ev1", SqlDbType.Char,0,proyecto.Fecha_ev1),
-                //DBHelper.MakeParam("@Fecha_ev1", SqlDbType.DateTime,0,proyecto.Fecha_ev1),
-               // DBHelper.MakeParam("@Fecha_ev2", SqlDbType.DateTime,0,proyecto.Fecha_ev2),
->>>>>>> d5c8d7dc23751b5b477c7998364895d9ccccb442
                 DBHelper.MakeParam("@Titulo", SqlDbType.VarChar,0,proyecto.Titulo),
                 DBHelper.MakeParam("@Producto", SqlDbType.VarChar,0,proyecto.Producto),
                 DBHelper.MakeParam("@Campo", SqlDbType.Char,0,proyecto.Campo),
@@ -38,12 +33,8 @@ namespace PCEPI.Negocio
                 DBHelper.MakeParam("@Descripcion", SqlDbType.VarChar,0,proyecto.Descripcion),
                 DBHelper.MakeParam("@Opinion_dir", SqlDbType.Char,0,proyecto.Opinion_dir),
                 DBHelper.MakeParam("@Observaciones", SqlDbType.VarChar,0,proyecto.Observaciones),
-<<<<<<< HEAD
-                DBHelper.MakeParam("@values_insert", SqlDbType.VarChar,0,proyecto.ValuesInsert)            };
-=======
                 DBHelper.MakeParam("@values_insert", SqlDbType.VarChar, 0, proyecto.ValuesInsert)
             };
->>>>>>> d5c8d7dc23751b5b477c7998364895d9ccccb442
 
             return Convert.ToInt32(DBHelper.ExecuteScalar("usp_Insertar_Proyectogrupos1", dbParams));
         }
@@ -79,6 +70,15 @@ namespace PCEPI.Negocio
             {
             };
             return DBHelper.ExecuteDataSet("usp_ListProyecto_GetProyecto", dbParams);
+        }
+
+        public static DataSet GetCampos(ProyectoCampo campos)
+        {
+            SqlParameter[] dbParams = new SqlParameter[]
+            {
+                DBHelper.MakeParam("@Id_Proyecto",SqlDbType.Int,0,campos.Id_Proyecto)
+            };
+            return DBHelper.ExecuteDataSet("sp_Campos_ddl", dbParams);
         }
 
         /*public static DataSet GetProyectoID(Proyecto proyecto)

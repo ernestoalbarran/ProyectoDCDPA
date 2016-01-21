@@ -2,7 +2,13 @@
 
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+   
     <style type="text/css">
+        .auto-style1 {
+            width: 400px;
+        }
+    </style>
+     <!-- <style type="text/css">
         .auto-style1 {
         }
         .auto-style2 {
@@ -29,7 +35,7 @@
         .auto-style8 {
             width: 29px;
         }
-    </style>
+    </style>-->
 </asp:Content>
 
  
@@ -40,10 +46,10 @@
 
               
               <h2>Alta Proyecto
-                  <asp:Label ID="lblTitulo" runat="server" ></asp:Label>
+                  <asp:Label ID="lblTitulo" runat="server"></asp:Label>
         
    
-               <span class="pull-right">
+              <!-- <span class="pull-right">
                             <asp:LinkButton ID="LnkAlta" runat="server" text="Alta Firmantes"
                             data-original-title="Alta Firmantes" data-toggle="tooltip" type="button" 
                             class="btn btn-primary" onclick="LnkNuevo_Click"></asp:LinkButton>
@@ -53,7 +59,7 @@
                             <asp:LinkButton ID="LinkConsulta" runat="server" text="Consulta Proyecto"
                             data-original-title="Consulta Firmantes" data-toggle="tooltip" type="button" 
                             class="btn btn-primary" onclick="LnkNuevo_ClickConsulta"></asp:LinkButton>
-                              </span>
+                              </span> -->
 
 
                </h2>   
@@ -86,7 +92,7 @@
                    <td class="auto-style7">
                        <asp:Label ID="lblGrupo" runat="server" Text="Label"></asp:Label>
                    </td>
-                <td class="auto-style6" colspan="2">
+                <td class="auto-style6" colspan="2" width="1500">
                     <asp:Label ID="lblMateria" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
@@ -96,14 +102,14 @@
                     <asp:Label ID="lblPeriodo" runat="server" Text="Label"></asp:Label>
                     &nbsp;
                     <asp:Label ID="Label5" runat="server" Text="Entidad 1"></asp:Label>
-                    <asp:Label ID="Label6" runat="server"></asp:Label>
+                   <!-- <asp:Label ID="Label6" runat="server"></asp:Label>-->
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2" colspan="2">Número de oficio*</td>
                 <td colspan=3>CCH/DIR/<asp:TextBox ID="txtNumOfice" runat="server" Width="39px" Height="22px"></asp:TextBox>/2016</td>
 
-                <td> <ASP:RequiredFieldValidator id="rqfValidatorNumOfice" runat="server" errormessage="El numero de oficio es obligatorio" width="243px" controltovalidate="txtNumOfice" display="Dynamic"></ASP:RequiredFieldValidator>
+                <td> <ASP:RequiredFieldValidator id="rqfValidatorNumOfice" runat="server" errormessage="El numero de oficio es obligatorio" width="243px" controltovalidate="txtNumOfice" display="Dynamic" ForeColor="Red"></ASP:RequiredFieldValidator>
 </td>
 
             </tr>
@@ -113,7 +119,7 @@
                     <asp:TextBox ID="txtFechaEval" runat="server" Enabled="False"></asp:TextBox>
                     dd/mm/aaaa</td>
                 <td>
-                    <ASP:RequiredFieldValidator id="rfvValidarFechaEval" runat="server" errormessage="La fecha de evaluacion es obligatoria" width="243px" controltovalidate="txtFechaEval" display="Dynamic"></ASP:RequiredFieldValidator>
+                    <ASP:RequiredFieldValidator id="rfvValidarFechaEval" runat="server" errormessage="La fecha de evaluacion es obligatoria" width="243px" controltovalidate="txtFechaEval" display="Dynamic" ForeColor="Red"></ASP:RequiredFieldValidator>
                 </td>
                 
 
@@ -124,7 +130,7 @@
                     <asp:TextBox ID="txtTitulo" runat="server" class="form-control input-lg" placeholder="Título"></asp:TextBox>
                 </td>
                 <td>
-                   <ASP:RequiredFieldValidator id="rfvValidarTitulo" runat="server" errormessage="Todos los proyectos requieren un titulo" width="243px" controltovalidate="txtTitulo" display="Dynamic"></ASP:RequiredFieldValidator>
+                   <ASP:RequiredFieldValidator id="rfvValidarTitulo" runat="server" errormessage="Todos los proyectos requieren un titulo" width="243px" controltovalidate="txtTitulo" display="Dynamic" ForeColor="Red"></ASP:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -133,23 +139,27 @@
                     <asp:TextBox ID="txtProducto" runat="server" class="form-control input-lg" placeholder="PRODUCTO"></asp:TextBox>
                 </td>
                 <td>
-                   <ASP:RequiredFieldValidator id="rfvValidarProducto" runat="server" errormessage="Todos los proyectos requieren especificar la realización de un producto" width="243px" controltovalidate="txtTitulo" display="Dynamic"></ASP:RequiredFieldValidator>
+                   <ASP:RequiredFieldValidator id="rfvValidarProducto" runat="server" errormessage="Todos los proyectos requieren especificar la realización de un producto" width="243px" controltovalidate="txtTitulo" display="Dynamic" ForeColor="Red"></ASP:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2" colspan="2">Campo</td>
                 <td colspan="3">
                     <asp:DropDownList ID="ddlCampo" runat="server">
-                        <asp:ListItem Value="0">Elige una opcion </asp:ListItem>
+                        <asp:ListItem Value="0" Text="---Seleccione una opcion ---"></asp:ListItem>
+                        <%-- Esto es como se hacia antes ahora se encuentra el sql source en capas.
+                            
                         <asp:ListItem Value="1">Calidad de Aprendizaje</asp:ListItem>
                         <asp:ListItem Value="2">Formación Integral</asp:ListItem>
                         <asp:ListItem Value="3">Actualización de los programas</asp:ListItem>
-                        <asp:ListItem Value="4">Proyectos cordinados</asp:ListItem>
+                        <asp:ListItem Value="4">Proyectos cordinados</asp:ListItem>--%>
                     </asp:DropDownList>
                 </td>
+                <td></td>
             </tr>
             <tr>
                 <td colspan="5">Materias del grupo</td>
+                <td></td>
             </tr>
             <tr>
                 <td class="auto-style2" rowspan="2" colspan="2">Materias&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -159,7 +169,7 @@
                 <td class="auto-style5" rowspan="2" colspan="2">
                     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                         <ContentTemplate>
-                    <asp:ListBox ID="ListBoxMaterias" runat="server" class="form-control input-lg" Height="217px" Width="271px" SelectionMode="Multiple" AutoPostBack="True" ></asp:ListBox>
+                    <asp:ListBox ID="ListBoxMaterias" runat="server" class="form-control input-lg" Height="217px" Width="200px" SelectionMode="Multiple" AutoPostBack="True" ></asp:ListBox>
                     <%--<asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SELECT [NOMBRE] FROM [PROFESOR]"></asp:SqlDataSource>
                     <asp:SqlDataSource ID="SqlDataSourceMAT" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_FILTRAR_MATERIA" SelectCommandType="StoredProcedure">
                         <SelectParameters>
@@ -174,7 +184,7 @@
                     <asp:Button ID="Button1" runat="server" Text="&gt;&gt;" OnClick="Button1_Click" />
                 </td>
                 <td rowspan="2">
-                    <asp:ListBox ID="ListBoxMateriasP" runat="server" class="form-control input-lg" Height="217px" Width="259px" OnSelectedIndexChanged="ListBoxMateriasP_SelectedIndexChanged" SelectionMode="Multiple" AutoPostBack="True"></asp:ListBox>
+                    <asp:ListBox ID="ListBoxMateriasP" runat="server" class="form-control input-lg" Height="217px" Width="200px" OnSelectedIndexChanged="ListBoxMateriasP_SelectedIndexChanged" SelectionMode="Multiple" AutoPostBack="True"></asp:ListBox>
                     <br />
                 </td>
             </tr>
@@ -186,7 +196,7 @@
             <tr>
                 <td class="auto-style2" colspan="2">Descripción del proyecto</td>
                 <td colspan="4">
-                    <asp:TextBox runat="server" ID="txtADescProy" rows="5" Height="183px" Width="546px"></asp:TextBox></td>
+                    <asp:TextBox runat="server" ID="txtADescProy" rows="5" Height="183px" Width="500px"></asp:TextBox></td>
             </tr>
             <tr>
                 <td class="auto-style2" colspan="2">Opinión del director</td>
@@ -206,6 +216,7 @@
             </tr>
             <tr>
                 <td colspan="5">Integrantes</td>
+                <td></td>
             </tr>
         
             <tr>

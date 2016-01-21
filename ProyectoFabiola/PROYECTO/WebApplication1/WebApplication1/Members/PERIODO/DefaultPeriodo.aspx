@@ -82,7 +82,6 @@
                 <td colspan="2">
                       <asp:GridView AutoGenerateColumns="true" runat="server" ID="grvPeriodos" 
                         EmptyDataText="No hay registros de Periodos ."
-                          AllowSorting="True"
                           AllowPaging="True"  
                           CellPadding="4"
                           GridLines="None"
