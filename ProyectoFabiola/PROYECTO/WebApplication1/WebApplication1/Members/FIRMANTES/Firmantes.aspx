@@ -20,6 +20,30 @@
    
           <div class="panel panel-info">
             <div class="panel-heading">
+
+
+                  //<!--  Parte Prueba variables de sesión-------------------------------->
+
+            <td >
+                   Plantel
+                    <asp:Label ID="lblP" runat="server" Text="Label" ></asp:Label>
+                </td>
+
+            <td >
+     
+            <td >
+                   Proyecto
+                    <asp:Label ID="lblProyecto" runat="server" Text="Label" ></asp:Label>
+                </td>
+
+            <td >
+                   Area
+                    <asp:Label ID="lblArea" runat="server" Text="Label" ></asp:Label>
+                </td>
+
+                     //<!--  Parte Prueba variables de sesión-------------------------------->
+
+
               <h2>Alta Firmantes
                   <asp:Label ID="lblTitulo" runat="server" ></asp:Label>
                   </h2>
@@ -34,9 +58,7 @@
                     <tbody>
                       <tr>
                         <td>Jefe de Sección:</td>
-                          <td colspan=5><asp:DropDownList ID="ddlJefe" runat="server" class="form-control" tabindex="5" 
-                                DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
-                                DataValueField="RFC" >
+                          <td colspan=5><asp:DropDownList ID="ddlJefe" runat="server" class="form-control" tabindex="5" >
                             </asp:DropDownList>
                         
                           </td>
@@ -47,19 +69,16 @@
                           <td colspan=5>
                               <asp:TextBox ID="tbSiglas" runat="server" class="form-control input-lg" placeholder="Siglas de elaboración"
                                   TabIndex="2"></asp:TextBox>
+                              <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbSiglas" ErrorMessage="Necesita Siglas" ForeColor="Red"></asp:RequiredFieldValidator>
                           </td>
                       </tr>
                         <tr>
                         <td>Consejero1:</td>
-                       <td colspan=2><asp:DropDownList ID="ddlConsejero1" runat="server" class="form-control" tabindex="5" 
-                                DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
-                                DataValueField="RFC">
+                       <td colspan=2><asp:DropDownList ID="ddlConsejero1" runat="server" class="form-control" tabindex="5">
                             </asp:DropDownList>
                         </td> 
                         <td>Consejero2</td>
-                       <td colspan=2><asp:DropDownList ID="ddlConsejero2" runat="server" class="form-control" tabindex="5" 
-                                DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
-                                DataValueField="RFC">
+                       <td colspan=2><asp:DropDownList ID="ddlConsejero2" runat="server" class="form-control" tabindex="5">
                             </asp:DropDownList>
                         </td>
 
@@ -67,16 +86,12 @@
 
                        <tr>
                         <td>Consejero3:</td>
-                        <td colspan=2><asp:DropDownList ID="ddlConsejero3" runat="server" class="form-control" tabindex="5" 
-                                DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
-                                DataValueField="RFC">
+                        <td colspan=2><asp:DropDownList ID="ddlConsejero3" runat="server" class="form-control" tabindex="5">
                             </asp:DropDownList>
                         </td>
                         <td>Consejero4</td>
                        
-                            <td colspan=2><asp:DropDownList ID="ddlConsejero4" runat="server" class="form-control" tabindex="5" 
-                                DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
-                                DataValueField="RFC">
+                            <td colspan=2><asp:DropDownList ID="ddlConsejero4" runat="server" class="form-control" tabindex="5">
                             </asp:DropDownList>
                         </td>
                                 </tr>
@@ -85,15 +100,11 @@
                         <tr>
                         <td>Consejero5:</td>
 
-                             <td colspan=2><asp:DropDownList ID="ddlConsejero5" runat="server" class="form-control" tabindex="5" 
-                                DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
-                                DataValueField="RFC">
+                             <td colspan=2><asp:DropDownList ID="ddlConsejero5" runat="server" class="form-control" tabindex="5">
                             </asp:DropDownList>
                         </td>
                           <td>Consejero6</td>
-                        <td colspan=2><asp:DropDownList ID="ddlConsejero6" runat="server" class="form-control" tabindex="5" 
-                                DataSourceID="SqlDataSource1" DataTextField="NOMBRE" 
-                                DataValueField="RFC" >
+                        <td colspan=2><asp:DropDownList ID="ddlConsejero6" runat="server" class="form-control" tabindex="5" >
                             </asp:DropDownList>
                         </td>  
                         </tr>
@@ -104,8 +115,15 @@
                             </td>
                             <td colspan="5">
                                 <asp:TextBox ID="tbFecha" runat="server" class="form-control input-lg" placeholder="Fecha Oficio"
-                                    TabIndex="18" TextMode="Date"></asp:TextBox>
-                            </td>
+                                    TabIndex="18" TextMode="Date">
+
+                                </asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator" runat="server" ControlToValidate="tbFecha" ErrorMessage="Necesita Fecha" ForeColor="Red"></asp:RequiredFieldValidator>
+
+                               
+
+<%--                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Es necesario ingresar fecha" ControlToValidate="tbFecha"></asp:RequiredFieldValidator>--%>
+                                </td>
                         </tr>
                     </tbody>
                   </table>
@@ -132,8 +150,10 @@
 
      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_OBTENER_FIRMANTE1" SelectCommandType="StoredProcedure">
      <SelectParameters>
+                            <asp:ControlParameter ControlID="ddlPlantel" PropertyName="SelectedValue" Name="idPlantel" Type="Int32" DefaultValue="0" />
                             <asp:ControlParameter ControlID="ddlArea" PropertyName="SelectedValue" Name="idArea" Type="Int32" DefaultValue="0" />
-                      
+                            
+
         </SelectParameters>  
          
           </asp:SqlDataSource>

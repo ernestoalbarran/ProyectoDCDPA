@@ -102,7 +102,11 @@
                     <asp:Label ID="lblPeriodo" runat="server" Text="Label"></asp:Label>
                     &nbsp;
                     <asp:Label ID="Label5" runat="server" Text="Entidad 1"></asp:Label>
+<<<<<<< HEAD
                    <!-- <asp:Label ID="Label6" runat="server"></asp:Label>-->
+=======
+                    
+>>>>>>> f88d0047e7949b62c26b0011cb0599f8d4e5f51c
                 </td>
             </tr>
             <tr>
@@ -145,10 +149,18 @@
             <tr>
                 <td class="auto-style2" colspan="2">Campo</td>
                 <td colspan="3">
+<<<<<<< HEAD
                     <asp:DropDownList ID="ddlCampo" runat="server">
                         <asp:ListItem Value="0" Text="---Seleccione una opcion ---"></asp:ListItem>
                         <%-- Esto es como se hacia antes ahora se encuentra el sql source en capas.
                             
+=======
+                    
+                        
+                        <asp:DropDownList ID="ddlCampo" runat="server">
+                        <%--Esto comentado es como se hacia antes, ahora se carga en capas directamente de la tabla campos de BD
+                            <asp:ListItem Value="0">Elige una opcion </asp:ListItem>
+>>>>>>> f88d0047e7949b62c26b0011cb0599f8d4e5f51c
                         <asp:ListItem Value="1">Calidad de Aprendizaje</asp:ListItem>
                         <asp:ListItem Value="2">Formación Integral</asp:ListItem>
                         <asp:ListItem Value="3">Actualización de los programas</asp:ListItem>
@@ -225,7 +237,7 @@
 
                              
 
-                    <asp:ListBox ID="ListBoxProfesor" runat="server" class="form-control input-lg"  Height="240px" Width="297px" SelectionMode="Multiple" AutoPostBack="True"></asp:ListBox>
+                    <asp:ListBox ID="ListBoxProfesor" runat="server" class="form-control input-lg"  Height="240px" Width="297px" SelectionMode="Multiple" AutoPostBack="True" OnSelectedIndexChanged="ListBoxProfesor_SelectedIndexChanged"></asp:ListBox>
 <%--        </asp:SqlDataSource>      <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_OBTENER_INTEGRANTE" SelectCommandType="StoredProcedure">  DataSourceID="SqlDataSource4" 
                       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conn %>" SelectCommand="SP_OBTENER_INTEGRANTE" SelectCommandType="StoredProcedure" >
                      

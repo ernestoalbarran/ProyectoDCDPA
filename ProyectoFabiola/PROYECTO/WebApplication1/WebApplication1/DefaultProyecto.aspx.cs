@@ -9,6 +9,12 @@ using PCEPI.Comun;
 using PCEPI.Negocio;
 using System.Web.Security;
 using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.IO;
+
+using WebApplication1;
+
 
 namespace PCEPI
 {
@@ -16,9 +22,11 @@ namespace PCEPI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //esto se hizo solo para observar que se mantienen los valores seteados
-
-            //string usuario = Session["usuario"].ToString();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+            SqlDataAdapter sql1 = new SqlDataAdapter("USP_PROYECTOS", conn);
+            sql1.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sql1.SelectCommand.Parameters.Add("@Id_Periodo", SqlDbType.Char).Value = Session["Id_Proyecto"].ToString();
 
             if (Roles.IsUserInRole("Administrador"))
             {
@@ -26,6 +34,9 @@ namespace PCEPI
                 Label2.Text = Session["Id_Area"].ToString(); // se debe hacer el cambio de materia por area en la pagina donde se despliega
                 Label3.Text = Session["Id_Plantel"].ToString();
                 Label4.Text = Session["usuario"].ToString();
+                Label5.Text = Session["Id_Proyecto"].ToString();
+                sql1.SelectCommand.Parameters.Add("@Id_Area", SqlDbType.Char).Value = Session["Id_Area"].ToString();
+                sql1.SelectCommand.Parameters.Add("@Id_Plantel", SqlDbType.Char).Value = Session["Id_plantel"].ToString();
             }
             else
             {
@@ -40,24 +51,32 @@ namespace PCEPI
                     Label5.Text = Session["Id_Proyecto"].ToString();
 
 
-
-                    //Label grupo = (Label)FormView1.FindControl("grupoLabel");
-                    //string temporal = grupo.Text;
-
-                    //DataRowView rowView = (DataRowView)FormView1.DataItem;
-                    //string temporal2;
-                    //temporal2 = rowView.ToString();
-
-                    //DataRowView rowView2 =  ((DataRowView)Container.DataItem)["IntegerValue"]) ;
-
+                    sql1.SelectCommand.Parameters.Add("@Id_Area", SqlDbType.Char).Value = Session["areaUsuario"].ToString();
+                    sql1.SelectCommand.Parameters.Add("@Id_Plantel", SqlDbType.Char).Value = Session["plantelUsuario"].ToString();
                     
+//                    Session.Add("Area", Label2.Text);
+                    Session.Add("Id_Area", Label2.Text);
+                    Session.Add("Id_Plantel", Label3.Text);
+
+                    // enviar el nombre del áre y el nombre dle plantel
 
                 }
                 else {
                     Response.Write("Sin rol definido");
                 }
+
+//
             }
 
+            DataSet ds = new DataSet();
+            sql1.Fill(ds);
+
+            //Bind the Proyectos table to the parent Repeater control, and call DataBind.
+            Repeater1.DataSource = ds;
+            Repeater1.DataBind();
+
+            //Close the connection.
+            conn.Close();
 
         }
 
@@ -112,5 +131,49 @@ namespace PCEPI
 
             Response.Redirect("AltaProyecto.aspx?opcion=" + sumaOpciones, false);
         }
+
+        protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            Button1.Visible = true;
+            Button2.Visible = true;
+
+        }
+
+        protected void Repeater1_ItemDataBound(Object Sender, RepeaterItemEventArgs e)
+        {
+            Button1.Visible = true;
+            Button2.Visible = true;
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+//            Response.ContentType = "application/pdf";
+//            Response.AddHeader("content-disposition",
+//                "attachment;filename=Customers.pdf");
+//            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+//            StringWriter sw = new StringWriter();
+//            HtmlTextWriter hw = new HtmlTextWriter(sw);
+
+//            this.Page.RenderControl(hw);
+////            this.repCustomers.RenderControl(hw);
+//            StringReader sr = new StringReader
+//                (sw.ToString().Replace("\r", "")
+//                .Replace("\n", "").Replace("  ", ""));
+
+//            Document pdfDoc =
+//                new Document(iTextSharp.text.PageSize.A4,
+//                             10f, 10f, 10f, 0.0f);
+
+//            iTextSharp.text.html.simpleparser.HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
+//            PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
+//            pdfDoc.Open();
+//            htmlparser.Parse(sr);
+//            pdfDoc.Close();
+//            Response.Write(pdfDoc);
+//            Response.End();
+        }
+
+
     }
 }

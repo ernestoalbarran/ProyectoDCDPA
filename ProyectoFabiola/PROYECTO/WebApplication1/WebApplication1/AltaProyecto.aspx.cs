@@ -25,12 +25,15 @@ namespace PCEPI
         {
             if (!Page.IsPostBack)
             {
+                
                 lblPeriodo.Text = Session["Proyecto"].ToString();
+                //nombre del área
                 lblMateria.Text = Session["Area"].ToString(); // se debe hacer el cambio de materia por area en la pagina donde se despliega
+                //nombre del plantel
                 lblPlantel.Text = Session["Plantel"].ToString();
-                //Label6.Text = Request.QueryString["opcion"]; // esto es para saber que se tienen guardadas las opciones del check box
+               // Label6.Text = Request.QueryString["opcion"]; // esto es para saber que se tienen guardadas las opciones del check box
 
-                //Llenando el ddlCampo Agregar a el final 
+                //llena el llbCampos directamente de la base de datos
                 ProyectoCampo ddlC = new ProyectoCampo();
                 ddlC.Id_Proyecto = Convert.ToInt32(Session["Id_Proyecto"].ToString());
                 DataSet Campos = NegocioProyecto.GetCampos(ddlC);
@@ -38,24 +41,26 @@ namespace PCEPI
                 ddlCampo.DataTextField = "Des_Corta";
                 ddlCampo.DataValueField = "IDCampo";
                 ddlCampo.DataBind();
-                
+
+
+                //Estos debe recibirlos tambien del PEC
 
                 ProyectoLabels labels = new ProyectoLabels();
-                labels.PERIODO = Session["Proyecto"].ToString();
-                labels.PLANTEL = Session["Id_Plantel"].ToString();
-                labels.ID_AREA = Session["Id_Area"].ToString();
+                labels.PERIODO = Session["Proyecto"].ToString();   //en este formato 2006-2007
+                labels.PLANTEL = Session["Id_Plantel"].ToString();  //id del plantel
+                labels.ID_AREA = Session["Id_Area"].ToString();     // id del área
                 labels.Fecha = "@Fecha";
                 labels.Grupo = "@Grupo";
 
 
-
+                //Trae las etiquetas (label) del número de grupo y la fecha de evaluación
                 DataSet texto = NegocioProyectoLabels.LabelsProyecto(labels);
                 DataRow dr = texto.Tables[0].Rows[0];
                 txtFechaEval.Text = dr["Fecha"].ToString();
                 lblGrupo.Text = dr["Grupo"].ToString();
 
 
-
+                //Trae profesores y materias
                 ProfesorProyecto profesor = new ProfesorProyecto();
                 profesor.ID_PLANTEL = Session["Id_Plantel"].ToString();
                 profesor.Area = Int32.Parse(Session["Id_Area"].ToString());
@@ -142,10 +147,10 @@ namespace PCEPI
             }
         }
 
-        protected bool Valida_Profesor(String RFC)
+        protected bool Valida_Profesor(String RFC, int Id_Proyecto)
         {
             Profesor profesor_RFC = new Profesor();
-            return profesor_RFC.validaProfesor(RFC);
+            return profesor_RFC.validaProfesor(RFC,Id_Proyecto);
            
         }
 
@@ -158,7 +163,7 @@ namespace PCEPI
             else
             {
                 //este if verifica si el profesor ya se encuentra en un proyecto
-                if (Valida_Profesor(ListBoxProfesor.SelectedValue.ToString())!=true)
+                if (Valida_Profesor(ListBoxProfesor.SelectedValue.ToString(), Convert.ToInt32(Session["Id_Proyecto"].ToString())) != true)
                 {
                     //ListBoxProfProy.Items.Add(ListBoxProfesor.SelectedItem);
                     //ListBoxProfesor.Items.Remove(ListBoxProfProy.SelectedItem);
@@ -299,119 +304,127 @@ namespace PCEPI
         {
             try
             {
-               if (validarContenido() != true)
+                if (validarContenido() != true)
                 {
                 }
-               else 
-               {
-                   int filas = gvProfesor.Rows.Count;
-                   int cantChk = 0;
-                   int numCheckboxSelect = filas / 4;
-                   //contar el numero de checkbox seleccionados
-                   foreach (GridViewRow registro in gvProfesor.Rows)
-                   {
-                       System.Web.UI.WebControls.CheckBox chk = (System.Web.UI.WebControls.CheckBox)registro.FindControl("chbCoordinador");
-                       if (chk.Checked)
-                           cantChk++;
-                   }
+                else
+                {
+                    int filas = gvProfesor.Rows.Count;
+                    int cantChk = 0;
+                    int numCheckboxSelect = filas / 4;
+                    //contar el numero de checkbox seleccionados
+                    foreach (GridViewRow registro in gvProfesor.Rows)
+                    {
+                        System.Web.UI.WebControls.CheckBox chk = (System.Web.UI.WebControls.CheckBox)registro.FindControl("chbCoordinador");
+                        if (chk.Checked)
+                            cantChk++;
+                    }
+
+                    if (numCheckboxSelect == cantChk)
+                    {
 
 
-                   if (numCheckboxSelect == cantChk)
-                   {
+                        int opcion = Convert.ToInt32(Request.QueryString["opcion"]);
+                        StringBuilder MateriasProy = new StringBuilder();
+                        String Fecha = txtFechaEval.Text;
+                        Fecha = Regex.Replace(Fecha, @"[^\u0000-\u007F]", string.Empty);
+                        string inputFormat = "dd/MM/yyyy";
+                        string outputFormat = "yyyy/MM/dd";
+                        var dateTime = DateTime.ParseExact(Fecha, inputFormat, CultureInfo.InvariantCulture);
+                        string output = dateTime.ToString(outputFormat);
+                        int id_Periodo = 0;
+                        id_Periodo = Convert.ToInt32(Session["Id_Proyecto"].ToString());
 
+                        Proyecto proyecto = new Proyecto();
+                        proyecto.Grupo = Session["ID_Plantel"].ToString() + Session["ID_AREA"].ToString() + lblGrupo.Text;
+                        //proyecto.Periodo = Int32.Parse(Session["Id_Proyecto"].ToString());
+                       //se guarda el id del periodo antes se hacia el periodo tal cual, con la variable de session Proyecto.
+                        proyecto.Periodo = id_Periodo.ToString();
 
-                       int opcion = Convert.ToInt32(Request.QueryString["opcion"]);
-                       StringBuilder MateriasProy = new StringBuilder();
-                       String Fecha = txtFechaEval.Text;
-                       Fecha = Regex.Replace(Fecha, @"[^\u0000-\u007F]", string.Empty);
-                       string inputFormat = "dd/MM/yyyy";
-                       string outputFormat = "yyyy/MM/dd";
-                       var dateTime = DateTime.ParseExact(Fecha, inputFormat, CultureInfo.InvariantCulture);
-                       string output = dateTime.ToString(outputFormat);
+                        switch (opcion)
+                        {
+                            case 0:
+                                proyecto.Interarea = "0";
+                                proyecto.Interplantel = "0";
+                                proyecto.P_asignatura = "0";
+                                break;
 
-                       Proyecto proyecto = new Proyecto();
-                       proyecto.Grupo = Session["ID_Plantel"].ToString() + Session["ID_AREA"].ToString() + lblGrupo.Text;
-                       proyecto.Periodo = lblPeriodo.Text;
+                            case 1:
+                                proyecto.Interarea = "1";
+                                proyecto.Interplantel = "0";
+                                proyecto.P_asignatura = "0";
+                                break;
+                            case 2:
+                                proyecto.Interarea = "0";
+                                proyecto.Interplantel = "1";
+                                proyecto.P_asignatura = "0";
+                                break;
+                            case 3:
+                                proyecto.Interarea = "1";
+                                proyecto.Interplantel = "1";
+                                proyecto.P_asignatura = "0";
+                                break;
+                            case 4:
+                                proyecto.Interarea = "0";
+                                proyecto.Interplantel = "0";
+                                proyecto.P_asignatura = "1";
+                                break;
+                            case 5:
+                                proyecto.Interarea = "1";
+                                proyecto.Interplantel = "0";
+                                proyecto.P_asignatura = "1";
+                                break;
+                            case 6:
+                                proyecto.Interarea = "0";
+                                proyecto.Interplantel = "1";
+                                proyecto.P_asignatura = "1";
+                                break;
+                            case 7:
+                                proyecto.Interarea = "1";
+                                proyecto.Interplantel = "1";
+                                proyecto.P_asignatura = "1"; ;
+                                break;
+                            default:
+                                break;
 
-                       switch (opcion)
-                       {
-                           case 0:
-                               proyecto.Interarea = "0";
-                               proyecto.Interplantel = "0";
-                               proyecto.P_asignatura = "0";
-                               break;
+                        }
 
-                           case 1:
-                               proyecto.Interarea = "1";
-                               proyecto.Interplantel = "0";
-                               proyecto.P_asignatura = "0";
-                               break;
-                           case 2:
-                               proyecto.Interarea = "0";
-                               proyecto.Interplantel = "1";
-                               proyecto.P_asignatura = "0";
-                               break;
-                           case 3:
-                               proyecto.Interarea = "1";
-                               proyecto.Interplantel = "1";
-                               proyecto.P_asignatura = "0";
-                               break;
-                           case 4:
-                               proyecto.Interarea = "0";
-                               proyecto.Interplantel = "0";
-                               proyecto.P_asignatura = "1";
-                               break;
-                           case 5:
-                               proyecto.Interarea = "1";
-                               proyecto.Interplantel = "0";
-                               proyecto.P_asignatura = "1";
-                               break;
-                           case 6:
-                               proyecto.Interarea = "0";
-                               proyecto.Interplantel = "1";
-                               proyecto.P_asignatura = "1";
-                               break;
-                           case 7:
-                               proyecto.Interarea = "1";
-                               proyecto.Interplantel = "1";
-                               proyecto.P_asignatura = "1"; ;
-                               break;
-                           default:
-                               break;
+                        proyecto.Oficio = txtNumOfice.Text;
+                        proyecto.Fecha_ev1 = output; //Convert.ToDateTime(output);  el output está como string y se debe guardar como datetime
+                        proyecto.Titulo = txtTitulo.Text;
+                        proyecto.Producto = txtProducto.Text;
+                        proyecto.Campo = ddlCampo.SelectedValue.ToString();
+                        foreach (ListItem mat in ListBoxMateriasP.Items)
+                        {
+                            String valores = mat.Value;
+                            MateriasProy.Append(valores.ToString());
+                        }
+                        String Concatenadas = MateriasProy.ToString();
+                        proyecto.Asignaturas = Concatenadas; //esta es la concatenacion de las materias del listbox
+                        proyecto.Descripcion = txtADescProy.Text;
+                        proyecto.Opinion_dir = ddlOpinion.SelectedValue.ToString();
+                        proyecto.Observaciones = txtObservaciones.Text;
+                        //estas dos variables son las que dicen quien y cuando en la base de datos, hay que saegurarse que el procedimiento almacenado reciba estas variables tambien 
+                        proyecto.Donde = Session["usuarioIP"].ToString();
+                        proyecto.Quien = Session["idUsuario"].ToString();
 
-                       }
+                        //proyecto.PROFESOR = ListBoxProfProy.SelectedItem.Text;     
+                        string valoresProfesores = crearValoresInsertarProfesores();
+                        proyecto.ValuesInsert = valoresProfesores;
 
-                       proyecto.Oficio = txtNumOfice.Text;
-                       proyecto.Fecha_ev1 = output; //Convert.ToDateTime(output);
-                       proyecto.Titulo = txtTitulo.Text;
-                       proyecto.Producto = txtProducto.Text;
-                       proyecto.Campo = ddlCampo.SelectedValue.ToString();
-                       foreach (ListItem mat in ListBoxMateriasP.Items)
-                       {
-                           String valores = mat.Value;
-                           MateriasProy.Append(valores.ToString());
-                       }
-                       String Concatenadas = MateriasProy.ToString();
-                       proyecto.Asignaturas = Concatenadas; //esta es la concatenacion de las materias del listbox
-                       proyecto.Descripcion = txtADescProy.Text;
-                       proyecto.Opinion_dir = ddlOpinion.SelectedValue.ToString();
-                       proyecto.Observaciones = txtObservaciones.Text;
-                       //proyecto.PROFESOR = ListBoxProfProy.SelectedItem.Text;     
-                       string valoresProfesores = crearValoresInsertarProfesores();
-                       proyecto.ValuesInsert = valoresProfesores;
+                        if (NegocioProyecto.Insertar(proyecto) > 0)
+                        {
+                            MessageBox.Show("Se inserto el proyecto correctamente");
+                            Response.Redirect("DefaultProyecto.aspx", false);
 
-                       if (NegocioProyecto.Insertar(proyecto) > 0)
-                       {
-                           MessageBox.Show("Se inserto el proyecto correctamente");
-                           Response.Redirect("DefaultProyecto.aspx", false);
-
-                       }
-                   }
-                   else
-                       MessageBox.Show("El numero de Cordinadores \n permitidos para el proyecto \n es de: " + numCheckboxSelect);
-               }
-               }
-
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El numero de Cordinadores \n permitidos para el proyecto \n es de: " + numCheckboxSelect);
+                    }
+                }
+            }
             catch (Exception ex)
             {
 
@@ -439,7 +452,8 @@ namespace PCEPI
                 //DataKeyArray arreglo = gvProfesor.DataKeyNames();
                 valores.Append("'" + gvProfesor.DataKeys[registro.RowIndex][1].ToString() + "', ");
                 valores.Append("'" + Session["ID_Plantel"].ToString() + Session["ID_AREA"].ToString() + lblGrupo.Text + "', ");
-                valores.Append("'" + Convert.ToInt32(Session["Id_Proyecto"].ToString()) + "', ");  //lblPeriodo.Text
+                valores.Append("'" + Convert.ToInt32(Session["Id_Proyecto"].ToString()) + "', "); //lblPeriodo.Text
+
                 if (((System.Web.UI.WebControls.CheckBox)registro.FindControl("chbCoordinador")).Checked == true)
                     valores.Append("'1', ");
                   
@@ -449,7 +463,9 @@ namespace PCEPI
                 //Aqui concatenar todos los valores de un prof
 
             }
-            string cadena = (valores.ToString()).Substring(0, valores.Length - 1);
+
+            string cadena = (valores.ToString()).Substring(0, valores.Length - 1);//,seleccion
+
             return cadena;
         }
 
@@ -573,6 +589,11 @@ namespace PCEPI
         }
 
         protected void ListBoxMaterias_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ListBoxProfesor_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

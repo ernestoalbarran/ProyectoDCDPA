@@ -21,7 +21,8 @@
                     </td>
                 <td colspan=2>
                     <asp:TextBox ID="txDes_Corta" runat="server" class="form-control input-lg" placeholder="TITULO" tabindex="1"> </asp:TextBox>
-                </td>
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txDes_Corta" ErrorMessage="Un Campo necesita un título" ForeColor="Red"></asp:RequiredFieldValidator>
+                     </td>
                 </tr>
                          <td >
                     PERIODO
@@ -38,7 +39,7 @@
                 </td>
                 <td colspan=2>
                     <asp:TextBox  TextMode="Multiline" ID="txDes_Larga" runat="server" class="form-control input-lg" placeholder="DESCRIPCION LARGA" tabindex="1"> </asp:TextBox>
-                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txDes_Larga" ErrorMessage="Un Campo necesita una descripción" ForeColor="Red"></asp:RequiredFieldValidator>
+<%--                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txDes_Larga" ErrorMessage="Un Campo necesita una descripción" ForeColor="Red"></asp:RequiredFieldValidator>--%>
                 
                     </tr>
                    
@@ -58,7 +59,7 @@
                            EmptyDataText="No hay registros de Campos ."
                           AllowSorting="True"
                           AllowPaging="True"  
-                          CellPadding="4"
+                          CellPadding="3"
                           GridLines="None" 
                            OnPageIndexChanging="grvCampos_PageIndexChanging" 
                           ForeColor="#333333" 

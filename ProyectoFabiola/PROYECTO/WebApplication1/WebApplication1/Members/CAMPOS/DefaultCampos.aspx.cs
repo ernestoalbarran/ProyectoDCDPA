@@ -33,7 +33,7 @@ namespace DGCCH.Presentacion
         protected void btnInsert_Click(object sender, EventArgs e)
         {
             NegocioCampos NegCam = new NegocioCampos();
-            String Validacion = txDes_Larga.Text;
+            String Validacion = txDes_Corta.Text;
             Int64 valida = Validacion.LongCount();
              if (valida != 0)
             {
@@ -52,7 +52,7 @@ namespace DGCCH.Presentacion
                 grvCampos.SetPageIndex(grvCampos.PageCount);
             }
              else
-                 MessageBox.Show("Debes de ingresar una descripcion al Campo");
+                 MessageBox.Show("Debes de ingresar un titulo al Campo");
 
         }    
                  

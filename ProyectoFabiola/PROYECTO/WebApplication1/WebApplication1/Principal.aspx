@@ -8,6 +8,32 @@
                 <div class="col-md-2 col-lg-2 " align="center">
                     <img runat="server"  src="~/Images/dcdpa_logo.png" align="center" id="Inicio" />
                     <br>
+
+                    //<!--  Parte Prueba variables de sesión-------------------------------->
+
+                    <td >
+                   Periodo
+                     Id <asp:Label ID="lblProyecto" runat="server" Text="Label" ></asp:Label>
+                      Nombre  <asp:Label ID="lblNombreProyecto" runat="server" Text="Label" ></asp:Label>
+
+                </td>
+                    <td >
+                   Área
+                   Id <asp:Label ID="lblArea" runat="server" Text="Label" ></asp:Label>
+                   Nombre <asp:Label ID="lblNombreArea" runat="server" Text="Label" ></asp:Label>
+                </td>
+
+                    <td >
+                   Plantel
+                    Id<asp:Label ID="lblPlantel" runat="server" Text="Label" ></asp:Label>
+                     Nombre   <asp:Label ID="lblNombrePlantel" runat="server" Text="Label" ></asp:Label>
+                </td>
+
+                    
+                    
+        //<!--  Parte Prueba variables de sesión-------------------------------->
+
+
                     <br>
                    
                 </div>

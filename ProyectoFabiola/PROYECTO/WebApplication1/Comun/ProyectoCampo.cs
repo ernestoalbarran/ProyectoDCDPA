@@ -9,7 +9,6 @@ namespace Comun
     {
         //Agregar IDProyecto al final 
         private int _Id_Proyecto;
-
         public int Id_Proyecto
         {
             get { return _Id_Proyecto; }
@@ -20,7 +19,6 @@ namespace Comun
         {
             this.Id_Proyecto = Id_Proyecto;
         }
-
         public ProyectoCampo()
         {
             // TODO: Complete member initialization

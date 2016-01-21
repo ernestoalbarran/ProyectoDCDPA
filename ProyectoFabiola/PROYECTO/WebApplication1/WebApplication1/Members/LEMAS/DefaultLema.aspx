@@ -24,7 +24,11 @@
                             TITULO
                      </td>
                 <td colspan=2>
+<<<<<<< HEAD
                     <asp:TextBox ID="txtitulo" runat="server" class="form-control input-lg" placeholder="TITULO" tabindex="1" Height="40px"></asp:TextBox>
+=======
+                    <asp:TextBox ID="txtitulo" runat="server" class="form-control input-lg" placeholder="TITULO" tabindex="1" Height="40px"> </asp:TextBox>
+>>>>>>> f88d0047e7949b62c26b0011cb0599f8d4e5f51c
                 </td>
                 <td >
                     PERIODO
@@ -49,9 +53,9 @@
                  <td class="auto-style1" >
                         <asp:Button ID="btnInsert" runat="server" Text="Almacenar Lema" OnClick="btnInsert_Click" class="btn btn-primary" />
                  </td>      
-                <td>
+               <%-- <td>
                     <input id="Reset_Lemas" type="reset" value="limpiar campos" class="btn btn-primary" />
-                </td>
+                </td>--%>
             </tr>
         
                 <td colspan="2">
