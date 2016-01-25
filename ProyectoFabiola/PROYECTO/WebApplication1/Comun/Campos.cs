@@ -11,6 +11,8 @@ namespace DGCCH.Comun
 
         public Campos()
         {        }
+        
+
 
         private int _IDCampo;
 
@@ -42,6 +44,8 @@ namespace DGCCH.Comun
             get { return _Des_Corta; }
             set { _Des_Corta = value; }
         }
+
+       //public Campos(int IDCampo, string Des_Corta, string Des_Larga)
 
         //public Campos(int Id_Proyecto)
         //{

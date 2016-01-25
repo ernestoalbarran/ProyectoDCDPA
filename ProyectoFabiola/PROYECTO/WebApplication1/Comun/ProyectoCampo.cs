@@ -14,6 +14,7 @@ namespace Comun
             get { return _Id_Proyecto; }
             set { _Id_Proyecto = value; }
         }
+
         public ProyectoCampo(int Id_Proyecto)
         {
             this.Id_Proyecto = Id_Proyecto;
@@ -23,5 +24,4 @@ namespace Comun
             // TODO: Complete member initialization
         }
     }
-
 }

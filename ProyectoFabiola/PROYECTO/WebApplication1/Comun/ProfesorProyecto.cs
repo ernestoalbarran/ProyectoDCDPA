@@ -70,10 +70,12 @@ namespace PCEPI.Comun
 
 
 
-        public ProfesorProyecto(string  NOMBRE, string RFC ) 
+        public ProfesorProyecto(string  NOMBRE, string RFC, int Area, int Opcion ) 
         {
             this.NOMBRE = NOMBRE;
             this.RFC = RFC;
+            this.Area = Area;
+            this.Opcion = Opcion;
         }
 
     }

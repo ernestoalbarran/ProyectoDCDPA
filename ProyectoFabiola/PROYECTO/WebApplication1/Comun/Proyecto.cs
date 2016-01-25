@@ -115,7 +115,7 @@ namespace PCEPI.Comun
         }
 
 
-        /* private String _donde;
+        private String _donde;
 
          public String Donde
          {
@@ -129,7 +129,7 @@ namespace PCEPI.Comun
              get { return _quien; }
              set { _quien = value; }
          }
-         private DateTime _cuando;
+         /* private DateTime _cuando;
 
          public DateTime Cuando
          {
@@ -148,7 +148,7 @@ namespace PCEPI.Comun
 
         public Proyecto() { }
 
-        public Proyecto(String Grupo, String Periodo, String Interarea, String Interplantel, String P_asignatura, String Oficio, String Fecha_ev1, String Titulo, String Producto, String Campo, String Asignaturas, String Descripcion, String Opinion_dir, String Observaciones, string ValuesInsert)
+        public Proyecto(String Grupo, String Periodo, String Interarea, String Interplantel, String P_asignatura, String Oficio, String Fecha_ev1, String Titulo, String Producto, String Campo, String Asignaturas, String Descripcion, String Opinion_dir, String Observaciones, String Donde ,String Quien, string ValuesInsert)
         {
             this.Grupo = Grupo;
             this.Periodo = Periodo;
@@ -157,7 +157,7 @@ namespace PCEPI.Comun
             this.P_asignatura = P_asignatura;
             this.Oficio = Oficio;
             this.Fecha_ev1 = Fecha_ev1;
-            //this.Fecha_ev2 = Fecha_ev2;
+            //this.Fecha_ev2 = Fecha_ev2;,
             this.Titulo = Titulo;
             this.Producto = Producto;
             this.Campo = Campo;
@@ -165,6 +165,8 @@ namespace PCEPI.Comun
             this.Descripcion = Descripcion;
             this.Opinion_dir = Opinion_dir;
             this.Observaciones = Observaciones;
+            this.Donde= Donde;
+            this.Quien=Quien;
             this.ValuesInsert = ValuesInsert;
 
         }

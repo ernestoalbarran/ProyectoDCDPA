@@ -83,8 +83,7 @@ namespace Comun
 
         
 
-        public Firmante1(int ID_FIRMANTE1, string RFC_PEC,string RFC_CONSEJERO1,string RFC_CONSEJERO2,string RFC_CONSEJERO3,string RFC_CONSEJERO4,string RFC_CONSEJERO5,
-string RFC_CONSEJERO6,string SIGLAS,DateTime FECHA_OFICIO)
+        public Firmante1(int ID_FIRMANTE1, string RFC_PEC,string RFC_CONSEJERO1,string RFC_CONSEJERO2,string RFC_CONSEJERO3,string RFC_CONSEJERO4,string RFC_CONSEJERO5,string RFC_CONSEJERO6,string SIGLAS,DateTime FECHA_OFICIO)
         {
             this.ID_FIRMANTE1 = ID_FIRMANTE1;
             this.RFC_PEC=RFC_PEC;

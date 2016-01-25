@@ -24,7 +24,11 @@
                             TITULO
                      </td>
                 <td colspan=2>
+<<<<<<< HEAD
+                    <asp:TextBox ID="txtitulo" runat="server" class="form-control input-lg" placeholder="TITULO" tabindex="1" Height="40px"></asp:TextBox>
+=======
                     <asp:TextBox ID="txtitulo" runat="server" class="form-control input-lg" placeholder="TITULO" tabindex="1" Height="40px"> </asp:TextBox>
+>>>>>>> f88d0047e7949b62c26b0011cb0599f8d4e5f51c
                 </td>
                 <td >
                     PERIODO
@@ -63,7 +67,7 @@
                           GridLines="None"
                           OnPageIndexChanging="grvLemas_PageIndexChanging" 
                           ForeColor="#333333" 
-                           Width="607px" OnSelectedIndexChanged="grvLemas_SelectedIndexChanged" >
+                           Width="607px" OnSelectedIndexChanged="grvLemas_SelectedIndexChanged" EnableTheming="True" EnableViewState="False" >
                            <EditRowStyle BackColor="#999999" />
                              <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
                              <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

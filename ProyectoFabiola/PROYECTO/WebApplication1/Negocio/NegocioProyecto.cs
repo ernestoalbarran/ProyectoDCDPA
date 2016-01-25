@@ -33,6 +33,8 @@ namespace PCEPI.Negocio
                 DBHelper.MakeParam("@Descripcion", SqlDbType.VarChar,0,proyecto.Descripcion),
                 DBHelper.MakeParam("@Opinion_dir", SqlDbType.Char,0,proyecto.Opinion_dir),
                 DBHelper.MakeParam("@Observaciones", SqlDbType.VarChar,0,proyecto.Observaciones),
+                DBHelper.MakeParam("@donde", SqlDbType.VarChar,0,proyecto.Donde),
+                DBHelper.MakeParam("@quien", SqlDbType.VarChar,0,proyecto.Quien),
                 DBHelper.MakeParam("@values_insert", SqlDbType.VarChar, 0, proyecto.ValuesInsert)
             };
 

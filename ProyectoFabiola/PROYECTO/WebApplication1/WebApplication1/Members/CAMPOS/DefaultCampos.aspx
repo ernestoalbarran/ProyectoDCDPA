@@ -55,7 +55,7 @@
 
             <tr>
                 <td colspan="2">
-                      <asp:GridView AutoGenerateColumns="true" runat="server" ID="grvCampos" 
+                      <asp:GridView runat="server" ID="grvCampos" 
                            EmptyDataText="No hay registros de Campos ."
                           AllowSorting="True"
                           AllowPaging="True"  
@@ -70,7 +70,7 @@
                              <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                              <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
                              <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />  
-                             <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                             <SelectedRowStyle BackColor="#E2DED6" Font-Bold="false" ForeColor="#333333" />
                              <SortedAscendingCellStyle BackColor="#E9E7E2" />
                              <SortedAscendingHeaderStyle BackColor="#506C8C" />
                             <SortedDescendingCellStyle BackColor="#FFFDF8" />

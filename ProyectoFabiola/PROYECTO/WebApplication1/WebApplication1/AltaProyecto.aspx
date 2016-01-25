@@ -2,7 +2,13 @@
 
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+   
     <style type="text/css">
+        .auto-style1 {
+            width: 400px;
+        }
+    </style>
+     <!-- <style type="text/css">
         .auto-style1 {
         }
         .auto-style2 {
@@ -29,7 +35,7 @@
         .auto-style8 {
             width: 29px;
         }
-    </style>
+    </style>-->
 </asp:Content>
 
  
@@ -40,7 +46,7 @@
 
               
               <h2>Alta Proyecto
-                  <asp:Label ID="lblTitulo" runat="server" ></asp:Label>
+                  <asp:Label ID="lblTitulo" runat="server"></asp:Label>
         
    
               <!-- <span class="pull-right">
@@ -86,7 +92,7 @@
                    <td class="auto-style7">
                        <asp:Label ID="lblGrupo" runat="server" Text="Label"></asp:Label>
                    </td>
-                <td class="auto-style6" colspan="2">
+                <td class="auto-style6" colspan="2" width="1500">
                     <asp:Label ID="lblMateria" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
@@ -96,14 +102,18 @@
                     <asp:Label ID="lblPeriodo" runat="server" Text="Label"></asp:Label>
                     &nbsp;
                     <asp:Label ID="Label5" runat="server" Text="Entidad 1"></asp:Label>
+<<<<<<< HEAD
+                   <!-- <asp:Label ID="Label6" runat="server"></asp:Label>-->
+=======
                     
+>>>>>>> f88d0047e7949b62c26b0011cb0599f8d4e5f51c
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2" colspan="2">Número de oficio*</td>
                 <td colspan=3>CCH/DIR/<asp:TextBox ID="txtNumOfice" runat="server" Width="39px" Height="22px"></asp:TextBox>/2016</td>
 
-                <td> <ASP:RequiredFieldValidator id="rqfValidatorNumOfice" runat="server" errormessage="El numero de oficio es obligatorio" width="243px" controltovalidate="txtNumOfice" display="Dynamic"></ASP:RequiredFieldValidator>
+                <td> <ASP:RequiredFieldValidator id="rqfValidatorNumOfice" runat="server" errormessage="El numero de oficio es obligatorio" width="243px" controltovalidate="txtNumOfice" display="Dynamic" ForeColor="Red"></ASP:RequiredFieldValidator>
 </td>
 
             </tr>
@@ -113,7 +123,7 @@
                     <asp:TextBox ID="txtFechaEval" runat="server" Enabled="False"></asp:TextBox>
                     dd/mm/aaaa</td>
                 <td>
-                    <ASP:RequiredFieldValidator id="rfvValidarFechaEval" runat="server" errormessage="La fecha de evaluacion es obligatoria" width="243px" controltovalidate="txtFechaEval" display="Dynamic"></ASP:RequiredFieldValidator>
+                    <ASP:RequiredFieldValidator id="rfvValidarFechaEval" runat="server" errormessage="La fecha de evaluacion es obligatoria" width="243px" controltovalidate="txtFechaEval" display="Dynamic" ForeColor="Red"></ASP:RequiredFieldValidator>
                 </td>
                 
 
@@ -124,7 +134,7 @@
                     <asp:TextBox ID="txtTitulo" runat="server" class="form-control input-lg" placeholder="Título"></asp:TextBox>
                 </td>
                 <td>
-                   <ASP:RequiredFieldValidator id="rfvValidarTitulo" runat="server" errormessage="Todos los proyectos requieren un titulo" width="243px" controltovalidate="txtTitulo" display="Dynamic"></ASP:RequiredFieldValidator>
+                   <ASP:RequiredFieldValidator id="rfvValidarTitulo" runat="server" errormessage="Todos los proyectos requieren un titulo" width="243px" controltovalidate="txtTitulo" display="Dynamic" ForeColor="Red"></ASP:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -133,17 +143,24 @@
                     <asp:TextBox ID="txtProducto" runat="server" class="form-control input-lg" placeholder="PRODUCTO"></asp:TextBox>
                 </td>
                 <td>
-                   <ASP:RequiredFieldValidator id="rfvValidarProducto" runat="server" errormessage="Todos los proyectos requieren especificar la realización de un producto" width="243px" controltovalidate="txtTitulo" display="Dynamic"></ASP:RequiredFieldValidator>
+                   <ASP:RequiredFieldValidator id="rfvValidarProducto" runat="server" errormessage="Todos los proyectos requieren especificar la realización de un producto" width="243px" controltovalidate="txtTitulo" display="Dynamic" ForeColor="Red"></ASP:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2" colspan="2">Campo</td>
                 <td colspan="3">
+<<<<<<< HEAD
+                    <asp:DropDownList ID="ddlCampo" runat="server">
+                        <asp:ListItem Value="0" Text="---Seleccione una opcion ---"></asp:ListItem>
+                        <%-- Esto es como se hacia antes ahora se encuentra el sql source en capas.
+                            
+=======
                     
                         
                         <asp:DropDownList ID="ddlCampo" runat="server">
                         <%--Esto comentado es como se hacia antes, ahora se carga en capas directamente de la tabla campos de BD
                             <asp:ListItem Value="0">Elige una opcion </asp:ListItem>
+>>>>>>> f88d0047e7949b62c26b0011cb0599f8d4e5f51c
                         <asp:ListItem Value="1">Calidad de Aprendizaje</asp:ListItem>
                         <asp:ListItem Value="2">Formación Integral</asp:ListItem>
                         <asp:ListItem Value="3">Actualización de los programas</asp:ListItem>
@@ -211,6 +228,7 @@
             </tr>
             <tr>
                 <td colspan="5">Integrantes</td>
+                <td></td>
             </tr>
         
             <tr>
