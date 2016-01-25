@@ -19,10 +19,16 @@ namespace WebApplication1
             string ip = Request.ServerVariables["REMOTE_ADDR"];
             Session["usuarioIP"] = ip;
 
+
+
            if (Roles.IsUserInRole("Administrador")) 
            {
-               Session["usuario"] = "Administrador";
                string usuarioActual = HttpContext.Current.User.Identity.Name;
+
+               Guid idUsuarioActual = (Guid)Membership.GetUser(User.Identity.Name).ProviderUserKey;
+               Session["idUsuario"] = idUsuarioActual;
+
+               Session["usuario"] = "Administrador";
 
                //<!--  Parte Prueba variables de sesión-------------------------------->
 
@@ -61,9 +67,12 @@ namespace WebApplication1
 
            if (Roles.IsUserInRole("Jefe Sección")) 
            {
-               Session["usuario"] = "Jefe Sección";
-
                string usuarioActual = HttpContext.Current.User.Identity.Name;
+
+               Guid idUsuarioActual = (Guid)Membership.GetUser(User.Identity.Name).ProviderUserKey;
+               Session["idUsuario"] = idUsuarioActual;
+
+               Session["usuario"] = "Jefe Sección";
                Session["nombreUsuario"] = usuarioActual;
             //   Console.WriteLine((string)Session["nombreUsuario"]);
 
